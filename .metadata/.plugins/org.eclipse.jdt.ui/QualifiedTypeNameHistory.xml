@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
 <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
 <fullyQualifiedTypeName name="javafx.scene.control.SplitPane.Divider"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -25,7 +24,6 @@
 <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.trax.SAX2StAXBaseWriter"/>
 <fullyQualifiedTypeName name="l.Student"/>
 <fullyQualifiedTypeName name="l.Worker"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
 <fullyQualifiedTypeName name="l.Student1"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array"/>
@@ -49,9 +47,7 @@
 <fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="com.cjl.model.MemberInformation"/>
 <fullyQualifiedTypeName name="com.sun.javafx.scene.EnteredExitedHandler"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="music.Songs"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="javafx.css.StyleableStringProperty"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xpath.internal.operations.String"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="jdk.nashorn.internal.ir.BreakableNode"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
