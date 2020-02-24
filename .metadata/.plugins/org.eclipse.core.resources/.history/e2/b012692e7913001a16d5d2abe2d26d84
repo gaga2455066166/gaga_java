@@ -1,0 +1,114 @@
+package com.cjl.view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+
+public class ShopMemberAddInterFrm extends JInternalFrame {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ShopMemberAddInterFrm frame = new ShopMemberAddInterFrm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ShopMemberAddInterFrm() {
+		setClosable(true);
+		setIconifiable(true);
+		setTitle("\u5546\u5E97\u4F1A\u5458\u7533\u8BF7");
+		setBounds(100, 100, 474, 340);
+		
+		JLabel label = new JLabel("\u59D3\u540D\uFF1A");
+		label.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u7528\u6237\u540D.png")));
+		label.setFont(new Font("ËÎÌו", Font.PLAIN, 12));
+		
+		JLabel label_1 = new JLabel("\u6027\u522B\uFF1A");
+		label_1.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u6027\u522B.png")));
+		
+		JLabel label_2 = new JLabel("\u5E74\u9F84\uFF1A");
+		label_2.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u5E74\u9F84.png")));
+		
+		JLabel label_3 = new JLabel("\u624B\u673A\uFF1A");
+		label_3.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u624B\u673A\u53F7\u7801.png")));
+		
+		JLabel label_4 = new JLabel("\u5730\u5740\uFF1A");
+		label_4.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u8054\u7CFB\u5730\u5740.png")));
+		
+		JLabel label_5 = new JLabel("\u4F1A\u5458\u5BC6\u7801\uFF1A");
+		label_5.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u5BC6\u7801.png")));
+		
+		JLabel label_6 = new JLabel("\u5145\u503C\u7EA7\u522B\uFF1A");
+		label_6.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u7B49\u7EA7\u4FE1\u606F.png")));
+		
+		JLabel label_7 = new JLabel("\u6B22\u8FCE\u60A8\uFF0C\u6211\u4EEC\u7684\u65B0\u4F1A\u5458\uFF01");
+		label_7.setFont(new Font("ËÎÌו", Font.BOLD, 25));
+		label_7.setIcon(new ImageIcon(ShopMemberAddInterFrm.class.getResource("/images/\u6B22\u8FCE\u7533\u8BF7\u4F1A\u5458.png")));
+		
+		JLabel label_8 = new JLabel("\u6CE8\u91CA\u3001\u89E3\u91CA\u548C\u8BF4\u660E");
+		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap(43, Short.MAX_VALUE)
+					.addComponent(label_7)
+					.addGap(35))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(20)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(label_8)
+						.addComponent(label_6)
+						.addComponent(label_5)
+						.addComponent(label_4)
+						.addComponent(label_3)
+						.addComponent(label_2)
+						.addComponent(label_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(19)
+					.addComponent(label_7)
+					.addGap(18)
+					.addComponent(label)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_1)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_2)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_3)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_4)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_5)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_6)
+					.addGap(18)
+					.addComponent(label_8)
+					.addContainerGap(35, Short.MAX_VALUE))
+		);
+		getContentPane().setLayout(groupLayout);
+
+	}
+
+}

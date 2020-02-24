@@ -1,0 +1,37 @@
+package day5;
+
+import java.util.Scanner;
+
+public class vehicle {
+	int speed;
+	int size;
+	Scanner scanner = new Scanner(System.in);
+
+	public void move() {
+		System.out.println("体积" + size + "速度" + speed);
+	}
+
+	public void setSpeed(int s) {
+		speed = s;
+	}
+
+	public void setSize(int si) {
+		size = si;
+	}
+
+	public void speedUp() {
+		System.out.println("请输入要增加多少速度");
+		int up;
+		up = scanner.nextInt();
+		speed = speed + up;
+		System.out.println("增加成功");
+	}
+
+	public void speedDown() {
+		System.out.println("请输入要减少多少速度");
+		int down;
+		down = scanner.nextInt();
+		speed = speed + down;
+		System.out.println("减少成功");
+	}
+}

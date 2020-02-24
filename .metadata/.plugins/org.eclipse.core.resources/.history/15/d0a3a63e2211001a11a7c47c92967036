@@ -1,0 +1,131 @@
+package com.cjl.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
+
+public class MainFrm extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainFrm frame = new MainFrm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainFrm() {
+		setTitle("\u5546\u5E97\u4F1A\u5458\u7BA1\u7406\u7CFB\u7EDF");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 600);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setToolTipText("");
+		setJMenuBar(menuBar);
+		
+		JMenu menu = new JMenu("\u4F1A\u5458\u4FE1\u606F\u67E5\u8BE2");
+		menu.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u4FE1\u606F\u67E5\u8BE2.png")));
+		menuBar.add(menu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("\u4F1A\u5458\u5217\u8868");
+		mntmNewMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u5217\u8868.png")));
+		menu.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem("\u4E2A\u4EBA\u4FE1\u606F");
+		mntmNewMenuItem_5.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4E2A\u4EBA\u4FE1\u606F.png")));
+		menu.add(mntmNewMenuItem_5);
+		
+		JMenuItem mntmNewMenuItem_6 = new JMenuItem("\u4F1A\u5458\u5361\u5BC6");
+		mntmNewMenuItem_6.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u5361\u5BC6.png")));
+		menu.add(mntmNewMenuItem_6);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("\u7B49\u7EA7\u4FE1\u606F");
+		mntmNewMenuItem_1.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u7B49\u7EA7\u4FE1\u606F.png")));
+		menu.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("\u79EF\u5206\u4F59\u989D");
+		mntmNewMenuItem_2.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u79EF\u5206\u4F59\u989D.png")));
+		menu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("\u6D88\u8D39\u91D1\u989D");
+		mntmNewMenuItem_4.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u6D88\u8D39\u91D1\u989D.png")));
+		menu.add(mntmNewMenuItem_4);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("\u8054\u7CFB\u5730\u5740");
+		mntmNewMenuItem_3.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u8054\u7CFB\u5730\u5740.png")));
+		menu.add(mntmNewMenuItem_3);
+		
+		JMenu menu_1 = new JMenu("\u4F1A\u5458\u4FE1\u606F\u53D8\u66F4");
+		menu_1.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u4FE1\u606F\u53D8\u66F4.png")));
+		menuBar.add(menu_1);
+		
+		JMenuItem mntmNewMenuItem_7 = new JMenuItem("\u4E2A\u4EBA\u4FE1\u606F\u53D8\u66F4");
+		mntmNewMenuItem_7.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4E2A\u4EBA\u4FE1\u606F.png")));
+		menu_1.add(mntmNewMenuItem_7);
+		
+		JMenuItem mntmNewMenuItem_8 = new JMenuItem("\u652F\u4ED8\u5BC6\u7801\u4FEE\u6539");
+		mntmNewMenuItem_8.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u5361\u5BC6.png")));
+		menu_1.add(mntmNewMenuItem_8);
+		
+		JMenuItem mntmNewMenuItem_9 = new JMenuItem("\u4F1A\u5458\u7B49\u7EA7\u63D0\u5347");
+		mntmNewMenuItem_9.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u7B49\u7EA7\u4FE1\u606F.png")));
+		menu_1.add(mntmNewMenuItem_9);
+		
+		JMenuItem mntmNewMenuItem_10 = new JMenuItem("\u4F1A\u5458\u79EF\u5206\u5151\u6362");
+		mntmNewMenuItem_10.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u79EF\u5206\u4F59\u989D.png")));
+		menu_1.add(mntmNewMenuItem_10);
+		
+		JMenuItem mntmNewMenuItem_11 = new JMenuItem("\u6D88\u8D39\u91D1\u989D\u5145\u503C");
+		mntmNewMenuItem_11.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u6D88\u8D39\u91D1\u989D.png")));
+		menu_1.add(mntmNewMenuItem_11);
+		
+		JMenuItem mntmNewMenuItem_12 = new JMenuItem("\u8054\u7CFB\u5730\u5740\u53D8\u66F4");
+		mntmNewMenuItem_12.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u8054\u7CFB\u5730\u5740.png")));
+		menu_1.add(mntmNewMenuItem_12);
+		
+		JMenu menu_2 = new JMenu("\u4F1A\u5458\u7533\u8BF7\u6CE8\u9500");
+		menu_2.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u7533\u8BF7.png")));
+		menuBar.add(menu_2);
+		
+		JMenuItem mntmNewMenuItem_13 = new JMenuItem("\u4F1A\u5458\u7533\u8BF7");
+		mntmNewMenuItem_13.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u7533\u8BF71.png")));
+		menu_2.add(mntmNewMenuItem_13);
+		
+		JMenuItem mntmNewMenuItem_14 = new JMenuItem("\u4F1A\u5458\u6CE8\u9500");
+		mntmNewMenuItem_14.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u4F1A\u5458\u6CE8\u95001.png")));
+		menu_2.add(mntmNewMenuItem_14);
+		
+		JMenu menu_3 = new JMenu("\u7EDF\u8BA1");
+		menu_3.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u7EDF\u8BA1.png")));
+		menuBar.add(menu_3);
+		
+		JMenu menu_4 = new JMenu("\u5173\u4E8E\u6211\u4EEC");
+		menu_4.setIcon(new ImageIcon(MainFrm.class.getResource("/images/\u5173\u4E8E\u6211\u4EEC.png")));
+		menuBar.add(menu_4);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+	}
+
+}

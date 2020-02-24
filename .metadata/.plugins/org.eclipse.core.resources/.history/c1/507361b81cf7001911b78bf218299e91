@@ -1,0 +1,12 @@
+package day5;
+
+public class Student {
+	String name;
+	int age;
+	String hoppy;
+	public void speak() {
+		System.out.println(age);
+	}
+}
+
+

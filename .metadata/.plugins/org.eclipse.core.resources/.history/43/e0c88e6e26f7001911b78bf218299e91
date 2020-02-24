@@ -1,0 +1,13 @@
+package day5;
+import java.util.*;
+public class Task2 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		vehicle v1 =new vehicle();
+		int speed = scanner.nextInt();
+		int size=scanner.nextInt();
+		v1.setSpeed(speed);
+		v1.setSize(size);
+		v1.move();
+	}
+}

@@ -1,0 +1,12 @@
+package day5;
+
+public class Student {
+	String name;
+	int age;
+	String hoppy;
+	public void speak() {
+		System.out.println("名字：" + name + "\t年龄：" + age + "\t兴趣爱好：" + hoppy);
+	}
+}
+
+

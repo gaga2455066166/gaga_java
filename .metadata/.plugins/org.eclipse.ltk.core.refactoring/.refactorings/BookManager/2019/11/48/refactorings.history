@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;注意事项.png&apos; to &apos;ShopSystem/src/images&apos;&#x0D;&#x0A;－ 原始项目：“BookManager”&#x0D;&#x0A;－ 目标元素：“ShopSystem/src/images”&#x0D;&#x0A;－ 原始元素：“注意事项.png”" description="复制文件" destination="=ShopSystem/src&lt;images" element1="src/images/注意事项.png" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1575123998070" units="0" version="1.0"/>
+</session>

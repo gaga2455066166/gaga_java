@@ -1,0 +1,26 @@
+package day5;
+
+import java.util.Scanner;
+
+public class Task1 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Student s1 = new Student();
+		
+		s1.age=scanner.nextInt();
+		String c= scanner.nextLine();
+		s1.name= scanner.next();
+
+		s1.hoppy=scanner.next();
+		s1.speak();
+		System.out.println(s1.panduan("吃东西"));
+		System.out.println("输入要设置的年龄");
+		int a=scanner.nextInt();
+		s1.setAge(a);
+		System.out.println("年龄" + s1.age);
+		scanner.close();
+		
+		
+		
+	}
+}

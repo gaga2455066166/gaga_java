@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="从表达式“textField.getText()”中抽取局部变量“text”&#x0D;&#x0A;－ 原始项目：“Shop”&#x0D;&#x0A;－ 变量名称：“text”&#x0D;&#x0A;－ 目标方法：“a.MyFrame.MyFrame().新建 ActionListener() {...}.actionPerformed()”&#x0D;&#x0A;－ 变量表达式：“textField.getText()”&#x0D;&#x0A;－ 将出现的表达式替换为变量" description="抽取局部变量“text”" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;a{MyFrame.java" name="text" replace="true" selection="705 0" stamp="1574068529020" varType="false" version="1.0"/>
+</session>
