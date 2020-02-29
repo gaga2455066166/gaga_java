@@ -19,8 +19,8 @@ public class Add {
             enterJob(sc, employee);
             enterDateHired(sc, employee);
             employees.add(employee);
-            System.out.println("Record Saved");
-            System.out.println("Add another employee record? (y)es or (n)o");
+            System.out.println("记录保存");
+            System.out.println("添加另一个员工记录?  (y)es 或 (n)o");
             String canAgain = sc.nextLine();
             if (!canAgain.equals("y")) {
                 again = false;
@@ -36,12 +36,12 @@ public class Add {
             System.out.print("Enter Date Hired (dd-mm-yyyy): ");
             dateHiredStr = sc.nextLine();
             if (dateHiredStr.equals("")) {
-                System.out.println("No date hired entered 鈥� try again");
+                System.out.println("没有检测到输入，请重新输入!");
             } else if (isValidDate(dateHiredStr)) {
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
                 dateHired = sdf.parse(dateHiredStr);
             } else {
-                System.out.println("Invalid Date Hired");
+                System.out.println("无效的日期");
             }
         } while (dateHiredStr.equals("") || dateHired == null);
         employee.setDateHired(dateHired);
@@ -69,7 +69,7 @@ public class Add {
         String job;
         String regex = "[a-zA-Z|\\s]+";
         do {
-            System.out.print("Enter Job Title: ");
+            System.out.print("输入职位: ");
             job = sc.nextLine();
             if (job.equals("")) {
                 System.out.println("No Job title entered 鈥� try again");
@@ -85,12 +85,12 @@ public class Add {
         int departmentNum;
         String regex = "\\d+";
         do {
-            System.out.print("Enter Dept #: ");
+            System.out.print("输入部门 #: ");
             departmentNumStr = sc.nextLine();
             if (departmentNumStr.equals("")) {
-                System.out.println("No Dept # entered 鈥� try again");
+                System.out.println("没有检测到输入，请重新输入! ");
             } else if (!departmentNumStr.matches(regex)) {
-                System.out.println("Dept # can contain only digits with no spaces");
+                System.out.println("部门编号只能包含没有数字的编号");
             }
         } while (departmentNumStr.equals("") || !departmentNumStr.matches(regex));
         departmentNum = Integer.parseInt(departmentNumStr);
@@ -104,30 +104,30 @@ public class Add {
         String initial;
         String regex = "[a-zA-Z|\\s]+";
         do {
-            System.out.print("Enter Last Name: ");
+            System.out.print("输入性: ");
             lastName = sc.nextLine();
             if (lastName.equals("")) {
-                System.out.println("No last name entered 鈥� try again");
+                System.out.println("没有检测到输入，请重新输入! ");
             } else if (!lastName.matches(regex)) {
-                System.out.println("Last name can contain only alphabetical characters and spaces");
+                System.out.println("姓氏只能包含字母字符和空格");
             }
         } while (lastName.equals("") || !lastName.matches(regex));
         do {
-            System.out.print("Enter First Name: ");
+            System.out.print("输入名: ");
             firstName = sc.nextLine();
             if (firstName.equals("")) {
-                System.out.println("No First name entered 鈥� try again");
+                System.out.println("没有检测到输入，请重新输入!");
             } else if (!firstName.matches(regex)) {
-                System.out.println("First name can contain only alphabetical characters and spaces");
+                System.out.println("名字只能包含字母和空格");
             }
         } while (firstName.equals("") || !firstName.matches(regex));
         do {
-            System.out.print("Enter Middle Init: ");
+            System.out.print("输入 Middle Init: ");
             initial = sc.nextLine();
             if (initial.equals("")) {
-                System.out.println("No Middle Init entered 鈥� try again");
+                System.out.println("没有检测到输入，请重新输入!");
             } else if (!initial.matches(regex)) {
-                System.out.println("Middle Init can contain only alphabetical characters and spaces");
+                System.out.println("Middle Init 只能包含字母字符和空格");
             }
         } while (initial.equals("") || !initial.matches(regex));
         employee.setFirstName(firstName);
@@ -140,12 +140,12 @@ public class Add {
         String telephoneNumber;
         String regex = "0[2-8]-[1-9]\\d{7}";
         do {
-            System.out.print("Enter Phone Number (02-12345678): ");
+            System.out.print("输入手机号(02-12345678): ");
             telephoneNumber = sc.nextLine();
             if (telephoneNumber.equals("")) {
-                System.out.println("No phone number entered 鈥� try again");
+                System.out.println("没有检测到输入，请重新输入!");
             } else if (!telephoneNumber.matches(regex)) {
-                System.out.println("Invalid phone number 鈥� try again");
+                System.out.println("非法的手机号，请重新输入");
             }
         } while (telephoneNumber.equals("") || !telephoneNumber.matches(regex));
         employee.setTelephoneNumber(telephoneNumber);
@@ -155,16 +155,16 @@ public class Add {
         String payrollNumber = null;
         int i = 0;
         do {
-            System.out.print("Enter employee 3 digit payroll number: ");
+            System.out.print("输入员工3位数工资单号码: ");
             payrollNumber = sc.nextLine();
             if (payrollNumber.equals("")) {
-                System.out.println("No payroll number entered 鈥� try again");
+                System.out.println("没有检测到输入，请重新输入！");
             } else if (!payrollNumber.matches("\\d{3}")) {
-                System.out.println("Payroll number can contain only numerical characters");
+                System.out.println("工资单号只能包含数字字符");
             } else {
                 for (i = 0; i < employees.size(); i++) {
                     if (employees.get(i).getPayrollNumber().equals(payrollNumber)) {
-                        System.out.println("The payroll number already exists");
+                        System.out.println("工资单号码已经存在");
                         break;
                     }
                 }

@@ -5,7 +5,7 @@ import java.text.ParseException;
 
 public class Test {
     public static void main(String[] args) throws ParseException, IOException {
-        EmployeeManager employeeManager = new EmployeeManager();
-        employeeManager.start();
+        Menu menu = new Menu();
+        menu.start();
     }
 }

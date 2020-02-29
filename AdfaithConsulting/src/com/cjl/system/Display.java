@@ -23,7 +23,9 @@ public class Display {
     public static void showNameAndPhoneNumber(List<Employee> employees) {
         for (int i = 0; i < employees.size(); i++) {
             Employee employee = employees.get(i);
-            System.out.println(employee.getLastName() + "," + employee.getFirstName() + "," + employee.getTelephoneNumber());
+            System.out.println(employee.getLastName() + "," 
+            + employee.getFirstName() + "," 
+            		+ employee.getTelephoneNumber());
         }
         ensure();
     }
@@ -31,7 +33,9 @@ public class Display {
     public static void showNameAndPhoneNumberFormatted(List<Employee> employees) {
         for (int i = 0; i < employees.size(); i++) {
             Employee employee = employees.get(i);
-            System.out.println(format(employee.getLastName()) + format(employee.getFirstName()) + employee.getTelephoneNumber());
+            System.out.println(format(employee.getLastName()) + 
+            		format(employee.getFirstName()) + 
+            		employee.getTelephoneNumber());
         }
         ensure();
     }
@@ -46,7 +50,7 @@ public class Display {
 
     public static void ensure() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Press Enter to continue...");
+        System.out.print("按回车键继续。。。");
         String ensure = sc.nextLine();
     }
 }

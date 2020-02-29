@@ -108,23 +108,27 @@ public class Employee {
     }
 	@Override
     public int hashCode() {
-        return Objects.hash(lastName, firstName, initial, payrollNumber, telephoneNumber, departmentNum, job, dateHired);
+        return Objects.hash(lastName, firstName, initial, payrollNumber, 
+        		telephoneNumber, departmentNum, job, dateHired);
     }
 
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        return payrollNumber + ":" + telephoneNumber + ":" + lastName + ":" + firstName + ":" + initial + ":" + departmentNum + ":" + job + ":" + sdf.format(dateHired);
+        return payrollNumber + ":" + telephoneNumber + ":" + lastName + ":"
+        		+ firstName + ":" + initial + ":" + departmentNum + ":" 
+        + job + ":" + sdf.format(dateHired);
     }
 
     public String format() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        return format2(lastName) + format2(firstName) + format2(initial) + format2(payrollNumber) + format2(telephoneNumber) + format2(departmentNum + "") + format2(job) + format2(sdf.format(dateHired));
+        return format2(lastName) + "\t" + firstName + "\t" + initial + "\t" + payrollNumber 
+        		+ "\t" + telephoneNumber + "\t" + departmentNum + "" + "\t" + job + format2(sdf.format(dateHired));
     }
 
     public String format2(String str) {
         int len = str.length();
-        for (int i = 0; i < 20 - len; i++) {
+        for (int i = 0; i < 10 - len; i++) {
             str = str + " ";
         }
         return str;

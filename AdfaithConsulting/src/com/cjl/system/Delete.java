@@ -11,23 +11,23 @@ public class Delete {
         boolean flag;
         do {
             flag = false;
-            System.out.print("Enter employee 3 digit payroll number: ");
+            System.out.print("输入员工3位工资单号码:");
             payrollNumber = sc.nextLine();
             if (payrollNumber.equals("")) {
-                System.out.println("No payroll number entered 鈥� try again");
+                System.out.println("错误，再试一次");
             } else if (!payrollNumber.matches("\\d{3}")) {
-                System.out.println("Payroll number can contain only numerical characters");
+                System.out.println("工资单号只能包含数字字符。");
             } else {
                 int i = 0;
                 int size = employees.size();
                 for (i = 0; i < size; i++) {
                     if (employees.get(i).getPayrollNumber().equals(payrollNumber)) {
-                        System.out.println("Confirm record deletion, (y)es or (n)o");
+                        System.out.println("请确定是否删除记录, (y)es or (n)o");
                         String ensure = sc.nextLine();
                         if (ensure.equals("y")) {
                             employees.remove(i);
-                            System.out.println("Record deleted");
-                            System.out.println("Delete another? (y)es or (n)o");
+                            System.out.println("记录已经删除");
+                            System.out.println("删除另一个？  (y)es or (n)o");
                             ensure = sc.nextLine();
                             if (ensure.equals("y")) {
                                 flag = true;
@@ -37,16 +37,10 @@ public class Delete {
                     }
                 }
                 if (i == size) {
-                    System.out.println("Adfaith Consulting  Employee Records:\n" +
-                            "======================================\n" +
+                    System.out.println(
+                            "员工工资单号" + payrollNumber + " 没有找到！\n" +
                             "\n" +
-                            "Employee Record Deletion:\n" +
-                            "\n" +
-                            "Enter employee  3 digit payroll number to enable file deletion: " + payrollNumber + " (user input)\n" +
-                            "\n" +
-                            "Employee record for " + payrollNumber + " not found!\n" +
-                            "\n" +
-                            "Press Enter to continue ...");
+                            "按确定键继续。。。");
                     String ensure = sc.nextLine();
                 }
             }
