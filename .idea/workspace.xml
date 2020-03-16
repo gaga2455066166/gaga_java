@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="904efb97-4921-4a62-b46e-3e38c24f4f76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/IDEA测试练习/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IDEA测试练习/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IDEA测试练习/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IDEA测试练习/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IDEA测试练习/IDEA测试练习.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/Out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/OutBuff.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/OutCopy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/T20200304.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/T20200306_in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/T20200306_out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200304/TestBuffIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200304/TestCopy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200304/TestIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200306/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200306/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200310/MyThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200310/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200310/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200310/TestRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200312/Battle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200312/Hero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200312/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/T20200312/TestThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/com/cjl/查找文件/Copy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/com/cjl/查找文件/SearchFileThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/com/cjl/查找文件/TestThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/作业0226/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/作业0226/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/作业0307/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/作业0313/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/作业0313/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/作业0313/TestRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/src/作业0313/TestThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/233.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/Out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/OutBuff.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/OutCopy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/T20200304.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/T20200306_in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/T20200306_out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/new/OutCopy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/new/T20200304.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/new/T20200306_in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp/new/T20200306_out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/233.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/Out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/OutBuff.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/OutCopy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/T20200304.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/T20200306_in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/T20200306_out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/new/OutCopy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/new/T20200304.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/new/T20200306_in.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrainTask/temp0/new/T20200306_out.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/src/Mooc/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/src/Mooc/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/课堂练习/课堂练习.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/0/30398935e056001a161aae9788786f97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/83/00c20caadf56001a161aae9788786f97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/84/f0cb6bbfdf56001a161aae9788786f97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/8f/40942995de56001a161aae9788786f97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/d3/60e074c8df56001a161aae9788786f97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/f6/d07e6a92df56001a161aae9788786f97" beforeDir="false" afterPath="$PROJECT_DIR$/TrainTask/src/作业0307/T1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/AdfaithConsulting/.indexes/e4/81/e5/d1/history.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/AdfaithConsulting/.markers" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/AdfaithConsulting/.markers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/AdfaithConsulting/org.eclipse.jdt.core/state.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/AdfaithConsulting/org.eclipse.jdt.core/state.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/LuoGu/.markers" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/LuoGu/.markers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/LuoGu/org.eclipse.jdt.core/state.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/LuoGu/org.eclipse.jdt.core/state.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/ShopSystem/.markers" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/ShopSystem/.markers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/ShopSystem/org.eclipse.jdt.core/state.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/ShopSystem/org.eclipse.jdt.core/state.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/TrainTask/.indexes/e4/18/history.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/TrainTask/.markers" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/TrainTask/.markers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/TrainTask/org.eclipse.jdt.core/state.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/TrainTask/org.eclipse.jdt.core/state.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/寒假作业-方俊鹏/.location" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/寒假作业-方俊鹏/.markers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/寒假作业-方俊鹏/org.eclipse.jdt.core/state.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/1985606607.index" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/1985606607.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/2401234663.index" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/2401234663.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/3217608836.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/.metadata/version.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdfaithConsulting/src/com/cjl/system/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdfaithConsulting/src/com/cjl/system/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B站/src/java客户信息管理系统/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/B站/src/java客户信息管理系统/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B站/src/java客户信息管理系统/CustomerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/B站/src/java客户信息管理系统/CustomerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B站/src/java客户信息管理系统/CustomerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/B站/src/java客户信息管理系统/CustomerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B站/src/java客户信息管理系统/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/B站/src/java客户信息管理系统/CustomerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/a/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/a/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/a/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/a/PersonImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/a/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/Bird.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/Fish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/IAnimal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/IDog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/IPerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/IShape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/ManImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/b/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/c/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/c/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/c/HappyDog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/c/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/d/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/d/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/d/StudentLeader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/d/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/d/Worker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/e/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/e/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/e/E.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/e/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/e/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/e/SubCar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/e/TestShape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Bird.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Ifly.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Plain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Serpent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/f/Test2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/Computer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/IAnimal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/Keyboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/Mic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/Mouse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/TestComputer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/g/UsbDevice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/h/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/h/Outer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/h/TestOuter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/i/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/i/Test2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/i/Test3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/i/TestException1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/BlueException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Example.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Outer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/TestBlueException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/TestOuterIn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/TestPerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/TestShape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/j/Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/k/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/k/TestAuto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/k/TestDate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/k/TestRandom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/k/TestRuntime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/k/TestString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/TrainTask/src/作业0226/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/Student1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/TestCompar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/TestList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/TestWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/Worker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/l/World.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/m/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/m/SetAndList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/m/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/m/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/m/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/m/TestMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/m/TestPerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/music/MusicSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTask/src/music/Songs.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZA8nVuXWhRb4CuIXt1HmyitMQw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="904efb97-4921-4a62-b46e-3e38c24f4f76" name="Default Changelist" comment="" />
+      <created>1584270705383</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584270705383</updated>
+      <workItem from="1584270711937" duration="173000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="260" key="FileChooserDialogImpl" timestamp="1584270781493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584270781493" />
+    <state x="640" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584270715753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584270715753" />
+    <state x="334" y="129" key="new project wizard" timestamp="1584270787057">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1584270787057" />
+  </component>
+</project>
