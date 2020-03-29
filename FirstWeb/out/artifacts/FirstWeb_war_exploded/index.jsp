@@ -8,10 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Java Web项目测试$</title>
+    <title>Java Web项目测试</title>
   </head>
   <body>
   第一个Java Web项目测试
-  $END$
+  测试，测试
+
   </body>
 </html>
