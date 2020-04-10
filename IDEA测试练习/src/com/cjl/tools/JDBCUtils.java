@@ -8,28 +8,34 @@ public class JDBCUtils {
     private static final String user = "root";
     private static final String password = "94232566";
     private static final String DriverName = "com.mysql.cj.jdbc.Driver";
-    public static Connection getConn(){
+
+    static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(DriverName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Connection getConn() {
+
         try {
-            conn = DriverManager.getConnection(url,user,password);
+            conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return conn;
     }
-    public static void  close(Connection conn, PreparedStatement pst){
-        if(pst != null){
+
+    public static void close(Connection conn, Statement stmt) {
+        if (stmt != null) {
             try {
-                pst.close();
+                stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        if(conn != null){
+        if (conn != null) {
             try {
                 conn.close();
             } catch (SQLException e) {
@@ -37,22 +43,23 @@ public class JDBCUtils {
             }
         }
     }
-    public static void  close(Connection conn, PreparedStatement pst, ResultSet rs){
-        if(rs != null){
+
+    public static void close(Connection conn, Statement stmt, ResultSet rs) {
+        if (rs != null) {
             try {
                 rs.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        if(pst != null){
+        if (stmt != null) {
             try {
-                pst.close();
+                stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        if(conn != null){
+        if (conn != null) {
             try {
                 conn.close();
             } catch (SQLException e) {

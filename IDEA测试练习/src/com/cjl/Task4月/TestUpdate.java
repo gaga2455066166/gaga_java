@@ -20,14 +20,7 @@ public class TestUpdate {
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
-            try {
-                assert stmt != null;
-                stmt.close();
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
+            JDBCUtils.close(conn,stmt);
         }
 
     }

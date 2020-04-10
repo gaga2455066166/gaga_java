@@ -2,21 +2,19 @@ package com.cjl.Task4月;
 
 import com.cjl.tools.JDBCUtils;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-public class TestSelect {
+public class TestPreparedStatement {
     public static void main(String[] args) {
         Connection conn = null;
-        Statement stmt = null;
+        PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
             conn = JDBCUtils.getConn();
-            stmt = conn.createStatement();
-            String sql = "select * from student";
-            rs = stmt.executeQuery(sql);
+            String sql = "select * from student where sid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,9);
+            rs = pstmt.executeQuery();
             while(rs.next()){
                 System.out.print(rs.getInt("sid") + "\t");
                 System.out.print(rs.getString("sname") + "\t");
@@ -26,7 +24,7 @@ public class TestSelect {
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
-            JDBCUtils.close(conn,stmt,rs);
+            JDBCUtils.close(conn,pstmt,rs);
         }
     }
 }
