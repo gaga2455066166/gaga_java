@@ -13,26 +13,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JDesktopPane;
 
-public class MainJFrame extends JFrame {
+public abstract class MainJFrame extends JFrame {
 
-	private JPanel contentPane;
-	private JDesktopPane desktopPane;
+	protected JPanel contentPane;
+	protected JDesktopPane desktopPane;
+	protected abstract void purchase();
+	protected abstract void select();
+	protected abstract void clean();
+	protected abstract void type();
+	protected abstract void update();
+	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainJFrame frame = new MainJFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
@@ -57,11 +49,7 @@ public class MainJFrame extends JFrame {
 		item11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//进货的窗口
-				PurchaseJInternalFrame purchaseJInternalFrame = new PurchaseJInternalFrame();
-				purchaseJInternalFrame.setVisible(true);
-				desktopPane.add(purchaseJInternalFrame);
-				
-				
+				purchase();					
 			}
 		});
 		mnNewMenu.add(item11);
@@ -70,9 +58,7 @@ public class MainJFrame extends JFrame {
 		item12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//水果清理
-				CleanJInternalFrame cleanJInternalFrame = new CleanJInternalFrame();
-				cleanJInternalFrame.setVisible(true);
-				desktopPane.add(cleanJInternalFrame);
+				clean();
 			}
 		});
 		mnNewMenu.add(item12);
@@ -81,9 +67,10 @@ public class MainJFrame extends JFrame {
 		item13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//信息修改
-				UpdateJInternalFrame updateJInternalFrame = new UpdateJInternalFrame();
-				updateJInternalFrame.setVisible(true);
-				desktopPane.add(updateJInternalFrame);
+				update();
+//				UpdateJInternalFrame updateJInternalFrame = new UpdateJInternalFrame();
+//				updateJInternalFrame.setVisible(true);
+//				desktopPane.add(updateJInternalFrame);
 			}
 		});
 		mnNewMenu.add(item13);
@@ -92,9 +79,10 @@ public class MainJFrame extends JFrame {
 		item14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//查询的action
-				SelectJInternalFrame selectJInternalFrame= new SelectJInternalFrame();
-				selectJInternalFrame.setVisible(true);
-				desktopPane.add(selectJInternalFrame);
+				select();
+//				SelectJInternalFrame selectJInternalFrame= new SelectJInternalFrame();
+//				selectJInternalFrame.setVisible(true);
+//				desktopPane.add(selectJInternalFrame);
 			}
 		});
 		mnNewMenu.add(item14);
@@ -103,9 +91,10 @@ public class MainJFrame extends JFrame {
 		item15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//类别
-				TypeJInternalFrame typeJInternalFrame = new TypeJInternalFrame();
-				typeJInternalFrame.setVisible(true);
-				desktopPane.add(typeJInternalFrame);
+				type();
+//				TypeJInternalFrame typeJInternalFrame = new TypeJInternalFrame();
+//				typeJInternalFrame.setVisible(true);
+//				desktopPane.add(typeJInternalFrame);
 			}
 		});
 		mnNewMenu.add(item15);
@@ -113,8 +102,14 @@ public class MainJFrame extends JFrame {
 		JMenu mnNewMenu_1 = new JMenu("\u5173\u4E8E");
 		menuBar.add(mnNewMenu_1);
 		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("\u7CFB\u7EDF\u5173\u4E8E");
+		mnNewMenu_1.add(mntmNewMenuItem_1);
+		
 		JMenu mnNewMenu_2 = new JMenu("\u9000\u51FA\u7CFB\u7EDF");
 		menuBar.add(mnNewMenu_2);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("\u5B89\u5168\u9000\u51FA");
+		mnNewMenu_2.add(mntmNewMenuItem);
 		
 		desktopPane = new JDesktopPane();
 		desktopPane.setBounds(0, 31, 646, 506);

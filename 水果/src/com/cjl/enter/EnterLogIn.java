@@ -1,7 +1,6 @@
 package com.cjl.enter;
 
 import com.cjl.Controller.LogInController;
-import com.cjl.view.LogInJFrame;
 
 import java.awt.*;
 

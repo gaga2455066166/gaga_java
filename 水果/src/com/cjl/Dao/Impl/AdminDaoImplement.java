@@ -40,6 +40,33 @@ public class AdminDaoImplement implements AdminDao{
 		
 		return logInAdmin;
 	}
+	@Override
+	public Admin selectAdminByAdmin(Admin admin) {
+		String sql = "SELECT * FROM admin where id = ? and password = ?";
+		Admin logInAdmin = new Admin();
+		boolean flag = false;
+		try {
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, admin.getId());
+            preparedStatement.setString(2, admin.getPassword());
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+            	flag = true;
+                logInAdmin.setId(rs.getInt("id"));
+                logInAdmin.setPassword(rs.getString("password"));
+                logInAdmin.setName(rs.getString("name"));
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+		if(flag == true) {
+			return logInAdmin;
+		}
+		else {
+			return null;
+		}
+	}
     
     
 	

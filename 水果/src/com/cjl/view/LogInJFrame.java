@@ -21,7 +21,8 @@ public abstract class LogInJFrame extends JFrame {
 	
 	
 	protected abstract void logIn();
-	protected abstract void empty();
+	protected abstract void setEmpty();
+	protected abstract boolean isEmpty();
 
 
 	/**
@@ -57,8 +58,6 @@ public abstract class LogInJFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//登录按钮
 				logIn();
-				dispose();
-				new MainJFrame().setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(126, 212, 93, 23);
@@ -68,7 +67,7 @@ public abstract class LogInJFrame extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//清空的按钮
-				empty();
+				setEmpty();
 				
 			}
 		});
