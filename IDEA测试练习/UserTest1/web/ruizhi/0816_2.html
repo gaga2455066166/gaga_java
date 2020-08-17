@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>一(2)</title>
+    <script type="text/javascript">
+
+
+        /**选中的元素向右移动**/
+        function moveRight() {
+            let selectElement = document.getElementById("first");
+            let optionElements = selectElement.getElementsByTagName("option");
+            let len = optionElements.length;
+
+
+            if (!(selectElement.selectedIndex === -1)){
+                let selectElement2 = document.getElementById("secend");
+
+                for (let i = 0; i < len; i++) {
+                    selectElement2.appendChild(optionElements[selectElement.selectedIndex]);
+                }
+            } else {
+                alert("还没有选择需要移动的元素！");
+            }
+        }
+
+        function moveAll() {
+            let selectElement = document.getElementById("first");
+            let optionElements = selectElement.getElementsByTagName("option");
+            let len = optionElements.length;
+
+            //先翻转，不然会倒转
+            let firstOption = [];
+            for (let k = len - 1; k >= 0; k--) {
+                firstOption.push(optionElements[k]);
+            }
+
+            let lens = firstOption.length;
+            let selectElement2 = document.getElementById("secend");
+            for (let j = lens - 1; j >= 0; j--) {
+                selectElement2.appendChild(firstOption[j]);
+            }
+        }
+
+        function moveLeft() {
+            let selectElement = document.getElementById("secend");
+            let optionElement = selectElement.getElementsByTagName("option");
+            let len = optionElement.length;
+
+            if (!(selectElement.selectedIndex === -1)) {
+                let firstSelectElement = document.getElementById("first");
+                for (let i = 0; i < len; i++) {
+                    firstSelectElement.appendChild(optionElement[selectElement.selectedIndex]);//被选中的那个元素的索引
+                }
+            } else {
+                alert("您还没有选中要移动的项目!");
+            }
+        }
+
+        function moveAllLeft() {
+            let selectElement = document.getElementById("secend");
+            // let optionElements = document.getElementsByTagName("option");
+            let optionElements = selectElement.getElementsByTagName("option");
+            let len = optionElements.length;
+            let optionEls = [];
+            //翻转
+            for (let i = len - 1; i >= 0; i--) {
+                optionEls.push(optionElements[i]);
+            }
+            let lens = optionEls.length;
+
+            let firstSelectElement = document.getElementById("first");
+            for (let j = lens - 1; j >= 0; j--) {
+                firstSelectElement.appendChild(optionEls[j]);
+            }
+        }
+    </script>
+</head>
+<body>
+<table width="80%" border="1" align="center">
+    <tbody>
+    <tr>
+        <td width="47%" rowspan="15">
+            <label for="first">请至少选择一项要移动的属性</label>
+            <select name="first" size="10" id="first" multiple="multiple">
+                <option value="">1111111111111</option>
+                <option value="">2222222222222</option>
+                <option value="">3333333333333</option>
+                <option value="">4444444444444</option>
+                <option value="">5555555555555</option>
+                <option value="">6666666666666</option>
+                <option value="">7777777777777</option>
+                <option value="">8888888888888</option>
+            </select>
+        </td>
+
+
+    </tr>
+
+    <tr>
+        <td width="7%">
+            <input type="button" value="选中左移" onclick="moveLeft()"/>
+        </td>
+        <td width="46%" rowspan="15">
+            <label for="secend">请至少选择一项要移动的属性</label>
+            <select size="10" id="secend" multiple="multiple">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="全部左移" onclick="moveAllLeft()"/>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="button" value="全部右移" onclick="moveAll()"/></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="选中右移" onclick="moveRight()"/></td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+
+</html>

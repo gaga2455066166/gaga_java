@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+</head>
+<body>
+<div id="Date"></div>
+<script type="text/javascript">
+    setInterval(function(){
+        let x = ["星期日", "星期一", "星期二","星期三","星期四", "星期五","星期六"];
+        let date = new Date();
+        let year = date.getFullYear();    //获取当前年份
+        let mon = date.getMonth()+1;      //获取当前月份
+        let day = date.getDate();          //获取当前日
+        let h = date.getHours();          //获取小时
+        let m = date.getMinutes();        //获取分钟
+        let s = date.getSeconds();        //获取秒
+        let day7 = date.getDay();
+        let d = document.getElementById('Date');
+        d.innerHTML='当前时间:'+year+'-'+mon+'-'+day+' '+h+':'+m+':'+s+' '+x[day7];
+    },1000)
+</script>
+</body>
+
+</html>
