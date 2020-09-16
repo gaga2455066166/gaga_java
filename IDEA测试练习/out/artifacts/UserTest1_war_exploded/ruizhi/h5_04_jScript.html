@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function method1() {
+            let s = Math.random().toString(36).substr(2,4);
+            console.log(s);
+            document.getElementById("text").value = s;
+        }
+    </script>
+</head>
+<body>
+<button type="button" onclick="method1()">生成</button>
+<label for="text">验证码：</label><input id="text" type="text">
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function method1(a, b) {
+            return a.toFixed(b);
+        }
+
+        function method0() {
+            let a0 = document.getElementById("number").value;
+            let b0 = document.getElementById("x").value;
+            console.log(a0);
+            console.log(b0);
+            let a = parseFloat(a0);
+            let b = parseFloat(b0);
+
+            let s = method1(a, b);
+            // window.alert(s);
+            console.log(s);
+            document.getElementById("s").value = s;
+
+            // console.log(typeof s);
+        }
+    </script>
+</head>
+<body>
+<label for="number">数字:</label><input type="text" id="number" name="数字">
+<hr>
+<label for="x">保留的位数:</label><input type="text" id="x" name="保留的位数">
+<hr>
+<button onclick="method0()">计算</button>
+<hr>
+<label for="s">最终结果:</label><input type="text" id="s" name="结果">
+</body>
+</html>
