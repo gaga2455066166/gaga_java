@@ -37,7 +37,7 @@
     <script type="text/javascript">
         function deleteUser(id) {
             //用户提示：
-            if(confirm("确定删除吗？")){
+            if (confirm("确定删除吗？")) {
                 location.href = "${pageContext.request.contextPath}/DelUserServlet?id=" + id;
             }
         }
@@ -64,46 +64,50 @@
             </div>
             <button type="submit" class="btn btn-default">查询</button>
         </form>
+
     </div>
 
     <div style="float: right;margin: 5px">
         <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加联系人</a>
-        <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">删除选中</a>
+        <a class="btn btn-primary" href="javascript:void(0);" id="delSelected">删除选中</a>
     </div>
-    <table border="1" class="table table-bordered table-hover">
-        <tr class="success">
-            <th><input type="checkbox"></th>
-            <th>ID</th>
-            <th>姓名</th>
-            <th>性别</th>
-            <th>年龄</th>
-            <th>籍贯</th>
-            <th>QQ</th>
-            <th>邮箱</th>
-            <th>操作</th>
-        </tr>
 
-
-        <c:forEach items="${users}" var="user">
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>${user.id}</td>
-                <td>${user.username}</td>
-                <td>${user.gender}</td>
-                <td>${user.age}</td>
-                <td>${user.address}</td>
-                <td>${user.qq}</td>
-                <td>${user.email}</td>
-                <td><a class="btn btn-default btn-sm"
-                       href="${pageContext.request.contextPath}/FindUserServlet?id=${user.id}">修改</a>
-                    &nbsp;
-                    <a class="btn btn-default btn-sm"
-                       href="javascript:deleteUser(${user.id});">删除</a>
-                </td>
+    <form action="${pageContext.request.contextPath}/DelSelectedServlet">
+        <table border="1" class="table table-bordered table-hover">
+            <tr class="success">
+                <th><input type="checkbox"></th>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>籍贯</th>
+                <th>QQ</th>
+                <th>邮箱</th>
+                <th>操作</th>
             </tr>
-        </c:forEach>
 
-    </table>
+
+            <c:forEach items="${users}" var="user">
+                <tr>
+                    <td><input type="checkbox" name="uid" value="${user.id}"></td>
+                    <td>${user.id}</td>
+                    <td>${user.username}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.age}</td>
+                    <td>${user.address}</td>
+                    <td>${user.qq}</td>
+                    <td>${user.email}</td>
+                    <td><a class="btn btn-default btn-sm"
+                           href="${pageContext.request.contextPath}/FindUserServlet?id=${user.id}">修改</a>
+                        &nbsp;
+                        <a class="btn btn-default btn-sm"
+                           href="javascript:deleteUser(${user.id});">删除</a>
+                    </td>
+                </tr>
+            </c:forEach>
+
+        </table>
+    </form>
     <div>
         <nav aria-label="Page navigation">
             <ul class="pagination">

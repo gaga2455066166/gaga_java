@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一(3)</title>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+
+        function btn1() {
+            let str1 = document.getElementById("textfield1");
+            console.log("验证长度限制的输入：" + str1.value);
+            if (str1.value.length < 6 || str1.value.length > 20) {
+                alert("输入的长度必须在6-20之间");
+                str1.value = "";
+            }
+        }
+
+        function btn2() {
+            let str2 = document.getElementById("textfield2");
+            console.log("验证纯汉字的输入：" + str2.value);
+            let reg = /[^\u4e00-\u9fa5]/;
+            if (reg.test(str2.value)) {
+                alert("请保证输入的只有纯汉字");
+            } else {
+                alert("验证成功");
+            }
+            // let reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+            // for (let i = 0; i < str2.value.length; i++) {
+            //     if (reg.test(str2.value.charAt(i))) {
+            //         alert("必须保证输入是纯汉字");
+            //         str2.value = "";
+            //         break;
+            //     }
+            //
+            // }
+            // alert("确定是纯汉字");
+        }
+
+        function btn3() {
+            let str3 = document.getElementById("textfield3");
+            console.log("验证纯英文的输入：" + str3.value);
+            let reg = new RegExp("[A-z]+", "g");
+            // for (let i = 0; i < str3.value.length; i++) {
+            //     if (reg.test(str3.value.charAt(i))) {
+            //         str3.value = "";
+            //         break;
+            //     }
+            // }
+            let str0 = reg.exec(str3.value);
+            if (str0 != null) {
+                alert("必须保证输入是纯英文");
+                str3.value = "";
+            } else {
+                alert("确定是纯英文");
+            }
+        }
+
+        function btn4() {
+            let str4 = document.getElementById("textfield4");
+            console.log("验证纯数字的输入：" + str4.value);
+            let reg = new RegExp("[^0-9|.]+", "g");
+            // console.log(reg.exec(str4.value));
+            let str0 = reg.exec(str4.value);
+            // console.log(str0.);
+            // console.log(typeof str0.value);
+            if (str0 != null) {
+                alert("必须保证输入是纯数字");
+                str4.value = "";
+            } else {
+                alert("确定是纯数字");
+            }
+
+        }
+
+        function btn5() {
+            let str5 = document.getElementById("textfield5");
+            console.log("验证数字+字母的输入：" + str5.value);
+            // let reg = new RegExp("^\\d+", "g");
+            let reg = /\D\W/g;
+            let str0 = reg.exec(str5.value);
+            console.log(str0);
+            if (str0 != null) {
+                alert("必须保证输入数字或者字母");
+                str5.value = "";
+            } else {
+                alert("验证成功");
+            }
+
+        }
+
+        function btn6() {
+            let pwd = document.getElementById("password");
+            console.log("第一次输入的密码：" + pwd.value);
+            let pwd2 = document.getElementById("password2");
+            console.log("第二次输入的密码：" + pwd2.value);
+            if (pwd.value !== pwd2.value) {
+                alert("两次输入的密码不一致");
+                pwd.value = "";
+                pwd2.value = "";
+            } else {
+                alert("密码一致");
+            }
+
+        }
+
+        function btn7() {
+            let str7 = document.getElementById("email");
+            let reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            console.log("输入的电子邮箱：" + str7.value);
+            if (!reg.test(str7.value)) {
+                alert("请输入正确的电子邮箱");
+            } else {
+                alert("合法的电子邮箱");
+            }
+        }
+
+        function btn8() {
+            let str8 = document.getElementById("tel");
+            console.log("输入的手机：" + str8.value);
+            let reg = /^(13[0-9]|14[5|7]|15[0-9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+            if (!reg.test(str8.value)) {
+                alert("请输入正确的手机");
+            } else {
+                alert("验证成功");
+            }
+
+        }
+
+        function btn9() {
+            let str9 = document.getElementById("textfield9");
+            console.log("输入的身份证号：" + str9.value);
+            let reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (!reg.test(str9.value)) {
+                alert("请输入正确的身份证号");
+                str9.value = "";
+            } else {
+                alert("验证成功");
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<table width="638" height="436" border="10" align="center" cellpadding="2" cellspacing="0">
+    <tbody>
+    <tr>
+        <td width="220" style="text-align: left">1.长度限制：</td>
+        <td width="274"><label for="textfield1">Text Field:</label>
+            <input type="text" name="textfield" id="textfield1"></td>
+        <td width="106"><input type="button" name="button" id="button" value="验证" onclick="btn1()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">2.只能输入汉字：</td>
+        <td><label for="textfield2">Text Field:</label>
+            <input type="text" name="textfield2" id="textfield2"></td>
+        <td><input type="button" name="button2" id="button2" value="验证" onclick="btn2()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">3.只能是英文：</td>
+        <td><label for="textfield3">Text Field:</label>
+            <input type="text" name="textfield3" id="textfield3"></td>
+        <td><input type="button" name="button3" id="button3" value="验证" onclick="btn3()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">4.只能是数字（包含小数点)：</td>
+        <td><label for="textfield4">Text Field:</label>
+            <input type="text" name="textfield4" id="textfield4"></td>
+        <td><input type="button" name="button4" id="button4" value="验证" onclick="btn4()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">5.只能是英文字母和数字：</td>
+        <td><label for="textfield5">Text Field:</label>
+            <input type="text" name="textfield5" id="textfield5"></td>
+        <td><input type="button" name="button5" id="button5" value="验证" onclick="btn5()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">6.两次输入的密码是否相同：</td>
+        <td><label for="password">Password:</label>
+            <input type="password" name="password" id="password"></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align: left">&nbsp;</td>
+        <td><label for="password2">Password:</label>
+            <input type="password" name="password2" id="password2"></td>
+        <td><input type="button" name="button6" id="button6" value="验证" onclick="btn6()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">7.邮箱验证：</td>
+        <td><label for="email">Email:</label>
+            <input type="email" name="email" id="email"></td>
+        <td><input type="button" name="button7" id="button7" value="验证" onclick="btn7()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">8.手机号码验证：</td>
+        <td><label for="tel">Tel:</label>
+            <input type="tel" name="tel" id="tel"></td>
+        <td><input type="button" name="button8" id="button8" value="验证" onclick="btn8()"></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">9.身份证号码验证：</td>
+        <td><label for="textfield9">Text Field:</label>
+            <input type="text" name="textfield9" id="textfield9"></td>
+        <td><input type="button" name="button9" id="button9" value="验证" onclick="btn9()"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
