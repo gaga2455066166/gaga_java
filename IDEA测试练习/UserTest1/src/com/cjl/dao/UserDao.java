@@ -6,15 +6,15 @@ import com.cjl.domain.User;
 import java.util.List;
 
 public interface UserDao {
-    public List<User> findAll();
-    public User findUserByIdAndUsername(Integer id,String username);
+    List<User> findAll();
+    User findUserByIdAndUsername(Integer id, String username);
 
-    public void add(User user);
+    void add(User user);
 
-    public void delete(int id);
+    void delete(int id);
 
-    public User findUserById(int id);
+    User findUserById(int id);
 
-    public void update(User user);
+    void update(User user);
 
 }
