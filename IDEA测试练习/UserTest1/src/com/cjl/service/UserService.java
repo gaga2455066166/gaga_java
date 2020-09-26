@@ -21,13 +21,15 @@ public interface UserService {
      * @param user
      * @return
      */
-    public User login(User user);
+    User login(User user);
 
-    public void addUser(User user);
+    void addUser(User user);
 
-    public void delUser(String id);
+    void delUser(String id);
 
-    public User findUserById(String id);
+    User findUserById(String id);
 
-    public void updateUser(User user);
+    void updateUser(User user);
+
+    void delUsersByids(String[] ids);
 }

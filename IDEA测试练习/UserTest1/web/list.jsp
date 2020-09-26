@@ -41,6 +41,22 @@
                 location.href = "${pageContext.request.contextPath}/DelUserServlet?id=" + id;
             }
         }
+        window.onload = function () {
+            //给删除选中按钮添加单击事件
+            document.getElementById("delSelected").onclick = function () {
+                document.getElementById("form").submit();
+
+            }
+            document.getElementById("selectAll").onclick = function () {
+                let cbs = document.getElementsByName("uid");
+                for (let i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = this.checked;
+                    
+                }
+
+            }
+
+        }
     </script>
 </head>
 <body>
@@ -72,10 +88,10 @@
         <a class="btn btn-primary" href="javascript:void(0);" id="delSelected">删除选中</a>
     </div>
 
-    <form action="${pageContext.request.contextPath}/DelSelectedServlet">
+    <form id="form" action="${pageContext.request.contextPath}/DelSelectedServlet" method="post">
         <table border="1" class="table table-bordered table-hover">
             <tr class="success">
-                <th><input type="checkbox"></th>
+                <th><input type="checkbox" id="selectAll"></th>
                 <th>ID</th>
                 <th>姓名</th>
                 <th>性别</th>
