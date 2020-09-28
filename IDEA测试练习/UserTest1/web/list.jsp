@@ -41,22 +41,38 @@
                 location.href = "${pageContext.request.contextPath}/DelUserServlet?id=" + id;
             }
         }
+
         window.onload = function () {
             //给删除选中按钮添加单击事件
             document.getElementById("delSelected").onclick = function () {
-                document.getElementById("form").submit();
-
-            }
-            document.getElementById("selectAll").onclick = function () {
+                let flag = false;
                 let cbs = document.getElementsByName("uid");
                 for (let i = 0; i < cbs.length; i++) {
-                    cbs[i].checked = this.checked;
-                    
+                    if (cbs[i].checked) {
+                        flag = true;
+                        break;
+                    }
                 }
+                if (flag === true) {
+                    if (confirm("您确定要删除选中条目吗")) {
+                        document.getElementById("form").submit();
+                    }
+                } else {
+                    alert("您没有选中条目！");
+                }
+            }
+
+        }
+        document.getElementById("selectAll").onclick = function () {
+            let cbs = document.getElementsByName("uid");
+            for (let i = 0; i < cbs.length; i++) {
+                cbs[i].checked = this.checked;
 
             }
 
         }
+
+
     </script>
 </head>
 <body>

@@ -8,7 +8,7 @@ import com.cjl.service.UserService;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private UserDao dao = new UserDaoImpl();
+    private final UserDao dao = new UserDaoImpl();
 
     @Override
     public List<User> findAll() {
@@ -18,12 +18,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(User user) {
-        return dao.findUserByIdAndUsername(user.getId(),user.getUsername());
+        return dao.findUserByIdAndUsername(user.getId(), user.getUsername());
     }
 
     @Override
     public void addUser(User user) {
-            dao.add(user);
+        dao.add(user);
     }
 
     @Override
@@ -44,12 +44,16 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 删除选中用户
+     *
      * @param ids
      */
     @Override
     public void delUsersByids(String[] ids) {
-        for (String id : ids) {
-            dao.delete(Integer.parseInt(id));
+        if (ids != null && ids.length > 0) {
+            for (String id : ids) {
+                dao.delete(Integer.parseInt(id));
+            }
         }
+
     }
 }
