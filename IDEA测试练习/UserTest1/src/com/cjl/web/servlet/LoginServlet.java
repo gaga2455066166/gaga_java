@@ -18,6 +18,7 @@ import java.util.Map;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        System.out.println(request);
         request.setCharacterEncoding("utf-8");
 
         //得到用户从页面中输入的验证码
