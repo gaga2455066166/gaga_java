@@ -2,13 +2,11 @@ package com.cjl.web.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +27,14 @@ public class SensitiveWordsFilter implements Filter {
                 if (method.getName().equals("getParameter")) {
                     //增强
                     String value = (String) method.invoke(req, args);
-                    if (value!=null){
+                    if (value != null) {
                         for (String str : list) {
-                            
+                            if (value.contains(str)) {
+                                value = value.replace(str, "***");
+                            }
                         }
                     }
-
+                    return value;
                 }
                 return method.invoke(req, args);
 
@@ -45,20 +45,21 @@ public class SensitiveWordsFilter implements Filter {
     }
 
 
-    private List<String> list = new ArrayList<>();//敏感词汇集合
+    private final List<String> list = new ArrayList<>();//敏感词汇集合
 
     public void init(FilterConfig config) throws ServletException {
         //在init中加载配置文件
         try {
             ServletContext servletContext = config.getServletContext();
             String realPath = servletContext.getRealPath("/WEB-INF/classes/敏感词汇.txt");
-            BufferedReader br = new BufferedReader(new FileReader(realPath));
-            String line = null;
-            while ((line = br.readLine())!=null){
+            InputStreamReader isr = new InputStreamReader(new FileInputStream(realPath), StandardCharsets.UTF_8);
+            BufferedReader br = new BufferedReader(isr);
+            String line;
+            while ((line = br.readLine()) != null) {
                 list.add(line);
             }
             br.close();
-            System.out.println(list);
+            System.out.println(list+"***");
 
         } catch (Exception e) {
             e.printStackTrace();
