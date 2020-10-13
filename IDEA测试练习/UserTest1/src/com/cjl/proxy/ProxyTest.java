@@ -20,11 +20,6 @@ public class ProxyTest {
 
                     /**
                      * 代理逻辑编写的方法：代理对象调用的所有方法都是触发该方法
-                     * @param proxy
-                     * @param method
-                     * @param args
-                     * @return
-                     * @throws Throwable
                      */
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
