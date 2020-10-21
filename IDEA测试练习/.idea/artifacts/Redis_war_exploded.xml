@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Redis:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Redis_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Redis" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="JUnit4" module-name="Redis" />
+          <element id="file-copy" path="$PROJECT_DIR$/Redis/web/WEB-INF/lib/jedis-3.3.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Redis/web/WEB-INF/lib/log4j-api-2.13.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Redis/web/WEB-INF/lib/commons-pool2-2.9.0.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Redis/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Ajax/Ajax.iml" filepath="$PROJECT_DIR$/Ajax/Ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/IDEA测试练习.iml" filepath="$PROJECT_DIR$/IDEA测试练习.iml" />
       <module fileurl="file://$PROJECT_DIR$/JQuery/JQuery.iml" filepath="$PROJECT_DIR$/JQuery/JQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Redis/Redis.iml" filepath="$PROJECT_DIR$/Redis/Redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/UserTest1/UserTest1.iml" filepath="$PROJECT_DIR$/UserTest1/UserTest1.iml" />
       <module fileurl="file://$PROJECT_DIR$/idea_web_test/idea_web_test.iml" filepath="$PROJECT_DIR$/idea_web_test/idea_web_test.iml" />
     </modules>
