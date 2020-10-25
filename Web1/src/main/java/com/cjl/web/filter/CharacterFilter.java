@@ -18,20 +18,36 @@ public class CharacterFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse rep, FilterChain filterChain) throws IOException, ServletException {
-        //将父接口转为子接口
+
+//        req.setCharacterEncoding("utf-8");
+//        rep.setContentType("text/html;charset=utf-8");
+//        rep.setCharacterEncoding("utf-8");
+//        filterChain.doFilter(req, rep);
+
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) rep;
-        //获取请求方法
-        String method = request.getMethod();
-//        解决post请求中文数据乱码问题
-        if (method.equalsIgnoreCase("post")) {
-            request.setCharacterEncoding("utf-8");
-        }
-        //处理响应乱码
+        String requestURI = request.getRequestURI();//查看请求
+        System.out.println(requestURI);
+//        String contentType = request.getHeader("Accept");//类型
+//        System.out.println(contentType);
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
+        if (requestURI.contains("/css/") ||
+                requestURI.contains("/js/") ||
+                requestURI.contains("/fonts/") ||
+                requestURI.contains("/img/") ||
+                requestURI.contains("/images/") ||
+                requestURI.contains("/error/")) {
+//            System.out.println("css");
+            response.setContentType("text/css;charset=utf-8");
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        response.setContentType("text/html;charset=utf-8");
+//        response.setContentType(contentType == null ? "text/html;charset=utf-8" : contentType + ";charset=utf-8");
         filterChain.doFilter(request, response);
+
     }
 
     @Override

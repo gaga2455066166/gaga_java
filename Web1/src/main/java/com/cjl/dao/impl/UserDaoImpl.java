@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao {
             user = template.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), username);
         } catch (Exception e) {
 //            e.printStackTrace();
-            System.out.println("数据库中没有这个用户名的数据");
+            System.out.println("There is no data for this user name in the database!");
             return null;
         }
         return user;
@@ -32,6 +32,6 @@ public class UserDaoImpl implements UserDao {
     public void save(User user) {
         String sql = "insert into tab_user(username, password, name, birthday, sex, telephone, email) values (?,?,?,?,?,?,?)";
         int update = template.update(sql, user.getUsername(), user.getPassword(), user.getName(), user.getBirthday(), user.getSex(), user.getTelephone(), user.getEmail());
-        System.out.println("插入" + update + "条数据，" + "用户名为：" + user.getUsername());
+        System.out.println("insert " + update + " piece of data," + "username:" + user.getUsername());
     }
 }
