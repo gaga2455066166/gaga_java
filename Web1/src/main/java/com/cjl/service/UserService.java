@@ -10,4 +10,6 @@ public interface UserService {
      * @return 返回是否成功的boolean
      */
     boolean register(User user);
+
+    boolean active(String code);
 }

@@ -16,4 +16,8 @@ public interface UserDao {
      * @param user 传进来一个要保存的用户user
      */
     void save(User user);
+
+    User findByCode(String code);
+
+    boolean updateStatus(User user);
 }

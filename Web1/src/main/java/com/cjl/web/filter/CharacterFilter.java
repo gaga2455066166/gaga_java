@@ -27,7 +27,7 @@ public class CharacterFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) rep;
         String requestURI = request.getRequestURI();//查看请求
-        System.out.println(requestURI);
+//        System.out.println(requestURI);
 //        String contentType = request.getHeader("Accept");//类型
 //        System.out.println(contentType);
         request.setCharacterEncoding("utf-8");
