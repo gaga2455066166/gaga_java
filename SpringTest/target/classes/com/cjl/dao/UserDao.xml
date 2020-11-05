@@ -11,4 +11,20 @@
         from user
         order by id
     </select>
+
+    <select id="selectUserByIdUsername" resultType="com.cjl.domain.User">
+        select id, username, gender, age, address, qq, email
+        from user
+        where id = #{id}
+          and username = #{username}
+    </select>
+
+    <select id="selectUserByParam1" resultType="com.cjl.domain.User">
+        select id, username, gender, age, address, qq, email
+        from user
+        where id = #{paramId}
+          and username = #{paramUsername}
+    </select>
+
+
 </mapper>
