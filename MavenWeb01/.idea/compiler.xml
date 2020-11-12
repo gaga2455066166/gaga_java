@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Web1" />
+        <module name="Junit4" />
         <module name="OnlineStore" />
+        <module name="Web1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Junit4" target="1.7" />
       <module name="market" target="1.5" />
       <module name="OnlineStore" target="1.8" />
       <module name="travel" target="1.8" />
