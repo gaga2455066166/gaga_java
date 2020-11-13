@@ -24,7 +24,7 @@
             // alert("checkUsername");
             let $username = $("#username");
             let username = $username.val();
-            let reg_username = /^\w{8,20}$/
+            let reg_username = /^\w{8,20}$/;
             let flag = reg_username.test(username);
             if (flag) {
                 //用户名合法
@@ -42,16 +42,16 @@
             let $password = $("#password");
             let $error = '<span style="color:#ff0000;font-size: 1px" id="passwordError">(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)</span>'
             let password = $password.val();
-            let reg_password = /^[a-zA-Z]\w{5,17}$/
+            let reg_password = /^[a-zA-Z]\w{5,17}$/;
             let flag = reg_password.test(password);
             if (flag) {
                 //用户名合法
-                $("#passwordError").remove()
+                $("#passwordError").remove();
                 $password.css("border", "")
             } else {
                 //用户名非法
                 if ($("#passwordError").length <= 0) {
-                    $password.after($error)
+                    $password.after($error);
                     $password.css("border", "1px solid red")
                 }
             }
@@ -75,8 +75,8 @@
         $(function () {
             //表单提交时，调用所有的校验方法
             $("#registerForm").submit(function () {
-                if (checkUsername() && checkPassword() && checkEmail()){
-                    $.post("RegisterUserServlet",$(this).serialize(),function (data) {
+                if (checkUsername() && checkPassword() && checkEmail()) {
+                    $.post("RegisterUserServlet", $(this).serialize(), function (data) {
                         //校验通过，发送ajax异步请求
 
                     })
