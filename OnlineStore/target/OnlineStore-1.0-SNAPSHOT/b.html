@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>返回</button>
+<span></span>
+</body>
+<script type="text/javascript">
+    $("button").click(function() {
+        history.back();
+    })
+    var a = request.getUrlParam("item")
+    var b = JSON.parse(unescape(a));
+    $("span").text(b.age)
+
+
+
+    // #########  localStorage读取  JSON
+    JSON.parse(localStorage.getItem("item"))
+</script>
+
+</html>

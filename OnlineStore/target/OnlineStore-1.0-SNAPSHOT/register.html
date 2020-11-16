@@ -22,7 +22,7 @@
         //用户名格式校验
         function checkUsername() {
             // alert("checkUsername");
-            let $username = $("#username");
+            let $username = $("#suser");
             let username = $username.val();
             let reg_username = /^\w{8,20}$/
             let flag = reg_username.test(username);
@@ -39,7 +39,7 @@
         //密码格式校验
         function checkPassword() {
             // alert("checkPassword")
-            let $password = $("#password");
+            let $password = $("#spwd");
             let $error = '<span style="color:#ff0000;font-size: 1px" id="passwordError">(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)</span>'
             let password = $password.val();
             let reg_password = /^[a-zA-Z]\w{5,17}$/
@@ -60,7 +60,7 @@
 
         function checkEmail() {
             //检查邮箱
-            let $email = $("#email");
+            let $email = $("#semail");
             let email = $email.val();
             let reg_email = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
             let flag = reg_email.test(email)
@@ -100,9 +100,9 @@
             });
 
             //用户名方框失去焦点时，调用对应的校验方法
-            $("#username").blur(checkUsername);
-            $("#password").blur(checkPassword);
-            $("#email").blur(checkEmail);
+            $("#suser").blur(checkUsername);
+            $("#spwd").blur(checkPassword);
+            $("#semail").blur(checkEmail);
 
         });
 

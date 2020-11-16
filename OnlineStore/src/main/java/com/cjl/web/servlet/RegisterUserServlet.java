@@ -15,11 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.Map;
 
 @WebServlet("/RegisterUserServlet")
 public class RegisterUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        System.out.println("RegisterUserServlet");
         //获取页面的验证码
         String check = request.getParameter("check");
 //        System.out.println(check);
@@ -28,7 +30,7 @@ public class RegisterUserServlet extends HttpServlet {
         String checkcode_server = (String) session.getAttribute("CHECKCODE_SERVER");
 //        System.out.println(checkcode_server);
         session.removeAttribute("CHECKCODE_SERVER");
-        if (!checkcode_server.equalsIgnoreCase(check)){
+        if (!checkcode_server.equalsIgnoreCase(check)) {
             //验证码错误
             ResultInfo info = new ResultInfo();
             info.setFlag(false);
@@ -43,6 +45,8 @@ public class RegisterUserServlet extends HttpServlet {
         }
 
         Map<String, String[]> map = request.getParameterMap();
+        map.forEach((key, value) -> System.out.println(key + ":" + Arrays.toString(value)));
+
         User user = new User();
         try {
             BeanUtils.populate(user, map);
@@ -50,6 +54,7 @@ public class RegisterUserServlet extends HttpServlet {
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
+        System.out.println(user);
         UserService service = new UserServiceImpl();
         boolean flag = service.register(user);
         ResultInfo info = new ResultInfo();

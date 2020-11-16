@@ -5,7 +5,6 @@ import com.cjl.dao.impl.UserDaoImpl;
 import com.cjl.domain.User;
 import com.cjl.service.UserService;
 import com.cjl.util.MailUtils;
-import com.cjl.util.UuidUtil;
 
 
 /**
@@ -23,7 +22,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean register(User user) {
-        User userByUsername = dao.findByUsername(user.getSuser());
+        User userByUsername = dao.findBySuser(user.getSuser());
         if (userByUsername != null) {
             //用户名在数据库中存在，注册失败
             return false;
@@ -55,5 +54,11 @@ public class UserServiceImpl implements UserService {
 //            return false;
 //        }
         return false;
+    }
+
+    @Override
+    public boolean login(User user) {
+        User userByUsername = dao.findBySuser(user.getSuser());
+        return user.getSpwd().equals(userByUsername.getSpwd());
     }
 }

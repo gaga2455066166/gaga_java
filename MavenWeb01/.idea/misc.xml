@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../mall" />
     <file type="web" url="file://$PROJECT_DIR$/../OnlineStore" />
     <file type="web" url="file://$PROJECT_DIR$/../Web1" />
     <file type="web" url="file://$PROJECT_DIR$/../Web2" />
@@ -13,6 +14,7 @@
         <option value="$PROJECT_DIR$/../Web1/pom.xml" />
         <option value="$PROJECT_DIR$/../OnlineStore/pom.xml" />
         <option value="$PROJECT_DIR$/../Junit4/pom.xml" />
+        <option value="$PROJECT_DIR$/../mall/pom.xml" />
       </list>
     </option>
   </component>

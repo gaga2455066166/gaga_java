@@ -1,12 +1,5 @@
 package domain;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runners.Suite;
-
-@RunWith(Suite.class)
-
 public class Computer {
     private int a;
     private int b;
@@ -58,9 +51,4 @@ public class Computer {
         for (; ; ) ;
     }
 
-    @Test
-    public void TestAdd() {
-        Computer computer = new Computer(12, 23);
-        System.out.println(computer.add());
-    }
 }

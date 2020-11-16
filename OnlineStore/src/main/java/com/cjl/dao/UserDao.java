@@ -6,10 +6,10 @@ public interface UserDao {
     /**
      * 查询是否有这个用户
      *
-     * @param username 传进来的用户名
+     * @param suser 传进来的用户名
      * @return 根据信息查找到的用户名
      */
-    User findByUsername(String username);
+    User findBySuser(String suser);
 
     /**
      * 保存

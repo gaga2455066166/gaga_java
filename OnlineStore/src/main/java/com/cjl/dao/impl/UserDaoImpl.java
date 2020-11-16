@@ -14,17 +14,16 @@ public class UserDaoImpl implements UserDao {
     private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
-    public User findByUsername(String username) {
-        String sql = "select * from tab_user where username = ?";
+    public User findBySuser(String suser) {
+        String sql = "select * from user where suser = ?";
         User user = null;
         try {
-            user = template.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), username);
+            user = template.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), suser);
         } catch (Exception e) {
 //            e.printStackTrace();
-            System.out.println("There is no data for this username: " + username + " in the database!");
+            System.out.println("There is no data for this username: " + suser + " in the database!");
             return null;
         }
-        System.out.println("The username: " + username + " already exists!");
         return user;
 
     }

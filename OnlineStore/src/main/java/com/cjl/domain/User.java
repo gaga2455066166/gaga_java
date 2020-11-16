@@ -11,16 +11,16 @@ public class User implements Serializable {
     private String spwd;
     private String sname;
     private String ssex;
-    private Date dbirth;
+    private String dbirth;
     private String semail;
     private String sphone;
     private String saddress;
     private String scode;
-    private Integer nlevel;
-    private Date dregdate;
-    private String slock;
-    private Date dlastdate;
-    private Integer nlogin;
+    private Integer nlevel = 0;
+    private String dregdate = null;
+    private String slock = null;
+    private String dlastdate = null;
+    private Integer nlogin = null;
 
     public String getSuser() {
         return suser;
@@ -54,11 +54,11 @@ public class User implements Serializable {
         this.ssex = ssex;
     }
 
-    public Date getDbirth() {
+    public String getDbirth() {
         return dbirth;
     }
 
-    public void setDbirth(Date dbirth) {
+    public void setDbirth(String dbirth) {
         this.dbirth = dbirth;
     }
 
@@ -102,11 +102,11 @@ public class User implements Serializable {
         this.nlevel = nlevel;
     }
 
-    public Date getDregdate() {
+    public String getDregdate() {
         return dregdate;
     }
 
-    public void setDregdate(Date dregdate) {
+    public void setDregdate(String dregdate) {
         this.dregdate = dregdate;
     }
 
@@ -118,11 +118,11 @@ public class User implements Serializable {
         this.slock = slock;
     }
 
-    public Date getDlastdate() {
+    public String getDlastdate() {
         return dlastdate;
     }
 
-    public void setDlastdate(Date dlastdate) {
+    public void setDlastdate(String dlastdate) {
         this.dlastdate = dlastdate;
     }
 
@@ -132,6 +132,26 @@ public class User implements Serializable {
 
     public void setNlogin(Integer nlogin) {
         this.nlogin = nlogin;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "suser='" + suser + '\'' +
+                ", spwd='" + spwd + '\'' +
+                ", sname='" + sname + '\'' +
+                ", ssex='" + ssex + '\'' +
+                ", dbirth=" + dbirth +
+                ", semail='" + semail + '\'' +
+                ", sphone='" + sphone + '\'' +
+                ", saddress='" + saddress + '\'' +
+                ", scode='" + scode + '\'' +
+                ", nlevel=" + nlevel +
+                ", dregdate=" + dregdate +
+                ", slock='" + slock + '\'' +
+                ", dlastdate=" + dlastdate +
+                ", nlogin=" + nlogin +
+                '}';
     }
 }
 

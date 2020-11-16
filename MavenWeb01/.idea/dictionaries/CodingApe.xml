@@ -1,9 +1,34 @@
 <component name="ProjectDictionaryState">
   <dictionary name="CodingApe">
     <words>
+      <w>adminuser</w>
       <w>checkcode</w>
       <w>clxcadklpbpmeada</w>
+      <w>commodit</w>
+      <w>commoditys</w>
+      <w>dbirth</w>
+      <w>dcdate</w>
+      <w>dlastdate</w>
+      <w>dregdate</w>
+      <w>nlevel</w>
+      <w>nlogin</w>
+      <w>nmaxid</w>
+      <w>nminid</w>
+      <w>nprice</w>
+      <w>onlinestore</w>
+      <w>saddress</w>
+      <w>scode</w>
+      <w>sdescription</w>
+      <w>semail</w>
+      <w>simg</w>
+      <w>slock</w>
+      <w>smctag</w>
       <w>smtp</w>
+      <w>sname</w>
+      <w>sphone</w>
+      <w>spwd</w>
+      <w>ssex</w>
+      <w>suser</w>
     </words>
   </dictionary>
 </component>
