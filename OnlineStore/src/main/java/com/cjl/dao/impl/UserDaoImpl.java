@@ -14,7 +14,7 @@ public class UserDaoImpl implements UserDao {
     private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
-    public User findBySuser(String suser) {
+    public User selectBySuser(String suser) {
         String sql = "select * from user where suser = ?";
         User user = null;
         try {
@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void save(User user) {
+    public void insertByUser(User user) {
         String sql = "insert into user(suser, spwd, sname, ssex, dbirth, semail, sphone, saddress) " +
                 " values (?,?,?,?,?,?,?,?)";
         int update = template.update(sql,
@@ -51,7 +51,7 @@ public class UserDaoImpl implements UserDao {
      * @return 寻找到的用户
      */
     @Override
-    public User findByCode(String code) {
+    public User selectByCode(String code) {
         String sql = "select * from tab_user where code = ?";
         User user = null;
         try {
@@ -70,7 +70,7 @@ public class UserDaoImpl implements UserDao {
      * @return 返回是否修改成功
      */
     @Override
-    public boolean updateStatus(User user) {
+    public boolean updateStatusByUser(User user) {
 //        String sql = "update tab_user set status = 'Y' where uid = ?";
 //        int update = template.update(sql, user.getUid());
 //        return update > 0;

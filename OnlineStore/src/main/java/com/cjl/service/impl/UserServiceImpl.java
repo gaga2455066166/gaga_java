@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean register(User user) {
-        User userByUsername = dao.findBySuser(user.getSuser());
+        User userByUsername = dao.selectBySuser(user.getSuser());
         if (userByUsername != null) {
             //用户名在数据库中存在，注册失败
             return false;
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
             //不存在，就要保存
 //            user.setCode(UuidUtil.getUuid());
 //            user.setStatus("N");
-            dao.save(user);
+            dao.insertByUser(user);
             //String content = "<a href='http://localhost:8080/Web1_war_exploded/ActiveUserServlet?code=" + user.getCode() + "'>点击注册激活邮件</a>";
             MailUtils.sendMail(user.getSemail(), "content", "激活邮件");
             return true;
@@ -58,12 +58,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(User user) {
-        User userByUsername = dao.findBySuser(user.getSuser());
+        User userByUsername = dao.selectBySuser(user.getSuser());
         return user.getSpwd().equals(userByUsername.getSpwd());
     }
 
     @Override
     public User findUserBySuser(String suser) {
-        return dao.findBySuser(suser);
+        return dao.selectBySuser(suser);
     }
 }

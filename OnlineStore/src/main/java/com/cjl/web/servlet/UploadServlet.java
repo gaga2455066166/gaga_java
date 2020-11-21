@@ -56,8 +56,8 @@ public class UploadServlet extends HttpServlet {
 
                     //方法二：保存到指定的路径
                     //将FileItem对象中保存的主体内容保存到某个指定的文件中。
-                    // 如果FileItem对象中的主体内容是保存在某个临时文件中，该方法顺利完成后，临时文件有可能会被清除
-//                    item.write(new File("D:\\sohucache\\"+fileName));
+//                     如果FileItem对象中的主体内容是保存在某个临时文件中，该方法顺利完成后，临时文件有可能会被清除
+                    item.write(new File(request.getServletContext().getRealPath("/")+fileName));
 //                    item.write(new File("").getAbsoluteFile());
                     System.out.println(new File("").getAbsoluteFile());
                     System.out.println(request.getServletContext().getRealPath("/"));

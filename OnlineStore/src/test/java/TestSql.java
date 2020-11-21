@@ -13,19 +13,19 @@ public class TestSql {
     @Test
     public void TestSelectUser(){
         UserDao dao = new UserDaoImpl();
-        System.out.println(dao.findBySuser("adminuser"));
+        System.out.println(dao.selectBySuser("adminuser"));
     }
 
     @Test
     public void TestSelectCommodity(){
         CommodityDao dao = new CommodityDaoImpl();
-        System.out.println(dao.findByNid(10001));
+        System.out.println(dao.selectByNid(10001));
     }
 
     @Test
     public void TestSelectAllCommodity(){
         CommodityDao dao = new CommodityDaoImpl();
-        System.out.println(dao.findAllCommodity());
+        System.out.println(dao.selectAll());
     }
 
     @Test

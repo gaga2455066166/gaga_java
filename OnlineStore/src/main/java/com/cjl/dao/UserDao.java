@@ -9,15 +9,15 @@ public interface UserDao {
      * @param suser 传进来的用户名
      * @return 根据信息查找到的用户名
      */
-    User findBySuser(String suser);
+    User selectBySuser(String suser);
 
     /**
      * 保存
      * @param user 传进来一个要保存的用户user
      */
-    void save(User user);
+    void insertByUser(User user);
 
-    User findByCode(String code);
+    User selectByCode(String code);
 
-    boolean updateStatus(User user);
+    boolean updateStatusByUser(User user);
 }

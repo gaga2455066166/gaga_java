@@ -20,7 +20,7 @@ public class CommodityListServlet extends HttpServlet {
 //        ObjectMapper mapper = new ObjectMapper();
 //        String json = mapper.writeValueAsString(info);
         CommodityService service = new CommodityServiceImpl();
-        List<Commodity> commodityList = service.commodityList();
+        List<Commodity> commodityList = service.findAllCommodity();
 
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(commodityList);

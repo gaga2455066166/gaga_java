@@ -13,7 +13,7 @@ public class CommodityDaoImpl implements CommodityDao {
     private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
-    public Commodity findByNid(Integer nid) {
+    public Commodity selectByNid(Integer nid) {
         String sql = "select * from commodity where nid = ?";
         Commodity commodity = null;
         try {
@@ -27,7 +27,7 @@ public class CommodityDaoImpl implements CommodityDao {
     }
 
     @Override
-    public List<Commodity> findAllCommodity() {
+    public List<Commodity> selectAll() {
         String sql = "select * from commodity";
         List<Commodity> commodityList = null;
         try {
