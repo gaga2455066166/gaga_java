@@ -8,16 +8,23 @@
       <w>commoditys</w>
       <w>dbirth</w>
       <w>dcdate</w>
+      <w>ddate</w>
       <w>dlastdate</w>
       <w>dregdate</w>
+      <w>headersuser</w>
+      <w>loginsuser</w>
       <w>nlevel</w>
       <w>nlogin</w>
       <w>nmaxid</w>
       <w>nminid</w>
       <w>nprice</w>
+      <w>nquantity</w>
+      <w>ntotal</w>
       <w>onlinestore</w>
       <w>saddress</w>
+      <w>scart</w>
       <w>scode</w>
+      <w>sdelivery</w>
       <w>sdescription</w>
       <w>semail</w>
       <w>simg</w>
@@ -25,6 +32,7 @@
       <w>smctag</w>
       <w>smtp</w>
       <w>sname</w>
+      <w>sorder</w>
       <w>sphone</w>
       <w>spwd</w>
       <w>ssex</w>

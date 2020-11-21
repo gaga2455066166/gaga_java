@@ -29,12 +29,11 @@
 </head>
 <body>
 <div id="header"></div>
-<!-- main-area -->
 <main>
 
 
-    <!-- shop-cart-area -->
-    <section class="shop-cart-area wishlist-area pt-100 pb-100">
+    <!--    <section class="shop-cart-area wishlist-area pt-100 pb-100">-->
+    <section class="shop-cart-area wishlist-area pb-100">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -43,24 +42,24 @@
                             <thead>
                             <tr>
                                 <th class="product-thumbnail"></th>
-                                <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
-                                <th class="product-quantity">QUANTITY</th>
-                                <th class="product-subtotal">SUBTOTAL</th>
+                                <th class="product-name">商品名称</th>
+                                <th class="product-price">价格</th>
+                                <th class="product-quantity">数量</th>
+                                <th class="product-subtotal">小计</th>
+                                <th class="product-subtotal">删除</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="carts">
                             <tr>
-                                <td class="product-thumbnail"><a href="#" class="wishlist-remove"><i
-                                        class="flaticon-cancel-1"></i></a><a href="shop-details.html"><img
-                                        src="img/product/wishlist_thumb02.jpg" alt=""></a>
+                                <td class="product-thumbnail">
+                                    <a href="shop-details.html"><img src="img/product/wishlist_thumb02.jpg" alt=""></a>
                                 </td>
                                 <td class="product-name">
-                                    <h4><a href="shop-details.html">Woman Lathers Jacket</a></h4>
-                                    <p>Cramond Leopard & Pythong Anorak</p>
-                                    <span>65% poly, 35% rayon</span>
+                                    <h4><a href="shop-details.html">商品的描述以及跳转链接</a></h4>
+                                    <p>商品的二级描述</p>
+                                    <span>生产信息或者制造商等</span>
                                 </td>
-                                <td class="product-price">$ 29.00</td>
+                                <td class="product-price">￥99</td>
                                 <td class="product-quantity">
                                     <div class="cart-plus">
                                         <form action="#">
@@ -71,6 +70,11 @@
                                     </div>
                                 </td>
                                 <td class="product-subtotal"><span>$ 68.00</span></td>
+                                <td>
+                                    <form action="#">
+                                        <button class="btn">删除</button>
+                                    </form>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -80,53 +84,22 @@
                             <div class="col-md-7">
                                 <div class="cart-coupon">
                                     <form action="#">
-                                        <input type="text" placeholder="Enter Coupon Code...">
-                                        <button class="btn">Apply Coupon</button>
+                                        <input type="text" placeholder="请输入商品名称">
+                                        <button class="btn">搜索</button>
                                     </form>
                                 </div>
                             </div>
                             <div class="col-md-5">
                                 <div class="continue-shopping">
-                                    <a href="shop.html" class="btn">Continue Shopping</a>
+                                    <a id="goToOrder" onclick="goToOrder()" class="btn">生成订单</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--                <div class="col-lg-4 col-md-8">-->
-                <!--                    <aside class="shop-cart-sidebar">-->
-                <!--                        <div class="shop-cart-widget">-->
-                <!--                            <h6 class="title">Cart Totals</h6>-->
-                <!--                            <form action="#">-->
-                <!--                                <ul>-->
-                <!--                                    <li><span>SUBTOTAL</span> $ 136.00</li>-->
-                <!--                                    <li>-->
-                <!--                                        <span>SHIPPING</span>-->
-                <!--                                        <div class="shop-check-wrap">-->
-                <!--                                            <div class="custom-control custom-checkbox">-->
-                <!--                                                <input type="checkbox" class="custom-control-input" id="customCheck1">-->
-                <!--                                                <label class="custom-control-label" for="customCheck1">FLAT RATE:-->
-                <!--                                                    $15</label>-->
-                <!--                                            </div>-->
-                <!--                                            <div class="custom-control custom-checkbox">-->
-                <!--                                                <input type="checkbox" class="custom-control-input" id="customCheck2">-->
-                <!--                                                <label class="custom-control-label" for="customCheck2">FREE-->
-                <!--                                                    SHIPPING</label>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </li>-->
-                <!--                                    <li class="cart-total-amount"><span>TOTAL</span> <span-->
-                <!--                                            class="amount">$ 151.00</span></li>-->
-                <!--                                </ul>-->
-                <!--                                <button class="btn">PROCEED TO CHECKOUT</button>-->
-                <!--                            </form>-->
-                <!--                        </div>-->
-                <!--                    </aside>-->
-                <!--                </div>-->
             </div>
         </div>
     </section>
-    <!-- shop-cart-area-end -->
 
 </main>
 <!-- main-area-end -->
@@ -151,5 +124,77 @@
 <script src="js/aos.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
+<script>
+    function getTime() {
+        let time = new Date();
+        return time.toLocaleDateString();
+    }
+    function goToOrder(){
+        //用异步交互进行订单生成
+        location.href = "order.html?sorder=date" + getTime();
+    }
+
+    $(function () {
+
+        $.ajax({
+            url: "DetailCartServlet",
+            data: {"suser": getCookieByName('suser')},
+            type: "post",
+            success: function (data) {
+                // 返回的data：List<Cart>
+                let $carts = $("#carts");
+                $.each(data, function (index, value) {
+                    let contentHtml = '';
+                    contentHtml +=
+                        '    <tr>' +
+                        '        <td class="product-thumbnail">' +
+                        '            <a href="#"><img src="' + value.simg + '" alt="还没加载出来" width="100" height="130"></a>' +
+                        '        </td>' +
+                        '        <td class="product-name">' +
+                        '            <h4><a href="#">' + value.sname + '</a></h4>' +
+                        '            <p>' + value.sdescription + '</p>' +
+                        '            <span>生产信息或者制造商等</span>' +
+                        '        </td>' +
+                        '        <td class="product-price">￥: ' + value.nprice + '</td>' +
+                        '        <td class="product-quantity">' +
+                        '            <div class="cart-plus">' +
+                        '                <form action="#">' +
+                        '                    <div class="cart-plus-minus">' +
+                        '                        <input type="text" value="' + value.nquantity + '">' +
+                        '                    </div>' +
+                        '                </form>' +
+                        '            </div>' +
+                        '        </td>' +
+                        '        <td class="product-subtotal"><span>￥' + value.ntotal + '</span></td>' +
+                        '        <td>' +
+                        '            <form action="#">' +
+                        '                <button class="btn">删除</button>' +
+                        '            </form>' +
+                        '        </td>' +
+                        '    <tr/>';
+                    $carts.append(contentHtml);
+
+                });
+
+
+            }
+        });
+
+
+    });
+
+    function getCookieByName(name) {
+        let strCookie = document.cookie;//获取cookie字符串
+        let arrCookie = strCookie.split(";");//分割
+        //遍历匹配
+        for (let i = 0; i < arrCookie.length; i++) {
+            let arr = arrCookie[i].split("=");
+            if (arr[0] === name) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+</script>
 </body>
 </html>

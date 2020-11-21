@@ -1,61 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- 头部 start -->
-    <header id="header">
-        <meta http-equiv="Content-Type" content='text/html; charset=utf-8'/>
-        <div class="top_banner">
-            <img src="images/top_banner.jpg" alt="">
-        </div>
-        <div class="shortcut">
-            <!-- 未登录状态  -->
-            <div class="login_out">
-                <a href="login.html">登录</a>
-                <a href="register.html">注册</a>
-            </div>
-            <!-- 登录状态  -->
-            <div class="login">
-            	
-                <span>欢迎回来，admin</span>
-                <a href="myfavorite.html" class="collection">我的收藏</a>
-                <a href="javascript:;">退出</a>
-            </div>
-        </div>
-        <div class="header_wrap">
-            <div class="topbar">
-                <div class="logo">
-                    <a href="/"><img src="images/logo.jpg" alt=""></a>
-                </div>
-                <div class="search">
-                    <input name="" type="text" placeholder="请输入商品名称" class="search_input" autocomplete="off">
-                    <a href="javascript:;" class="search-button">搜索</a>
-                </div>
-                <div class="hottel">
-                    <div class="hot_pic">
-                        <img src="images/hot_tel.jpg" alt="">
-                    </div>
-                    <div class="hot_tel">
-                        <p class="hot_time">客服热线(9:00-6:00)</p>
-                        <p class="hot_num">19959188180</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- 头部 end -->
-     <!-- 首页导航 -->
-    <div class="navitem">
-        <ul class="nav">
-            <li class="nav-active"><a href="index.html">首页</a></li>
-            <li><a href="route_list.html">电器</a></li>
-            <li><a href="route_list.html">数码</a></li>
-            <li><a href="route_list.html">个护</a></li>
-            <li><a href="route_list.html">美妆</a></li>
-            <li><a href="route_list.html">母婴</a></li>
-            <li><a href="route_list.html">办公</a></li>
-            <li><a href="route_list.html">运动</a></li>
-            <li><a href="route_list.html">购物车</a></li>
-            <li><a href="favoriterank.html">收藏排行榜</a></li>
-            <li><a href="favoriterank.html">我的订单</a></li>
-        </ul>
+<header id="header">
+    <meta http-equiv="Content-Type" content='text/html; charset=utf-8'/>
+    <script>
+        // $(function () {
+        //     let suser = getCookieByName("suser");
+        //     if (suser === "") {
+        //         $("#headersuser").html('您好，请先登录！');
+        //         if (getPageName() !== "login" && getPageName() !== "register") {
+        //             // $("#headersuser").html('请先登录！');
+        //             alert("请先登录!");
+        //             location.href = "login.html";
+        //         }
+        //     } else {
+        //         $("#headersuser").html('欢迎回来，' + suser);
+        //     }
+        //
+        // });
+
+        function getPageName() {
+            let a = location.href;
+            let b = a.split("/");
+            let c = b.slice(b.length - 1, b.length).toString().split(".");
+            return c.slice(0, 1).toString();
+        }
+
+        function getCookieByName(name) {
+            let strCookie = document.cookie;//获取cookie字符串
+            let arrCookie = strCookie.split(";");//分割
+            //遍历匹配
+            for (let i = 0; i < arrCookie.length; i++) {
+                let arr = arrCookie[i].split("=");
+                if (arr[0] === name) {
+                    return arr[1];
+                }
+            }
+            return "";
+        }
+    </script>
+    <div class="top_banner">
+        <img src="images/top_banner.jpg" alt="">
     </div>
+    <div class="shortcut">
+        <div class="login">
+
+            <span id="headersuser"></span>
+            <a href="cart.html" class="collection">我的购物车</a>
+            <a href="#">退出</a>
+        </div>
+    </div>
+    <div class="header_wrap">
+        <div class="topbar">
+            <div class="logo">
+                <a href="/"><img src="images/logo.jpg" alt=""></a>
+            </div>
+            <div class="search">
+                <input name="" type="text" placeholder="请输入商品名称" class="search_input" autocomplete="off">
+                <a href="javascript:;" class="search-button">搜索</a>
+            </div>
+            <div class="hottel">
+                <div class="hot_pic">
+                    <img src="images/hot_tel.jpg" alt="">
+                </div>
+                <div class="hot_tel">
+                    <p class="hot_time">客服热线(9:00-6:00)</p>
+                    <p class="hot_num">19959188180</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- 头部 end -->
+<!-- 首页导航 -->
+<div class="navitem">
+    <ul class="nav">
+        <li class="nav-active"><a href="index.html">首页</a></li>
+        <li><a href="route_list.html">电器</a></li>
+        <li><a href="route_list.html">数码</a></li>
+        <li><a href="cart.html">购物车</a></li>
+        <li><a href="favoriterank.html">收藏排行榜</a></li>
+        <li><a href="order.html">我的订单</a></li>
+    </ul>
+</div>
     

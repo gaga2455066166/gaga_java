@@ -141,15 +141,15 @@ public class User implements Serializable {
                 ", spwd='" + spwd + '\'' +
                 ", sname='" + sname + '\'' +
                 ", ssex='" + ssex + '\'' +
-                ", dbirth=" + dbirth +
+                ", dbirth='" + dbirth + '\'' +
                 ", semail='" + semail + '\'' +
                 ", sphone='" + sphone + '\'' +
                 ", saddress='" + saddress + '\'' +
                 ", scode='" + scode + '\'' +
                 ", nlevel=" + nlevel +
-                ", dregdate=" + dregdate +
+                ", dregdate='" + dregdate + '\'' +
                 ", slock='" + slock + '\'' +
-                ", dlastdate=" + dlastdate +
+                ", dlastdate='" + dlastdate + '\'' +
                 ", nlogin=" + nlogin +
                 '}';
     }

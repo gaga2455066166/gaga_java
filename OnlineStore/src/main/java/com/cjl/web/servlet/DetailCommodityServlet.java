@@ -25,7 +25,6 @@ public class DetailCommodityServlet extends HttpServlet {
         try {
             String json = mapper.writeValueAsString(commodityByNid);
             response.getWriter().print(json);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
