@@ -23,7 +23,7 @@ import java.util.Map;
 public class AddCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String, String[]> map = request.getParameterMap();
-        map.forEach((key, value) -> System.out.println(key + ":" + Arrays.toString(value)));
+//        map.forEach((key, value) -> System.out.println(key + ":" + Arrays.toString(value)));
         Cart cart = new Cart();
         try {
             BeanUtils.populate(cart, map);

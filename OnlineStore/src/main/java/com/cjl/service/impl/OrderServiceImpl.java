@@ -12,11 +12,17 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> findOrderListBySorder(String sorder) {
 
-        return dao.findBySorder(sorder);
+        return dao.selectBySorder(sorder);
     }
 
     @Override
     public List<Order> findOrderListBySuser(String suser) {
-        return dao.findBySuser(suser);
+        return dao.selectBySuser(suser);
+    }
+
+    @Override
+    public int saveOrderByOrder(Order order) {
+//        System.out.println("service impl ");
+        return dao.insertByOrder(order);
     }
 }

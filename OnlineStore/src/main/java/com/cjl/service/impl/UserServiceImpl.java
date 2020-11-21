@@ -61,4 +61,9 @@ public class UserServiceImpl implements UserService {
         User userByUsername = dao.findBySuser(user.getSuser());
         return user.getSpwd().equals(userByUsername.getSpwd());
     }
+
+    @Override
+    public User findUserBySuser(String suser) {
+        return dao.findBySuser(suser);
+    }
 }

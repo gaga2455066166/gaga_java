@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet("/DetailCartServlet")
 public class DetailCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("DetailCartServlet");
+//        System.out.println("DetailCartServlet");
         String suser = request.getParameter("suser");
 //        System.out.println(suser);
         CartService service = new CartServiceImpl();

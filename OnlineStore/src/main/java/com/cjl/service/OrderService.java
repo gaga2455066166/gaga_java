@@ -8,4 +8,6 @@ import java.util.List;
 public interface OrderService {
     List<Order> findOrderListBySorder(String sorder);
     List<Order> findOrderListBySuser(String suser);
+
+    int saveOrderByOrder(Order order);
 }

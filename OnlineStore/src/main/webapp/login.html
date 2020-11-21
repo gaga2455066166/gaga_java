@@ -24,7 +24,7 @@
             // alert("checkUsername");
             let $username = $("#suser");
             let username = $username.val();
-            let reg_username = /^\w{8,20}$/
+            let reg_username = /^\w{8,20}$/;
             let flag = reg_username.test(username);
             if (flag) {
                 //用户名合法

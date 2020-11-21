@@ -129,8 +129,25 @@
         let time = new Date();
         return time.toLocaleDateString();
     }
-    function goToOrder(){
-        location.href = "order.html?sorder=date" + getTime();
+
+    function goToOrder() {
+        //用异步交互进行订单生成
+        // location.href = "order.html?sorder=date" + getTime();
+        $.ajax({
+            url: "CreateOrderServlet",
+            data: {"sorder": "date" + getTime(), "suser": getCookieByName("suser"), "ddate": getTime()},
+            type: "post",
+            success: function (data) {
+                if (data.flag ==="false"){
+
+                    // console.log("提交订单");
+                    alert(data.errorMsg);
+                }
+                else {
+                    alert("已生成订单")
+                }
+            }
+        });
     }
 
     $(function () {
