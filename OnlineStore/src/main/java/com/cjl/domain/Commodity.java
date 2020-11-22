@@ -6,7 +6,7 @@ public class Commodity {
     private String sdescription;
     private Double nprice;
     private String simg;
-    private String smctag;//是否缺货
+    private String smctag = "Y";//是否缺货
     private String dcdate;
     private Integer nmaxid;
     private Integer nminid;

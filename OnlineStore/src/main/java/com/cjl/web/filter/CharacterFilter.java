@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * 解决全站乱码问题，处理所有的请求
  */
-//@WebFilter("/*")
+@WebFilter("/*")
 public class CharacterFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -37,6 +37,10 @@ public class CharacterFilter implements Filter {
                 requestURI.contains("/fonts/") ||
                 requestURI.contains("/img/") ||
                 requestURI.contains("/images/") ||
+                requestURI.contains("/assets/") ||
+                requestURI.contains("/bootstrap/") ||
+                requestURI.contains("/vendors/") ||
+                requestURI.contains("/commodityImg/") ||
                 requestURI.contains("/error/")) {
 //            System.out.println("css");
             response.setContentType("text/css;charset=utf-8");

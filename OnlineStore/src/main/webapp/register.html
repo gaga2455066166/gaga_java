@@ -87,16 +87,16 @@
                         //校验通过，发送ajax异步请求
                         if (data.flag) {
                             //注册成功
-                            location.href = "register_ok.html"
+                            location.href = "register_ok.html";
                         } else {
                             //注册失败
                             $("#errorMsg").html(data.errorMsg)
-                            changeCheckCode()
+                            changeCheckCode();
                         }
 
-                    })
+                    });
                 }
-                return false
+                return false;
             });
 
             //用户名方框失去焦点时，调用对应的校验方法

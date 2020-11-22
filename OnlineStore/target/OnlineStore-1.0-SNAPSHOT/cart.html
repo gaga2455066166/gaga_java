@@ -1,0 +1,216 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>我的购物车</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" href="css/search.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/odometer.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="header"></div>
+<main>
+
+
+    <!--    <section class="shop-cart-area wishlist-area pt-100 pb-100">-->
+    <section class="shop-cart-area wishlist-area pb-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="table-responsive-xl">
+                        <table class="table mb-0">
+                            <thead>
+                            <tr>
+                                <th class="product-thumbnail"></th>
+                                <th class="product-name">商品名称</th>
+                                <th class="product-price">价格</th>
+                                <th class="product-quantity">数量</th>
+                                <th class="product-subtotal">小计</th>
+                                <th class="product-subtotal">删除</th>
+                            </tr>
+                            </thead>
+                            <tbody id="carts">
+                            <tr>
+                                <td class="product-thumbnail">
+                                    <a href="shop-details.html"><img src="img/product/wishlist_thumb02.jpg" alt=""></a>
+                                </td>
+                                <td class="product-name">
+                                    <h4><a href="shop-details.html">商品的描述以及跳转链接</a></h4>
+                                    <p>商品的二级描述</p>
+                                    <span>生产信息或者制造商等</span>
+                                </td>
+                                <td class="product-price">￥99</td>
+                                <td class="product-quantity">
+                                    <div class="cart-plus">
+                                        <form action="#">
+                                            <div class="cart-plus-minus">
+                                                <input type="text" value="2">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td class="product-subtotal"><span>$ 68.00</span></td>
+                                <td>
+                                    <form action="#">
+                                        <button class="btn">删除</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="shop-cart-bottom mt-20">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="cart-coupon">
+                                    <form action="#">
+                                        <input type="text" placeholder="请输入商品名称">
+                                        <button class="btn">搜索</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="continue-shopping">
+                                    <a id="goToOrder" onclick="goToOrder()" class="btn">生成订单</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<!-- main-area-end -->
+<div id="footer"></div>
+<!--导入布局js，共享header和footer-->
+<script type="text/javascript" src="js/include.js"></script>
+
+<!-- JS here -->
+<script src="js/vendor/jquery-3.5.0.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.odometer.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script>
+    function getTime() {
+        let time = new Date();
+        return time.toLocaleDateString();
+    }
+
+    function goToOrder() {
+        //用异步交互进行订单生成
+        // location.href = "order.html?sorder=date" + getTime();
+        $.ajax({
+            url: "CreateOrderServlet",
+            data: {"sorder": "date" + getTime(), "suser": getCookieByName("suser"), "ddate": getTime()},
+            type: "post",
+            success: function (data) {
+                if (data.flag ==="false"){
+
+                    // console.log("提交订单");
+                    alert(data.errorMsg);
+                }
+                else {
+                    alert("已生成订单")
+                }
+            }
+        });
+    }
+
+    $(function () {
+
+        $.ajax({
+            url: "DetailCartServlet",
+            data: {"suser": getCookieByName('suser')},
+            type: "post",
+            success: function (data) {
+                // 返回的data：List<Cart>
+                let $carts = $("#carts");
+                $.each(data, function (index, value) {
+                    let contentHtml = '';
+                    contentHtml +=
+                        '    <tr>' +
+                        '        <td class="product-thumbnail">' +
+                        '            <a href="#"><img src="' + value.simg + '" alt="还没加载出来" width="100" height="130"></a>' +
+                        '        </td>' +
+                        '        <td class="product-name">' +
+                        '            <h4><a href="#">' + value.sname + '</a></h4>' +
+                        '            <p>' + value.sdescription + '</p>' +
+                        '            <span>生产信息或者制造商等</span>' +
+                        '        </td>' +
+                        '        <td class="product-price">￥: ' + value.nprice + '</td>' +
+                        '        <td class="product-quantity">' +
+                        '            <div class="cart-plus">' +
+                        '                <form action="#">' +
+                        '                    <div class="cart-plus-minus">' +
+                        '                        <input type="text" value="' + value.nquantity + '">' +
+                        '                    </div>' +
+                        '                </form>' +
+                        '            </div>' +
+                        '        </td>' +
+                        '        <td class="product-subtotal"><span>￥' + value.ntotal + '</span></td>' +
+                        '        <td>' +
+                        '            <form action="#">' +
+                        '                <button class="btn">删除</button>' +
+                        '            </form>' +
+                        '        </td>' +
+                        '    <tr/>';
+                    $carts.append(contentHtml);
+
+                });
+
+
+            }
+        });
+
+
+    });
+
+    function getCookieByName(name) {
+        let strCookie = document.cookie;//获取cookie字符串
+        let arrCookie = strCookie.split(";");//分割
+        //遍历匹配
+        for (let i = 0; i < arrCookie.length; i++) {
+            let arr = arrCookie[i].split("=");
+            if (arr[0] === name) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+</script>
+</body>
+</html>

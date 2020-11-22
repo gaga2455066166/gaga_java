@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>表单提交页面</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <!--[if lte IE 8]>
+    <script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+
+        <!--/span-->
+        <div class="span10" id="content">
+            <div class="row-fluid">
+                <!-- block -->
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">管路员权限：商品</div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <div class="span12">
+                            <form class="form-horizontal" action="AdminAddCommodity" id="addCommodity">
+                                <fieldset>
+                                    <legend>商品添加表格</legend>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nid">商品编号： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nid" name="nid">
+                                            <p class="help-block">Start typing to activate auto complete!</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sname">商品名称： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sname" name="sname">
+                                            <p class="help-block">Start typing to activate auto complete!</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sdescription">商品描述： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sdescription" name="sdescription">
+                                            <p class="help-block">请检查好</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nprice">商品价格： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nprice" name="nprice">
+                                            <p class="help-block">Start typing to activate auto complete!</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="simg">商品图片：</label>
+                                        <div class="controls">
+                                            <input class="input-file uniform_on" id="simg" type="file" name="simg">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="dcdate">入库时间：</label>
+                                        <div class="controls">
+                                            <input type="date" id="dcdate" name="dcdate">
+                                            <p class="help-block">请输入商品进入库存的时间，不是添加进入商城的时间。</p>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="select01">商品大类型：</label>
+                                        <div class="controls">
+                                            <select id="select01" class="chzn-select">
+                                                <option>something</option>
+                                                <option>电器</option>
+                                                <option>数码</option>
+                                                <option>个护</option>
+                                                <option>食品</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="multiSelect">商品关联标签</label>
+                                        <div class="controls">
+                                            <select multiple="multiple" id="multiSelect" class="chzn-select span4">
+                                                <option>吃</option>
+                                                <option>喝</option>
+                                                <option>玩</option>
+                                                <option>乐</option>
+                                            </select>
+                                            <p class="help-block">Start typing to activate auto complete!</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">确定添加</button>
+                                        <button type="reset" class="btn">取消</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /block -->
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <p>Copyright &copy; 2020.闽江学院二区二B509宿舍 All rights reserved.<a target="_blank" href="index.html">前往商城首页</a>
+        </p>
+    </footer>
+</div>
+<!--/.fluid-container-->
+<link href="vendors/datepicker.css" rel="stylesheet" media="screen">
+<link href="vendors/uniform.default.css" rel="stylesheet" media="screen">
+<link href="vendors/chosen.min.css" rel="stylesheet" media="screen">
+
+<link href="vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+
+<script src="vendors/jquery-1.9.1.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/jquery.uniform.min.js"></script>
+<script src="vendors/chosen.jquery.min.js"></script>
+<script src="vendors/bootstrap-datepicker.js"></script>
+
+<script src="vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+<script src="vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+
+<script src="vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+
+<script src="assets/scripts.js"></script>
+<script>
+    $(function () {
+        //表单提交时，调用所有的校验方法
+        $("#addCommodity").submit(function () {
+            $.post("AdminAddCommodity", $(this).serialize(), function (data) {
+                //校验通过，发送ajax异步请求
+                alert(data.flag);
+
+            });
+            return false
+        });
+
+        $(".chzn-select").chosen();
+
+    });
+</script>
+</body>
+
+</html>
