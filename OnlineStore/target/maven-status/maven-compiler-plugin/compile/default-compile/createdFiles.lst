@@ -12,6 +12,7 @@ com\cjl\domain\Commodity.class
 com\cjl\web\servlet\DetailOrderServlet.class
 com\cjl\web\servlet\CheckCodeServlet.class
 com\cjl\dao\CommodityDao.class
+com\cjl\web\servlet\AdminAddCommodity.class
 com\cjl\web\servlet\RegisterUserServlet.class
 com\cjl\domain\Cart.class
 com\cjl\web\filter\CharacterFilter.class

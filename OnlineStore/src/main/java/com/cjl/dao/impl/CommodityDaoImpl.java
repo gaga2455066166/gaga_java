@@ -39,4 +39,22 @@ public class CommodityDaoImpl implements CommodityDao {
         }
         return commodityList;
     }
+
+    @Override
+    public int insertCommodity(Commodity commodity) {
+        String sql = "insert into commodity(nid, sname, sdescription, nprice, simg, smctag, dcdate, nmaxid, nminid) " +
+                " values (?,?,?,?,?,?,?,?,?)";
+        int insert = template.update(sql,
+                commodity.getNid(),
+                commodity.getSname(),
+                commodity.getSdescription(),
+                commodity.getNprice(),
+                commodity.getSimg(),
+                commodity.getSmctag(),
+                commodity.getDcdate(),
+                commodity.getNmaxid(),
+                commodity.getNmaxid()
+        );
+        return insert;
+    }
 }

@@ -28,6 +28,7 @@ D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\util\Md5Util.ja
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\CommodityListServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\filter\CharacterFilter.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\ActiveUserServlet.java
+D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\AdminAddCommodity.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\util\UuidUtil.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\service\impl\UserServiceImpl.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\domain\ResultInfo.java

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <script>
+        //         // function imgPreview(fileDom) {
+        //         //     //判断是否支持FileReader
+        //         //     if(window.FileReader) {
+        //         //         var reader = new FileReader();
+        //         //     } else {
+        //         //         alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        //         //     }
+        //         //     //获取文件
+        //         //     var file = fileDom.files[0];
+        //         //     var imageType = /^image\//;
+        //         //     //是否是图片
+        //         //     if(!imageType.test(file.type)) {
+        //         //         alert("请选择图片！");
+        //         //         return;
+        //         //     }
+        //         //     //读取完成
+        //         //     reader.onload = function(e) {
+        //         //         //获取图片dom
+        //         //         var img = document.getElementById("preview");
+        //         //         //图片路径设置为读取的图片
+        //         //         img.src = e.target.result;
+        //         //     };
+        //         //     reader.readAsDataURL(file);
+        //         //
+        //         //     var formData = new FormData();
+        //         //     formData.append('file', $('#input_file')[0].files[0]); //添加图片信息的参数
+        //         //     formData.append('sizeid',123); //添加其他参数
+        //         //     $.ajax({
+        //         //         url: '/material/uploadFile',
+        //         //         type: 'POST',
+        //         //         cache: false, //上传文件不需要缓存
+        //         //         data: formData,
+        //         //         processData: false, // 告诉jQuery不要去处理发送的数据
+        //         //         contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+        //         //         success: function (data) {
+        //         //             var rs = eval("("+data+")");
+        //         //             if(rs.state==1){
+        //         //                 tipTopShow('上传成功！');
+        //         //             }else{
+        //         //                 tipTopShow(rs.msg);
+        //         //             }
+        //         //         },
+        //         //         error: function (data) {
+        //         //             tipTopShow("上传失败");
+        //         //         }
+        //         //     })
+        //         // }
+        //         function uploadFiles() {
+        // // 	var uploadFile = $('#excelFile').get(0).files[0];
+        //             let uploadFile = new FormData($("#file")[0]);
+        //             console.log(uploadFile);
+        //             if ("undefined" != typeof (uploadFile) && uploadFile != null && uploadFile != "") {
+        //                 $.ajax({
+        //                     url: 'TestUploadServlet',
+        //                     type: 'POST',
+        //                     data: uploadFile,
+        //                     async: false,
+        //                     cache: false,
+        //                     contentType: false, //不设置内容类型
+        //                     processData: false, //不处理数据
+        //                     success: function (data) {
+        //                         console.log(data);
+        //                         alert(data.msg);
+        //                     },
+        //                     error: function () {
+        //                         alert("上传失败！");
+        //                     }
+        //                 })
+        //             } else {
+        //                 alert("选择的文件无效！请重新选择");
+        //             }
+        //         }
+        $(function () {
+            $('#bt').on('click', function () {
+                var formData = new FormData($('#form')[0]);
+                $.ajax({
+                    url: "TestUploadServlet",
+                    data: formData,
+                    type: 'post',
+                    dataType: 'text',
+                    processData: false,
+                    contentType: false,
+                    success: function () {
+                        alert("ok");
+                    }
+                });
+            })
+        })
+
+    </script>
+</head>
+<body>
+<form id="form" method="post">
+    图片名称：<input id="id" name="id">
+    <input type="file" name="img" accept="image/gif/png/jpg/">
+</form>
+<button id="bt">提交</button>
+
+
+</body>
+</html>

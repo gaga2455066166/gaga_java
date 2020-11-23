@@ -32,9 +32,14 @@ public class AdminAddCommodity extends HttpServlet {
         }
         System.out.println(commodity);
         CommodityService service = new CommodityServiceImpl();
-//        service.
-        info.setFlag(false);
-
+        int i = service.AddCommodity(commodity);
+        if (i > 0) {
+            info.setFlag(true);
+            info.setErrorMsg("成功添加商品！");
+        }else {
+            info.setFlag(false);
+            info.setErrorMsg("添加商品失败，请检查商品nid后再尝试！");
+        }
 
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(info);

@@ -19,4 +19,9 @@ public class CommodityServiceImpl implements CommodityService {
     public Commodity findCommodityByNid(Integer nid) {
         return dao.selectByNid(nid);
     }
+
+    @Override
+    public int AddCommodity(Commodity commodity) {
+        return dao.insertCommodity(commodity);
+    }
 }
