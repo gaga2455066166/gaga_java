@@ -31,7 +31,8 @@
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
-                            <form class="form-horizontal" action="AdminAddCommodity" id="addCommodity" enctype="multipart/form-data" method="post">
+<!--                            <form class="form-horizontal" action="AdminAddCommodity" id="addCommodity" enctype="multipart/form-data" method="post">-->
+                            <form class="form-horizontal" id="addCommodity" method="post">
                                 <fieldset>
                                     <legend>商品添加表格</legend>
                                     <p id="msg"></p>
@@ -80,11 +81,11 @@
                                         <label class="control-label" for="nmaxid">商品大类型：</label>
                                         <div class="controls">
                                             <select id="nmaxid" name="nmaxid" class="chzn-select">
-                                                <option>something</option>
-                                                <option>电器</option>
-                                                <option>数码</option>
-                                                <option>个护</option>
-                                                <option>食品</option>
+                                                <option>大分类的nid</option>
+                                                <option>100</option>
+                                                <option>101</option>
+                                                <option>102</option>
+                                                <option>103</option>
                                             </select>
                                         </div>
                                     </div>
@@ -92,17 +93,18 @@
                                         <label class="control-label" for="nminid">商品关联标签</label>
                                         <div class="controls">
                                             <select multiple="multiple" id="nminid" name="nminid" class="chzn-select span4">
-                                                <option>吃</option>
-                                                <option>喝</option>
-                                                <option>玩</option>
-                                                <option>乐</option>
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
                                             </select>
                                             <p class="help-block">Start typing to activate auto complete!</p>
                                         </div>
 
                                     </div>
                                     <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">确定添加</button>
+<!--                                        <button type="submit" class="btn btn-primary">确定添加</button>-->
+                                        <button id="bt" class="btn btn-primary">提交</button>
                                         <button type="reset" class="btn">取消</button>
                                     </div>
                                 </fieldset>
@@ -143,19 +145,23 @@
 <script src="assets/scripts.js"></script>
 <script>
     $(function () {
-        //表单提交时，调用所有的校验方法
-        // $("#addCommodity").submit(function () {
-        //     $.post("AdminAddCommodity", $(this).serialize(), function (data) {
-        //         //校验通过，发送ajax异步请求
-        //         if (data.flag){
-        //             $("#msg").html(data.errorMsg);
-        //         }
-        //
-        //     });
-        //     return false
-        // });
-
         $(".chzn-select").chosen();
+        $(function () {
+            $('#bt').on('click', function () {
+                let formData = new FormData($('#addCommodity')[0]);
+                $.ajax({
+                    url: "AdminAddCommodity",
+                    data: formData,
+                    type: 'post',
+                    dataType: 'text',
+                    processData: false,
+                    contentType: false,
+                    success: function () {
+                        alert("ok");
+                    }
+                });
+            })
+        });
 
     });
 </script>

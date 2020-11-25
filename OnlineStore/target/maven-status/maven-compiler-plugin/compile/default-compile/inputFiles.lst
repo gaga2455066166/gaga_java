@@ -21,6 +21,7 @@ D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\Che
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\service\CommodityService.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\LoginUserServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\dao\CartDao.java
+D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\TestUploadServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\domain\Cart.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\service\impl\OrderServiceImpl.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\dao\impl\OrderDaoImpl.java

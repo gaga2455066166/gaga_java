@@ -56,7 +56,27 @@ public class OrderDaoImpl implements OrderDao {
                 order.getDdate(),
                 order.getSaddress(),
                 order.getSdelivery()
-                );
+        );
         return insert;
+    }
+
+    @Override
+    public int updateSdeliveryByOrder(Order order) {
+        System.out.println("order dao impl");
+        String sql = "update `order` set sdelivery = ? where sorder = ? and suser = ? and nid = ?";
+        int update = 0;
+        try {
+            update = template.update(sql,
+                    "已收货",
+                    order.getSorder(),
+                    order.getSuser(),
+                    order.getNid()
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Update 0");
+            return 0;
+        }
+        return update;
     }
 }

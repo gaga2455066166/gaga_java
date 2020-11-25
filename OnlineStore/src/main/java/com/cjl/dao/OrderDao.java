@@ -8,4 +8,6 @@ public interface OrderDao {
     List<Order> selectBySorder(String sorder);
     List<Order> selectBySuser(String suser);
     int insertByOrder(Order order);
+
+    int updateSdeliveryByOrder(Order order);
 }

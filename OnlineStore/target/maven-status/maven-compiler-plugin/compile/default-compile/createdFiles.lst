@@ -1,4 +1,5 @@
 com\cjl\service\CommodityService.class
+com\cjl\web\servlet\TestUploadServlet.class
 com\cjl\dao\CartDao.class
 com\cjl\util\JDBCUtils.class
 com\cjl\service\impl\CartServiceImpl.class

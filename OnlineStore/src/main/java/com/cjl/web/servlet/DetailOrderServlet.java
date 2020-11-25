@@ -19,9 +19,9 @@ import java.util.List;
 @WebServlet("/DetailOrderServlet")
 public class DetailOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("DetailOrderServlet");
+//        System.out.println("DetailOrderServlet");
         String suser = request.getParameter("suser");
-        System.out.println(suser);
+//        System.out.println(suser);
         OrderService service = new OrderServiceImpl();
         List<Order> orders = service.findOrderListBySuser(suser);
         response.setContentType("application/json;charset=utf-8");

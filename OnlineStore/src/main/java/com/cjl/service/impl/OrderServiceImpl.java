@@ -25,4 +25,10 @@ public class OrderServiceImpl implements OrderService {
 //        System.out.println("service impl ");
         return dao.insertByOrder(order);
     }
+
+    @Override
+    public int modifySdeliveryByOrder(Order order) {
+        System.out.println("order service impl");
+        return dao.updateSdeliveryByOrder(order);
+    }
 }
