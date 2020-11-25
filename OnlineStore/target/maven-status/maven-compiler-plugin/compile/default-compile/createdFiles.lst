@@ -17,6 +17,7 @@ com\cjl\web\servlet\AdminAddCommodity.class
 com\cjl\web\servlet\RegisterUserServlet.class
 com\cjl\domain\Cart.class
 com\cjl\web\filter\CharacterFilter.class
+com\cjl\web\servlet\ModifyOrderServlet.class
 com\cjl\service\OrderService.class
 com\cjl\util\MailUtils$1.class
 com\cjl\web\servlet\LoginUserServlet.class

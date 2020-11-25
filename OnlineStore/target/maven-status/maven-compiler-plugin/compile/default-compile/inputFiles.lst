@@ -6,6 +6,7 @@ D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\domain\User.jav
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\service\CartService.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\service\OrderService.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\domain\Commodity.java
+D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\ModifyOrderServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\util\MailUtils.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\DetailCommodityServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\dao\UserDao.java
