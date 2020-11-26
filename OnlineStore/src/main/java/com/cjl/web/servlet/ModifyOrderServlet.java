@@ -38,7 +38,7 @@ public class ModifyOrderServlet extends HttpServlet {
         ResultInfo info = new ResultInfo();
         if (i>0){
             info.setFlag(true);
-            info.setErrorMsg("收货成功");
+            info.setErrorMsg("收货成功，感谢您本店的购物，欢迎您下次购物！");
         }else {
             info.setFlag(false);
             info.setErrorMsg("请确定发货后再收货");

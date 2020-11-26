@@ -4,20 +4,24 @@
 <header id="header">
     <meta http-equiv="Content-Type" content='text/html; charset=utf-8'/>
     <script>
-        // $(function () {
-        //     let suser = getCookieByName("suser");
-        //     if (suser === "") {
-        //         $("#headersuser").html('您好，请先登录！');
-        //         if (getPageName() !== "login" && getPageName() !== "register") {
-        //             // $("#headersuser").html('请先登录！');
-        //             alert("请先登录!");
-        //             location.href = "login.html";
-        //         }
-        //     } else {
-        //         $("#headersuser").html('欢迎回来，' + suser);
-        //     }
-        //
-        // });
+        $(function () {
+            //上线后关闭
+            document.cookie = "suser=adminuser";
+
+            //上线后开启
+            // let suser = getCookieByName("suser");
+            // if (suser === "") {
+            //     $("#headersuser").html('您好，请先登录！');
+            //     if (getPageName() !== "login" && getPageName() !== "register") {
+            //         // $("#headersuser").html('请先登录！');
+            //         alert("请先登录!");
+            //         location.href = "login.html";
+            //     }
+            // } else {
+            //     $("#headersuser").html('欢迎回来，' + suser);
+            // }
+
+        });
 
         function getPageName() {
             let a = location.href;

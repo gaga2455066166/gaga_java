@@ -156,16 +156,19 @@
                         '        <td class="product-subtotal"><span>' + value.sdelivery + '</span></td>' +
                         '        <td>' +
                         '            <form action="#">' +
-                        '                <button class="btn" id="btn1">收货</button>' +
+                        '                <a class="btn" id="btn1" href="delivery_ok.html?sorder='+value.sorder+'&suser='+value.suser+'&nid='+value.nid+'">收货</a>' +
                         '            </form>' +
                         '        </td>' +
                         '    </tr>';
                     $orders.append(contentHtml);
-                    $("#btn1").on("click", data, function (event) {
-                            alert("收货");
-                            modifySdelivery(data);
-                        }
-                    );
+                    if(value.sdelivery === "已收货"){
+                        $("#btn1").attr('disabled',true);
+                    }
+                    // $("#btn1").on("click", data, function (event) {
+                    //         alert("收货");
+                    //         modifySdelivery(data);
+                    //     }
+                    // );
 
                 });
 
@@ -189,28 +192,28 @@
         return "";
     }
 
-    function modifySdelivery(data) {
-        $.ajax({
-            url: "ModifyOrderServlet",
-            data: {
-                "suser": getCookieByName("suser"),
-                "nid": data.nid,
-                "sname": data.sname,
-                "sdescription": data.sdescription,
-                "nprice": data.nprice,
-                "simg": data.simg,
-                "nquantity": 1,
-                "ntotal": data.nprice
-            },
-            type: "post",
-            success: function (data) {
-                // $("#addCart").html(data.errorMsg);
-                // alert(data.errorMsg);
-                console.log(data.errorMsg);
-            }
-        });
-
-    }
+    // function modifySdelivery(data) {
+    //     $.ajax({
+    //         url: "ModifyOrderServlet",
+    //         data: {
+    //             "suser": getCookieByName("suser"),
+    //             "nid": data.nid,
+    //             "sname": data.sname,
+    //             "sdescription": data.sdescription,
+    //             "nprice": data.nprice,
+    //             "simg": data.simg,
+    //             "nquantity": 1,
+    //             "ntotal": data.nprice
+    //         },
+    //         type: "post",
+    //         success: function (data) {
+    //             // $("#addCart").html(data.errorMsg);
+    //             // alert(data.errorMsg);
+    //             console.log(data.errorMsg);
+    //         }
+    //     });
+    //
+    // }
 </script>
 </body>
 </html>
