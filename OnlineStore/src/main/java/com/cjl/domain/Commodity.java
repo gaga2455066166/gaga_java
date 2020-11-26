@@ -10,6 +10,7 @@ public class Commodity {
     private String dcdate;
     private String smaxid;
     private String sminid;
+    private String sindex;
 
     public Integer getNid() {
         return nid;
@@ -83,6 +84,14 @@ public class Commodity {
         this.sminid = sminid;
     }
 
+    public String getSindex() {
+        return sindex;
+    }
+
+    public void setSindex(String sindex) {
+        this.sindex = sindex;
+    }
+
     @Override
     public String toString() {
         return "Commodity{" +
@@ -95,6 +104,7 @@ public class Commodity {
                 ", dcdate='" + dcdate + '\'' +
                 ", smaxid='" + smaxid + '\'' +
                 ", sminid='" + sminid + '\'' +
+                ", nindex=" + sindex +
                 '}';
     }
 }

@@ -1,3 +1,4 @@
+D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\RemoveCartServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\service\UserService.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\service\impl\CartServiceImpl.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\dao\OrderDao.java
@@ -15,6 +16,7 @@ D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\dao\impl\Commod
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\DetailCartServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\UploadServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\domain\Order.java
+D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\AdminModifyIndexCommodityServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\dao\impl\CartDaoImpl.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\web\servlet\CreateOrderServlet.java
 D:\local_github\java\gaga_java\OnlineStore\src\main\java\com\cjl\dao\CommodityDao.java

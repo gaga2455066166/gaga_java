@@ -1,5 +1,6 @@
 com\cjl\service\CommodityService.class
 com\cjl\web\servlet\TestUploadServlet.class
+com\cjl\web\servlet\RemoveCartServlet.class
 com\cjl\dao\CartDao.class
 com\cjl\util\JDBCUtils.class
 com\cjl\service\impl\CartServiceImpl.class
@@ -27,6 +28,7 @@ com\cjl\dao\impl\UserDaoImpl.class
 com\cjl\service\UserService.class
 com\cjl\util\Md5Util.class
 com\cjl\web\servlet\ActiveUserServlet.class
+com\cjl\web\servlet\AdminModifyIndexCommodityServlet.class
 com\cjl\web\servlet\UploadServlet.class
 com\cjl\util\UuidUtil.class
 com\cjl\web\servlet\AddCartServlet.class
