@@ -156,13 +156,15 @@
                         '        <td class="product-subtotal"><span>' + value.sdelivery + '</span></td>' +
                         '        <td>' +
                         '            <form action="#">' +
-                        '                <a class="btn" id="btn1" href="delivery_ok.html?sorder='+value.sorder+'&suser='+value.suser+'&nid='+value.nid+'">收货</a>' +
+                        '                <a class="btn" id="btn1" href="_ok.html?fun=order&sorder='+value.sorder+'&suser='+value.suser+'&nid='+value.nid+'">收货</a>' +
                         '            </form>' +
                         '        </td>' +
                         '    </tr>';
                     $orders.append(contentHtml);
                     if(value.sdelivery === "已收货"){
                         $("#btn1").attr('disabled',true);
+                    }else {
+                        $("#btn1").attr('disabled',false);
                     }
                     // $("#btn1").on("click", data, function (event) {
                     //         alert("收货");

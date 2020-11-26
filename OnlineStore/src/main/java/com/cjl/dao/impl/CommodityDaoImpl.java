@@ -3,7 +3,6 @@ package com.cjl.dao.impl;
 import com.cjl.dao.CommodityDao;
 import com.cjl.domain.Commodity;
 import com.cjl.util.JDBCUtils;
-import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -42,7 +41,7 @@ public class CommodityDaoImpl implements CommodityDao {
 
     @Override
     public int insertCommodity(Commodity commodity) {
-        String sql = "insert into commodity(nid, sname, sdescription, nprice, simg, smctag, dcdate, nmaxid, nminid) " +
+        String sql = "insert into commodity(nid, sname, sdescription, nprice, simg, smctag, dcdate, smaxid, sminid) " +
                 " values (?,?,?,?,?,?,?,?,?)";
         int insert = template.update(sql,
                 commodity.getNid(),
@@ -52,8 +51,8 @@ public class CommodityDaoImpl implements CommodityDao {
                 commodity.getSimg(),
                 commodity.getSmctag(),
                 commodity.getDcdate(),
-                commodity.getNmaxid(),
-                commodity.getNmaxid()
+                commodity.getSmaxid(),
+                commodity.getSminid()
         );
         return insert;
     }

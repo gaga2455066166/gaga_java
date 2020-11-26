@@ -78,25 +78,25 @@
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="nmaxid">商品大类型：</label>
+                                        <label class="control-label" for="smaxid">商品大类型：</label>
                                         <div class="controls">
-                                            <select id="nmaxid" name="nmaxid" class="chzn-select">
-                                                <option>大分类的nid</option>
-                                                <option>100</option>
-                                                <option>101</option>
-                                                <option>102</option>
-                                                <option>103</option>
+                                            <select id="smaxid" name="smaxid" class="chzn-select">
+                                                <option>大分类的smaxid</option>
+                                                <option>电器</option>
+                                                <option>数码</option>
+                                                <option>食品</option>
+                                                <option>手办</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="nminid">商品关联标签</label>
+                                        <label class="control-label" for="sminid">商品关联标签</label>
                                         <div class="controls">
-                                            <select multiple="multiple" id="nminid" name="nminid" class="chzn-select span4">
-                                                <option>01</option>
-                                                <option>02</option>
-                                                <option>03</option>
-                                                <option>04</option>
+                                            <select multiple="multiple" id="sminid" name="sminid" class="chzn-select span4">
+                                                <option>测试标签</option>
+                                                <option>搜索用的</option>
+                                                <option>试一下</option>
+                                                <option>用来测试</option>
                                             </select>
                                             <p class="help-block">Start typing to activate auto complete!</p>
                                         </div>
@@ -156,8 +156,8 @@
                     dataType: 'text',
                     processData: false,
                     contentType: false,
-                    success: function () {
-                        alert("ok");
+                    success: function (data) {
+                        alert(data.errorMsg);
                     }
                 });
             })

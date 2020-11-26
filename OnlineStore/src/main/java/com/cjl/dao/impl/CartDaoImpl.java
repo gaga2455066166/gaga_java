@@ -79,4 +79,23 @@ public class CartDaoImpl implements CartDao {
         }
         return update;
     }
+
+    @Override
+    public int deleteByCart(Cart cart) {
+//        System.out.println("cart dao impl");
+        System.out.println(cart);
+        String sql = "delete from cart where suser = ? and nid = ?";
+//        String sql = "update cart set ntotal = ntotal + ? where nid = ?";
+        int delete = 0;
+        try {
+            delete = template.update(sql,
+                    cart.getSuser(),
+                    cart.getNid());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Delete 0");
+            return 0;
+        }
+        return delete;
+    }
 }

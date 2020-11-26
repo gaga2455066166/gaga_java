@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>注册</title>
+    <title>OK</title>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" href="css/register.css">
     <!--导入jquery-->
@@ -14,11 +14,20 @@
             // console.log(search);
             let strs = search.split("&");
             // console.log(strs);
-            let sorder = strs[0].split("=")[1];
-            let suser = strs[1].split("=")[1];
-            let nid = strs[2].split("=")[1];
-            // console.log(sorder + suser + nid);
-            modifyOrder(sorder, suser, nid);
+            if (strs[0].split("=")[1] === "order"){
+                let sorder = strs[1].split("=")[1];
+                let suser = strs[2].split("=")[1];
+                let nid = strs[3].split("=")[1];
+                console.log(sorder + suser + nid);
+                modifyOrder(sorder, suser, nid);
+            }else if (strs[0].split("=")[1] === "cart"){
+                // console.log("cart");
+                let suser = strs[1].split("=")[1];
+                let nid = strs[2].split("=")[1];
+                console.log(suser + nid);
+                removeCart(suser, nid);
+            }
+
 
         });
 
@@ -27,6 +36,19 @@
                 url: "ModifyOrderServlet",
                 data: {
                     "sorder": sorder,
+                    "suser": suser,
+                    "nid": nid
+                },
+                type: "get",
+                success: function (data) {
+                    $("#msg").html(data.errorMsg);
+                }
+            });
+        }
+        function removeCart(suser, nid) {
+            $.ajax({
+                url: "RemoveCartServlet",
+                data: {
                     "suser": suser,
                     "nid": nid
                 },

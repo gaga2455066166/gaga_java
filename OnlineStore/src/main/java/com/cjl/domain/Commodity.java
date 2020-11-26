@@ -8,8 +8,8 @@ public class Commodity {
     private String simg;
     private String smctag = "Y";//是否缺货
     private String dcdate;
-    private Integer nmaxid;
-    private Integer nminid;
+    private String smaxid;
+    private String sminid;
 
     public Integer getNid() {
         return nid;
@@ -67,20 +67,20 @@ public class Commodity {
         this.dcdate = dcdate;
     }
 
-    public Integer getNmaxid() {
-        return nmaxid;
+    public String getSmaxid() {
+        return smaxid;
     }
 
-    public void setNmaxid(Integer nmaxid) {
-        this.nmaxid = nmaxid;
+    public void setSmaxid(String smaxid) {
+        this.smaxid = smaxid;
     }
 
-    public Integer getNminid() {
-        return nminid;
+    public String getSminid() {
+        return sminid;
     }
 
-    public void setNminid(Integer nminid) {
-        this.nminid = nminid;
+    public void setSminid(String sminid) {
+        this.sminid = sminid;
     }
 
     @Override
@@ -93,8 +93,8 @@ public class Commodity {
                 ", simg='" + simg + '\'' +
                 ", smctag='" + smctag + '\'' +
                 ", dcdate='" + dcdate + '\'' +
-                ", nmaxid=" + nmaxid +
-                ", nminid=" + nminid +
+                ", smaxid='" + smaxid + '\'' +
+                ", sminid='" + sminid + '\'' +
                 '}';
     }
 }

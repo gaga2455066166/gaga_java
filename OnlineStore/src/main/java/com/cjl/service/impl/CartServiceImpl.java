@@ -28,4 +28,10 @@ public class CartServiceImpl implements CartService {
 
         return i;
     }
+
+    @Override
+    public int removeCartByCart(Cart cart) {
+//        System.out.println("cart service impl");
+        return dao.deleteByCart(cart);
+    }
 }

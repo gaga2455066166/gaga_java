@@ -8,4 +8,6 @@ import java.util.List;
 public interface CartService {
     List<Cart> findCartListBySuser(String suser);
     int addCommodityToCart(Cart cart);
+
+    int removeCartByCart(Cart cart);
 }

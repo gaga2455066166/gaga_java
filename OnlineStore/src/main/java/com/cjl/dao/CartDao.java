@@ -10,4 +10,6 @@ public interface CartDao {
     int insertByCart(Cart cart);
 
     int updateByCart(Cart cart);
+
+    int deleteByCart(Cart cart);
 }

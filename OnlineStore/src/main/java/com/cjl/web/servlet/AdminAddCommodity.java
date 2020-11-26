@@ -67,6 +67,8 @@ public class AdminAddCommodity extends HttpServlet {
             for (FileItem fileItem : list) {
                 if (fileItem.isFormField()) {
                     map.put(fileItem.getFieldName(), fileItem.getString("utf-8"));
+                    System.out.println(fileItem.getFieldName());
+                    System.out.println(fileItem.getString("utf-8"));
                 } else {
                     file = fileItem;
                     String name = fileItem.getName();
