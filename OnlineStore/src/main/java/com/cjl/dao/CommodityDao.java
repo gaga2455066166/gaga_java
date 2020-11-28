@@ -5,7 +5,13 @@ import com.cjl.domain.Commodity;
 import java.util.List;
 
 public interface CommodityDao {
-    Commodity selectByNid(Integer nid);
-    List<Commodity> selectAll();
+    Commodity selectCommodityByNid(Integer nid);
+
+    List<Commodity> selectAllCommodity();
+
     int insertCommodity(Commodity commodity);
+
+    int updateCommoditySindex(Integer nid, String value);
+
+    List<Commodity> selectCommodityBySindex(String sindex);
 }

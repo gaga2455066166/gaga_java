@@ -12,7 +12,7 @@ public class CommodityDaoImpl implements CommodityDao {
     private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
-    public Commodity selectByNid(Integer nid) {
+    public Commodity selectCommodityByNid(Integer nid) {
         String sql = "select * from commodity where nid = ?";
         Commodity commodity = null;
         try {
@@ -26,7 +26,7 @@ public class CommodityDaoImpl implements CommodityDao {
     }
 
     @Override
-    public List<Commodity> selectAll() {
+    public List<Commodity> selectAllCommodity() {
         String sql = "select * from commodity";
         List<Commodity> commodityList = null;
         try {
@@ -55,5 +55,25 @@ public class CommodityDaoImpl implements CommodityDao {
                 commodity.getSminid()
         );
         return insert;
+    }
+
+    @Override
+    public int updateCommoditySindex(Integer nid, String value) {
+        String sql = "update commodity set sindex = ? where nid = ?";
+        return template.update(sql,value,nid);
+    }
+
+    @Override
+    public List<Commodity> selectCommodityBySindex(String sindex) {
+        String sql = "select * from commodity where sindex = ?";
+        List<Commodity> commodityList = null;
+        try {
+            commodityList = template.query(sql, new BeanPropertyRowMapper<>(Commodity.class),sindex);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("There is no data in the database!");
+            return null;
+        }
+        return commodityList;
     }
 }

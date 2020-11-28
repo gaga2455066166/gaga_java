@@ -19,13 +19,13 @@ public class TestSql {
     @Test
     public void TestSelectCommodity(){
         CommodityDao dao = new CommodityDaoImpl();
-        System.out.println(dao.selectByNid(10001));
+        System.out.println(dao.selectCommodityByNid(10001));
     }
 
     @Test
     public void TestSelectAllCommodity(){
         CommodityDao dao = new CommodityDaoImpl();
-        System.out.println(dao.selectAll());
+        System.out.println(dao.selectAllCommodity());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class TestSql {
         cart.setSimg("images/04-search_03.jpg");
         cart.setNquantity(1);
         cart.setNtotal(89.32);
-        int i = dao.insertByCart(cart);
+        int i = dao.insertCart(cart);
         System.out.println(i);
     }
 
@@ -60,7 +60,7 @@ public class TestSql {
         cart.setSimg("images/04-search_03.jpg");
         cart.setNquantity(1);
         cart.setNtotal(89.56);
-        int i = dao.updateByCart(cart);
+        int i = dao.updateCartNquantityByCart(cart);
         System.out.println(i);
     }
 

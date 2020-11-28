@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function compute() {
+            let oper1Str = document.getElementById("oper1").value;
+            let oper2Str = document.getElementById("oper2").value;
+            let oper1 = parseInt(oper1Str);
+            let oper2 = parseInt(oper2Str);
+            let result = oper1 + oper2;
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="number" id="oper1">
+    +
+    <input type="number" id="oper2">
+    =
+    <span id="result"></span>
+    <br>
+    <input type="button" value="点击" onclick="compute()">
+</body>
+
+</html>

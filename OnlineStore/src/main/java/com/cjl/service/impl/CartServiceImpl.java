@@ -11,19 +11,19 @@ public class CartServiceImpl implements CartService {
     private final CartDao dao = new CartDaoImpl();
     @Override
     public List<Cart> findCartListBySuser(String suser) {
-        return dao.selectBySuser(suser);
+        return dao.selectCartBySuser(suser);
     }
 
     @Override
     public int addCommodityToCart(Cart cart) {
-        Cart bySuserAndNid = dao.selectBySuserAndNid(cart.getSuser(), cart.getNid());
+        Cart bySuserAndNid = dao.selectCartBySuserAndNid(cart.getSuser(), cart.getNid());
         int i = 0;
         if (bySuserAndNid == null){
             //用户的cart表中没有这个商品，所以执行添加商品到cart表
-            i = dao.insertByCart(cart);
+            i = dao.insertCart(cart);
         }else {
             //有这个商品，修改他的数量。
-            i = dao.updateByCart(cart);
+            i = dao.updateCartNquantityByCart(cart);
         }
 
         return i;
@@ -32,6 +32,6 @@ public class CartServiceImpl implements CartService {
     @Override
     public int removeCartByCart(Cart cart) {
 //        System.out.println("cart service impl");
-        return dao.deleteByCart(cart);
+        return dao.deleteCartByCart(cart);
     }
 }

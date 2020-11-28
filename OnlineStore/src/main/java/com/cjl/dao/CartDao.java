@@ -5,11 +5,13 @@ import com.cjl.domain.Cart;
 import java.util.List;
 
 public interface CartDao {
-    List<Cart> selectBySuser(String suser);
-    Cart selectBySuserAndNid(String suser, Integer nid);
-    int insertByCart(Cart cart);
+    List<Cart> selectCartBySuser(String suser);
 
-    int updateByCart(Cart cart);
+    Cart selectCartBySuserAndNid(String suser, Integer nid);
 
-    int deleteByCart(Cart cart);
+    int insertCart(Cart cart);
+
+    int updateCartNquantityByCart(Cart cart);
+
+    int deleteCartByCart(Cart cart);
 }

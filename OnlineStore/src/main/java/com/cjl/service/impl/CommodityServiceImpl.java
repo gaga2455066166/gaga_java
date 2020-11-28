@@ -12,16 +12,27 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public List<Commodity> findAllCommodity() {
-        return dao.selectAll();
+        return dao.selectAllCommodity();
     }
 
     @Override
     public Commodity findCommodityByNid(Integer nid) {
-        return dao.selectByNid(nid);
+        return dao.selectCommodityByNid(nid);
     }
 
     @Override
     public int AddCommodity(Commodity commodity) {
         return dao.insertCommodity(commodity);
+    }
+
+    @Override
+    public int modifyCommoditySindex(Integer nid,String value) {
+
+        return dao.updateCommoditySindex(nid,value);
+    }
+
+    @Override
+    public List<Commodity> findCommodityBySindex(String sindex) {
+        return dao.selectCommodityBySindex(sindex);
     }
 }

@@ -12,7 +12,7 @@ public class CartDaoImpl implements CartDao {
     private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
-    public List<Cart> selectBySuser(String suser) {
+    public List<Cart> selectCartBySuser(String suser) {
         String sql = "select * from cart where suser = ?";
         List<Cart> carts = null;
         try {
@@ -26,7 +26,7 @@ public class CartDaoImpl implements CartDao {
     }
 
     @Override
-    public Cart selectBySuserAndNid(String suser, Integer nid) {
+    public Cart selectCartBySuserAndNid(String suser, Integer nid) {
         String sql = "select * from cart where suser = ? and nid = ?";
         Cart cart = null;
         try {
@@ -40,7 +40,7 @@ public class CartDaoImpl implements CartDao {
     }
 
     @Override
-    public int insertByCart(Cart cart) {
+    public int insertCart(Cart cart) {
 //        (suser, nid, sname, sdescription, nprice, simg, nquantity, ntotal)
         String sql = "insert into cart values (?,?,?,?,?,?,?,?)";
         int update = 0;
@@ -63,7 +63,7 @@ public class CartDaoImpl implements CartDao {
     }
 
     @Override
-    public int updateByCart(Cart cart) {
+    public int updateCartNquantityByCart(Cart cart) {
         String sql = "update cart set nquantity = nquantity + ? , ntotal = ntotal + ? where nid = ?";
 //        String sql = "update cart set ntotal = ntotal + ? where nid = ?";
         int update = 0;
@@ -81,7 +81,7 @@ public class CartDaoImpl implements CartDao {
     }
 
     @Override
-    public int deleteByCart(Cart cart) {
+    public int deleteCartByCart(Cart cart) {
 //        System.out.println("cart dao impl");
         System.out.println(cart);
         String sql = "delete from cart where suser = ? and nid = ?";

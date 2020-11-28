@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<!--    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">-->
+    <!--    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">-->
     <link href="assets/styles.css" rel="stylesheet" media="screen">
     <script src="js/jquery-3.3.1.js"></script>
 </head>
@@ -31,7 +31,7 @@
                                     <legend>商品添加表格</legend>
                                     <p id="msg"></p>
                                     <div>
-<!--                                        <button id="bt1" class="btn btn-primary">展示所有商品</button>-->
+                                        <!--                                        <button id="bt1" class="btn btn-primary">展示所有商品</button>-->
                                         <input id="bt1" value="展示所有商品" type="button" class="btn btn-primary">
                                         <input id="bt2" value="根据nid搜索" type="button" class="btn btn-primary">
                                         <input type="text" class="span6" id="nid" name="nid">
@@ -61,6 +61,37 @@
 <script>
     $(function () {
         $(function () {
+            let $commoditys = $("#commoditys");
+
+            //设定为首页
+            $commoditys.delegate(".setIndex", 'click', function () {
+                // alert($(this).parent().prev().prev().prev().html());
+                let nid = $(this).parent().prev().prev().prev().html();
+                // alert(nid);
+                $.ajax({
+                    url: "AdminModifyIndexCommodityServlet",
+                    data: {"btn": "setIndex", "nid": nid},
+                    type: "post",
+                    success: function (data) {
+                        $("#msg").html(data.errorMsg);
+                    }
+                });
+            });
+
+            //取消为首页
+            $commoditys.delegate(".cancelIndex", 'click', function () {
+                let nid = $(this).parent().prev().prev().prev().prev().html();
+                // alert(nid);
+                $.ajax({
+                    url: "AdminModifyIndexCommodityServlet",
+                    data: {"btn": "cancelIndex", "nid": nid},
+                    type: "post",
+                    success: function (data) {
+                        $("#msg").html(data.errorMsg);
+                    }
+                });
+            });
+
             // 展示全部
             $('#bt1').on('click', function () {
                 $.ajax({
@@ -68,7 +99,7 @@
                     data: {"btn": "showAll"},
                     type: "post",
                     success: function (data) {
-                        let $commoditys = $("#commoditys");
+                        // let $commoditys = $("#commoditys");
                         $commoditys.empty();
                         $commoditys.append(
                             '    <tr>' +
@@ -83,13 +114,14 @@
                             let contentHtml = '';
                             contentHtml +=
                                 '    <tr>' +
-                                '        <td>'+value.nid+'</td>' +
-                                '        <td>'+value.sname+'</td>' +
-                                '        <td>'+value.sindex+'</td>' +
-                                '        <td><input value="设定" type="button" class="btn btn-primary"></td>' +
-                                '        <td><input value="取消" type="button" class="btn btn-primary"></td>' +
+                                '        <td>' + value.nid + '</td>' +
+                                '        <td>' + value.sname + '</td>' +
+                                '        <td>' + value.sindex + '</td>' +
+                                '        <td><input value="设定" type="button" class="btn btn-primary setIndex"></td>' +
+                                '        <td><input value="取消" type="button" class="btn btn-primary cancelIndex"></td>' +
                                 '    </tr>';
-                            $("#commoditys").append(contentHtml);
+                            // $("#commoditys").append(contentHtml);
+                            $commoditys.append(contentHtml);
                         });
                         $("#msg").html("搜索成功，已经展示全部商品！");
                     }
@@ -100,10 +132,10 @@
             $('#bt2').on('click', function () {
                 $.ajax({
                     url: "AdminModifyIndexCommodityServlet",
-                    data: {"btn": "showByNid","nid" : $("#nid").val()},
+                    data: {"btn": "showByNid", "nid": $("#nid").val()},
                     type: "post",
                     success: function (data) {
-                        let $commoditys = $("#commoditys");
+                        // let $commoditys = $("#commoditys");
                         $commoditys.empty();
                         $commoditys.append(
                             '    <tr>' +
@@ -118,9 +150,9 @@
                         let contentHtml = '';
                         contentHtml +=
                             '    <tr>' +
-                            '        <td>'+data.nid+'</td>' +
-                            '        <td>'+data.sname+'</td>' +
-                            '        <td>'+data.sindex+'</td>' +
+                            '        <td>' + data.nid + '</td>' +
+                            '        <td>' + data.sname + '</td>' +
+                            '        <td>' + data.sindex + '</td>' +
                             '        <td><input value="设定" type="button" class="btn btn-primary"></td>' +
                             '        <td><input value="取消" type="button" class="btn btn-primary"></td>' +
                             '    </tr>';
@@ -134,5 +166,6 @@
     });
 </script>
 </body>
+
 
 </html>
