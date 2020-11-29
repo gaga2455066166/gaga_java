@@ -16,11 +16,12 @@ import java.util.List;
 @WebServlet("/CommodityListServlet")
 public class CommodityListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<Commodity> commodityList = null;
-//        ObjectMapper mapper = new ObjectMapper();
-//        String json = mapper.writeValueAsString(info);
+
+        String smaxid = request.getParameter("smaxid");
+//        System.out.println(nmaxid);
+
         CommodityService service = new CommodityServiceImpl();
-        List<Commodity> commodityList = service.findAllCommodity();
+        List<Commodity> commodityList = service.findCommodityBySmaxid(smaxid);
 
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(commodityList);

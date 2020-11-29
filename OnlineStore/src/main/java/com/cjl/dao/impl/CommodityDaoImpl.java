@@ -76,4 +76,18 @@ public class CommodityDaoImpl implements CommodityDao {
         }
         return commodityList;
     }
+
+    @Override
+    public List<Commodity> selectCommodityBySmaxid(String smaxid) {
+        String sql = "select * from commodity where smaxid = ?";
+        List<Commodity> commodityList = null;
+        try {
+            commodityList = template.query(sql, new BeanPropertyRowMapper<>(Commodity.class),smaxid);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("There is no data in the database!");
+            return null;
+        }
+        return commodityList;
+    }
 }

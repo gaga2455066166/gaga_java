@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>商品信息修改</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">-->
+    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+
+        <!--/span-->
+        <div class="span12" id="content">
+            <div class="row-fluid">
+                <!-- block -->
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">管路员权限：商品</div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <div class="span12">
+                            <!--                            <form class="form-horizontal" action="AdminAddCommodity" id="addCommodity" enctype="multipart/form-data" method="post">-->
+                            <form class="form-horizontal" id="addCommodity" method="post">
+                                <fieldset>
+                                    <legend>商品信息查询</legend>
+                                    <p id="msg"></p>
+                                    <div>
+                                        <!--                                        <button id="bt1" class="btn btn-primary">展示所有商品</button>-->
+                                        <input id="bt1" value="展示所有商品" type="button" class="btn btn-primary">
+                                        <input id="bt2" value="根据nid搜索" type="button" class="btn btn-primary">
+                                        <input type="text" class="span6" id="nid" name="nid">
+                                        <!--                                        <button type="reset" class="btn">取消</button>-->
+                                    </div>
+                                    <div class="control-group">
+                                        <table class="table table-hover" id="commoditys">
+                                        </table>
+                                    </div>
+                                    <h4>修改表格：</h4>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nid0">商品编号： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nid0" name="nid">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sname">商品名称： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sname" name="sname">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sdescription">商品描述： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sdescription" name="sdescription">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nprice">商品价格： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nprice" name="nprice">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="dcdate">入库时间：</label>
+                                        <div class="controls">
+                                            <input type="date" id="dcdate" name="dcdate">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="smaxid">商品大类型：</label>
+                                        <div class="controls">
+                                            <select id="smaxid" name="smaxid" class="chzn-select">
+                                                <option>大分类的smaxid</option>
+                                                <option>电器</option>
+                                                <option>数码</option>
+                                                <option>食品</option>
+                                                <option>手办</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sminid">商品关联标签</label>
+                                        <div class="controls">
+                                            <select multiple="multiple" id="sminid" name="sminid" class="chzn-select span4">
+                                                <option>测试标签</option>
+                                                <option>搜索用的</option>
+                                                <option>试一下</option>
+                                                <option>用来测试</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <!--                                        <button type="submit" class="btn btn-primary">确定添加</button>-->
+                                        <button id="bt" class="btn btn-primary">提交</button>
+                                        <button type="reset" class="btn">取消</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /block -->
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <p>Copyright &copy; 2020.闽江学院二区二B509宿舍 All rights reserved.<a target="_blank" href="index.html">前往商城首页</a>
+        </p>
+    </footer>
+</div>
+
+<script>
+    $(function () {
+        $(function () {
+            let $commoditys = $("#commoditys");
+
+            //前往修改文本信息
+            $commoditys.delegate(".modifyMsg", 'click', function () {
+                // alert($(this).parent().prev().prev().prev().html());
+                let nid = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().html();
+                alert("填充文本信息到表格");
+                // $commoditys.empty();
+                // $.ajax({
+                //     url: "AdminModifyIndexCommodityServlet",
+                //     data: {"btn": "setIndex", "nid": nid},
+                //     type: "post",
+                //     success: function (data) {
+                //         $("#msg").html(data.errorMsg);
+                //     }
+                // });
+            });
+
+            //修改图片
+            $commoditys.delegate(".cancelIndex", 'click', function () {
+                let nid = $(this).parent().prev().prev().prev().prev().html();
+                // alert(nid);
+                $.ajax({
+                    url: "AdminModifyIndexCommodityServlet",
+                    data: {"btn": "cancelIndex", "nid": nid},
+                    type: "post",
+                    success: function (data) {
+                        $("#msg").html(data.errorMsg);
+                    }
+                });
+            });
+
+            // 展示全部
+            $('#bt1').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyIndexCommodityServlet",
+                    data: {"btn": "showAll"},
+                    type: "post",
+                    success: function (data) {
+                        // let $commoditys = $("#commoditys");
+                        $commoditys.empty();
+                        $commoditys.append(
+                            '    <tr>' +
+                            '         <td>商品编号</td>' +
+                            '         <td>商品名称</td>' +
+                            '         <td>商品描述</td>' +
+                            '         <td>商品价格</td>' +
+                            '         <td>图片组</td>' +
+                            '         <td>商品库存</td>' +
+                            '         <td>添加日期</td>' +
+                            '         <td>分类标签</td>' +
+                            '         <td>搜索标签</td>' +
+                            '         <td>首页管理</td>' +
+                            '         <td>前往修改</td>' +
+                            '    </tr>'
+                        );
+                        $.each(data, function (index, value) {
+                            let contentHtml = '';
+                            contentHtml +=
+                                '    <tr>' +
+                                '        <td>' + value.nid + '</td>' +
+                                '        <td>' + value.sname + '</td>' +
+                                '        <td>' + value.sdescription + '</td>' +
+                                '        <td>' + value.nprice + '</td>' +
+                                '        <td><input value="管理" type="button" class="btn btn-primary"></td>' +
+                                '        <td>' + value.smctag + '</td>' +
+                                '        <td>' + value.dcdate + '</td>' +
+                                '        <td>' + value.smaxid + '</td>' +
+                                '        <td>' + value.sminid + '</td>' +
+                                '        <td>' + value.sindex + '</td>' +
+                                '        <td><input value="填充到表格" type="button" class="btn btn-primary modifyMsg"></td>' +
+                                // '        <td><input value="取消" type="button" class="btn btn-primary cancelIndex"></td>' +
+                                '    </tr>';
+                            // $("#commoditys").append(contentHtml);
+                            $commoditys.append(contentHtml);
+                        });
+                        $("#msg").html("搜索成功，已经展示全部商品！");
+                    }
+                });
+            });
+
+            // 展示条件查询
+            $('#bt2').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyIndexCommodityServlet",
+                    data: {"btn": "showByNid", "nid": $("#nid").val()},
+                    type: "post",
+                    success: function (data) {
+                        // let $commoditys = $("#commoditys");
+                        $commoditys.empty();
+                        $commoditys.append(
+                            '    <tr>' +
+                            '         <td>商品编号</td>' +
+                            '         <td>商品名称</td>' +
+                            '         <td>商品描述</td>' +
+                            '         <td>商品价格</td>' +
+                            '         <td>图片管理</td>' +
+                            '         <td>商品库存</td>' +
+                            '         <td>添加日期</td>' +
+                            '         <td>分类标签</td>' +
+                            '         <td>搜索标签</td>' +
+                            '         <td>首页管理</td>' +
+                            '         <td>前往修改</td>' +
+                            '    </tr>'
+                        );
+                        // console.log(data);
+                        let contentHtml = '';
+                        contentHtml +=
+                            '    <tr>' +
+                            '        <td>' + data.nid + '</td>' +
+                            '        <td>' + data.sname + '</td>' +
+                            '        <td>' + data.sdescription + '</td>' +
+                            '        <td>' + data.nprice + '</td>' +
+                            '        <td><input value="管理" type="button" class="btn btn-primary"></td>' +
+                            '        <td>' + data.smctag + '</td>' +
+                            '        <td>' + data.dcdate + '</td>' +
+                            '        <td>' + data.smaxid + '</td>' +
+                            '        <td>' + data.sminid + '</td>' +
+                            '        <td>' + data.sindex + '</td>' +
+                            '        <td><input value="填充到表格" type="button" class="btn btn-primary modifyMsg"></td>' +
+                            '    </tr>';
+                        $commoditys.append(contentHtml);
+                        $("#msg").html("搜索成功，已经展示商品！");
+                    }
+                });
+            })
+        });
+
+    });
+</script>
+</body>
+
+
+</html>

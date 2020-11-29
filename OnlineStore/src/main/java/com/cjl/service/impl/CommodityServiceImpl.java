@@ -35,4 +35,9 @@ public class CommodityServiceImpl implements CommodityService {
     public List<Commodity> findCommodityBySindex(String sindex) {
         return dao.selectCommodityBySindex(sindex);
     }
+
+    @Override
+    public List<Commodity> findCommodityBySmaxid(String smaxid) {
+        return dao.selectCommodityBySmaxid(smaxid);
+    }
 }

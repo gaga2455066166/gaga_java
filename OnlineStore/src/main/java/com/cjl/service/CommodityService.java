@@ -14,4 +14,6 @@ public interface CommodityService {
     int modifyCommoditySindex(Integer nid,String value);
 
     List<Commodity> findCommodityBySindex(String sindex);
+
+    List<Commodity> findCommodityBySmaxid(String smaxid);
 }

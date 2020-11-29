@@ -14,4 +14,6 @@ public interface CommodityDao {
     int updateCommoditySindex(Integer nid, String value);
 
     List<Commodity> selectCommodityBySindex(String sindex);
+
+    List<Commodity> selectCommodityBySmaxid(String smaxid);
 }
