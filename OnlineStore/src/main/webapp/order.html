@@ -134,16 +134,24 @@
                         '        <td class="product-subtotal"><span class="sdelivery">' + value.sdelivery + '</span></td>' +
                         '        <td>' +
                         '            <form action="#">' +
-                        '                <a class="btn" id="btn1" href="_ok.html?fun=order&sorder=' + value.sorder + '&suser=' + value.suser + '&nid=' + value.nid + '">收货</a>' +
+                        '                <a class="btn btn-sdelivery" id="btn1" href="_ok.html?fun=order&sorder=' + value.sorder + '&suser=' + value.suser + '&nid=' + value.nid + '">收货</a>' +
                         '            </form>' +
                         '        </td>' +
                         '    </tr>';
-                    $orders.append(contentHtml);
+
                     if (value.sdelivery === "已收货") {
-                        $("#btn1").attr('disabled', true);
+                        // $(".btn-sdelivery").attr('readonly', readonly);
+                        // $(".btn-sdelivery").attr('disabled', true);
+                        $("#btn1").attr("disabled",true);
+
+                        // console.log($("#btn1"));
                     } else {
-                        $("#btn1").attr('disabled', false);
+                        // $(".btn-sdelivery").attr('disabled', false);
+                        $("#btn1").removeAttr("disabled");
+                        // console.log("false");
+                        // console.log($("#btn1"));
                     }
+                    $orders.append(contentHtml);
                     // $("#btn1").on("click", data, function (event) {
                     //         alert("收货");
                     //         modifySdelivery(data);

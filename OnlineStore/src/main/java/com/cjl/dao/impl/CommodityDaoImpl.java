@@ -60,7 +60,7 @@ public class CommodityDaoImpl implements CommodityDao {
     @Override
     public int updateCommoditySindex(Integer nid, String value) {
         String sql = "update commodity set sindex = ? where nid = ?";
-        return template.update(sql,value,nid);
+        return template.update(sql, value, nid);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class CommodityDaoImpl implements CommodityDao {
         String sql = "select * from commodity where sindex = ?";
         List<Commodity> commodityList = null;
         try {
-            commodityList = template.query(sql, new BeanPropertyRowMapper<>(Commodity.class),sindex);
+            commodityList = template.query(sql, new BeanPropertyRowMapper<>(Commodity.class), sindex);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("There is no data in the database!");
@@ -82,12 +82,28 @@ public class CommodityDaoImpl implements CommodityDao {
         String sql = "select * from commodity where smaxid = ?";
         List<Commodity> commodityList = null;
         try {
-            commodityList = template.query(sql, new BeanPropertyRowMapper<>(Commodity.class),smaxid);
+            commodityList = template.query(sql, new BeanPropertyRowMapper<>(Commodity.class), smaxid);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("There is no data in the database!");
             return null;
         }
         return commodityList;
+    }
+
+    @Override
+    public int updateCommodity(Commodity c) {
+        String sql = "update commodity set " +
+                "sname = ? , sdescription = ? , nprice = ? , dcdate = ? , smaxid = ? ,sminid = ? ,sindex= ? " +
+                " where nid = ?";
+        int update = 0;
+        try {
+            update = template.update(sql, c.getSname(), c.getSdescription(), c.getNprice(), c.getDcdate(), c.getSmaxid(), c.getSminid(), c.getSindex(), c.getNid());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+
+        return update;
     }
 }
