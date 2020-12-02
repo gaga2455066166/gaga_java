@@ -134,23 +134,31 @@
                         '        <td class="product-subtotal"><span class="sdelivery">' + value.sdelivery + '</span></td>' +
                         '        <td>' +
                         '            <form action="#">' +
-                        '                <a class="btn btn-sdelivery" id="btn1" href="_ok.html?fun=order&sorder=' + value.sorder + '&suser=' + value.suser + '&nid=' + value.nid + '">收货</a>' +
+                        // '                <button class="btn btn-sdelivery" id="btn1" href="_ok.html?fun=order&sorder=' + value.sorder + '&suser=' + value.suser + '&nid=' + value.nid + '">收货</button>' +
+                        '                <button class="btn btn-sdelivery"';
+                    if (value.sdelivery === "已收货") {
+                        contentHtml += ' disabled="disabled"';
+                    }
+                    contentHtml +=
+                        '>收货</button>' +
                         '            </form>' +
                         '        </td>' +
                         '    </tr>';
 
-                    if (value.sdelivery === "已收货") {
-                        // $(".btn-sdelivery").attr('readonly', readonly);
-                        // $(".btn-sdelivery").attr('disabled', true);
-                        $("#btn1").attr("disabled",true);
-
-                        // console.log($("#btn1"));
-                    } else {
-                        // $(".btn-sdelivery").attr('disabled', false);
-                        $("#btn1").removeAttr("disabled");
-                        // console.log("false");
-                        // console.log($("#btn1"));
-                    }
+                    // if (value.sdelivery === "已收货") {
+                    //     // $(".btn-sdelivery").attr('readonly', readonly);
+                    //     $(".btn-sdelivery").attr('disabled', "disabled");
+                    //     // console.log(1);
+                    //     // $("#btn1").attr("disabled","disabled");
+                    //
+                    //     // console.log($("#btn1"));
+                    //     console.log($(".btn-sdelivery"));
+                    // } else {
+                    //     // $(".btn-sdelivery").attr('disabled', false);
+                    //     $("#btn1").removeAttr("disabled");
+                    //     // console.log("false");
+                    //     // console.log($("#btn1"));
+                    // }
                     $orders.append(contentHtml);
                     // $("#btn1").on("click", data, function (event) {
                     //         alert("收货");
