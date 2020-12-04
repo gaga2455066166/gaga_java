@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HelloVue:war">
+    <output-path>$PROJECT_DIR$/../HelloVue/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HelloVue</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="HelloVue.war">
+      <element id="artifact" artifact-name="HelloVue:war exploded" />
+    </root>
+  </artifact>
+</component>

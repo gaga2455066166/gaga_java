@@ -9,10 +9,10 @@
         <module name="Junit4" />
         <module name="OnlineStore" />
         <module name="Web1" />
-        <module name="mall" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="HelloVue" target="1.7" />
       <module name="Junit4" target="1.8" />
       <module name="mall" target="1.8" />
       <module name="market" target="1.5" />
