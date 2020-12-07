@@ -42,6 +42,9 @@
             }
             return "";
         }
+        function search() {
+            location.href = "route_list.html?type=sname&value="+document.getElementById("sname").value;
+        }
     </script>
     <div class="top_banner">
         <img src="images/top_banner.jpg" alt="">
@@ -60,8 +63,8 @@
                 <a href="/"><img src="images/logo.jpg" alt=""></a>
             </div>
             <div class="search">
-                <input name="" type="text" placeholder="请输入商品名称" class="search_input" autocomplete="off">
-                <a href="javascript:;" class="search-button">搜索</a>
+                <input type="text" id="sname" placeholder="请输入商品名称" class="search_input" autocomplete="off">
+                <button class="search-button" onclick="search()">搜索</button>
             </div>
             <div class="hottel">
                 <div class="hot_pic">
@@ -80,8 +83,8 @@
 <div class="navitem">
     <ul class="nav">
         <li class="nav-active"><a href="index.html">首页</a></li>
-        <li><a href="route_list.html?smaxid=device">电器</a></li>
-        <li><a href="route_list.html?smaxid=digital">数码</a></li>
+        <li><a href="route_list.html?type=smaxid&value=device">电器</a></li>
+        <li><a href="route_list.html?type=smaxid&value=digital">数码</a></li>
         <li><a href="cart.html">购物车</a></li>
 <!--        <li><a href="favoriterank.html">收藏排行榜</a></li>-->
         <li><a href="order.html">我的订单</a></li>

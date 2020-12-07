@@ -2,6 +2,7 @@ package com.cjl.dao;
 
 import com.cjl.domain.Commodity;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public interface CommodityDao {
@@ -18,4 +19,6 @@ public interface CommodityDao {
     List<Commodity> selectCommodityBySmaxid(String smaxid);
 
     int updateCommodity(Commodity commodity);
+
+    List<Commodity> selectCommodityBySname(String sname);
 }

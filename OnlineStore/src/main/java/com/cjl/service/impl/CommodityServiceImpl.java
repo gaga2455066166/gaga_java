@@ -45,4 +45,9 @@ public class CommodityServiceImpl implements CommodityService {
     public int modifyCommodity(Commodity commodity) {
         return dao.updateCommodity(commodity);
     }
+
+    @Override
+    public List<Commodity> findCommodityBySname(String sname) {
+        return dao.selectCommodityBySname(sname);
+    }
 }

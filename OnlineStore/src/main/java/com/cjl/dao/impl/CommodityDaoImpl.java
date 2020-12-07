@@ -6,6 +6,7 @@ import com.cjl.util.JDBCUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class CommodityDaoImpl implements CommodityDao {
@@ -105,5 +106,20 @@ public class CommodityDaoImpl implements CommodityDao {
         }
 
         return update;
+    }
+
+    @Override
+    public List<Commodity> selectCommodityBySname(String sname) {
+        String sql = "select * from commodity where sname = ?";
+        List<Commodity> commodityList = null;
+        try {
+            commodityList = template.query(sql, new BeanPropertyRowMapper<>(Commodity.class), sname);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("There is no data in the database!");
+            return null;
+        }
+        System.out.println(commodityList);
+        return commodityList;
     }
 }
