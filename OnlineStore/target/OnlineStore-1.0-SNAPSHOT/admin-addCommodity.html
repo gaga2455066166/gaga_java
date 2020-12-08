@@ -8,9 +8,9 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
     <link href="assets/styles.css" rel="stylesheet" media="screen">
-    <script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <!--    <script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script>-->
+    <!--    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
+    <!--    <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
 </head>
 
 <body>
@@ -27,7 +27,6 @@
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
-<!--                            <form class="form-horizontal" action="AdminAddCommodity" id="addCommodity" enctype="multipart/form-data" method="post">-->
                             <form class="form-horizontal" id="addCommodity" method="post">
                                 <fieldset>
                                     <legend>商品添加表格</legend>
@@ -76,7 +75,7 @@
                                                 <option>大分类的smaxid</option>
                                                 <option>device</option>
                                                 <option>数码</option>
-                                                <option>食品</option>
+                                                <option>Furniture</option>
                                                 <option>手办</option>
                                             </select>
                                         </div>
@@ -84,8 +83,9 @@
                                     <div class="control-group">
                                         <label class="control-label" for="sminid">商品关联标签</label>
                                         <div class="controls">
-                                            <select multiple="multiple" id="sminid" name="sminid" class="chzn-select span4">
-                                                <option>测试标签</option>
+                                            <select multiple="multiple" id="sminid" name="sminid"
+                                                    class="chzn-select span4">
+                                                <option>家具</option>
                                                 <option>搜索用的</option>
                                                 <option>试一下</option>
                                                 <option>用来测试</option>
@@ -94,7 +94,7 @@
 
                                     </div>
                                     <div class="form-actions">
-<!--                                        <button type="submit" class="btn btn-primary">确定添加</button>-->
+                                        <!--                                        <button type="submit" class="btn btn-primary">确定添加</button>-->
                                         <button id="bt" class="btn btn-primary">提交</button>
                                         <button type="reset" class="btn">取消</button>
                                     </div>
@@ -115,46 +115,29 @@
     </footer>
 </div>
 <!--/.fluid-container-->
-<link href="vendors/datepicker.css" rel="stylesheet" media="screen">
-<link href="vendors/uniform.default.css" rel="stylesheet" media="screen">
-<link href="vendors/chosen.min.css" rel="stylesheet" media="screen">
-
-<link href="vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
-
-<script src="vendors/jquery-1.9.1.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="vendors/jquery.uniform.min.js"></script>
-<script src="vendors/chosen.jquery.min.js"></script>
-<script src="vendors/bootstrap-datepicker.js"></script>
-
-<script src="vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
-<script src="vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
-
-<script src="vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
-
-
 <script src="assets/scripts.js"></script>
 <script>
-    $(function () {
-        $(".chzn-select").chosen();
-        $(function () {
-            $('#bt').on('click', function () {
-                let formData = new FormData($('#addCommodity')[0]);
-                $.ajax({
-                    url: "AdminAddCommodity",
-                    data: formData,
-                    type: 'post',
-                    dataType: 'text',
-                    processData: false,
-                    contentType: false,
-                    success: function (data) {
-                        alert(data.errorMsg);
-                    }
-                });
-            })
-        });
 
+
+    $(function () {
+        $('#bt').on('click', function () {
+            let formData = new FormData($('#addCommodity')[0]);
+            $.ajax({
+                url: "AdminAddCommodity",
+                data: formData,
+                type: 'post',
+                dataType: 'text',
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    alert(data.errorMsg);
+                }
+            });
+        })
     });
+
 </script>
 </body>
 
