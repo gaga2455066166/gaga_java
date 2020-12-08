@@ -2,6 +2,8 @@ package com.cjl.service;
 
 import com.cjl.domain.User;
 
+import java.util.List;
+
 public interface UserService {
     /**
      * 注册用户
@@ -16,4 +18,10 @@ public interface UserService {
     boolean login(User user);
 
     User findUserBySuser(String suser);
+
+    List<User> findAllUser();
+
+    int modifyUserBySuser(User user);
+
+    int userModifyUserBySuser(User user);
 }

@@ -31,4 +31,14 @@ public class OrderServiceImpl implements OrderService {
         System.out.println("order service impl");
         return dao.updateSdeliveryByOrder(order);
     }
+
+    @Override
+    public List<Order> findAllOrder() {
+        return dao.selectAllOrder();
+    }
+
+    @Override
+    public int modifyOrderByOrder(Order order) {
+        return dao.updateOrderByOrder(order);
+    }
 }

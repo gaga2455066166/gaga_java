@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>用户信息修改</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">-->
+    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <!--/span-->
+        <div class="span12" id="content">
+            <div class="row-fluid">
+                <!-- block -->
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">管路员权限：用户</div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <div class="span12">
+                            <!--                            <form class="form-horizontal" action="AdminAddCommodity" id="addCommodity" enctype="multipart/form-data" method="post">-->
+                            <form class="form-horizontal" id="modifyUser" method="post">
+                                <fieldset>
+                                    <legend>用户信息查询</legend>
+                                    <p id="msg"></p>
+                                    <div>
+                                        <!--                                        <button id="bt1" class="btn btn-primary">展示所有商品</button>-->
+                                        <input id="bt1" value="展示所有用户" type="button" class="btn btn-primary">
+                                        <input id="bt2" value="根据suser搜索" type="button" class="btn btn-primary">
+                                        <input type="text" class="span6" id="selectSuser" name="selectSuser">
+                                        <!--                                        <button type="reset" class="btn">取消</button>-->
+                                    </div>
+                                    <div class="control-group">
+                                        <table class="table table-hover" id="users">
+                                        </table>
+                                    </div>
+                                    <h4>修改表格：</h4>
+                                    <div class="control-group">
+                                        <label class="control-label" for="suser">用户账号： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="suser" name="suser"
+                                                   readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sname">用户名称： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sname" name="sname">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="semail">用户邮箱： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="semail" name="semail">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sphone">用户手机： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sphone" name="sphone">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="saddress">收获地址： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="saddress" name="saddress">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="scode">地址邮编： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="scode" name="scode">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nlevel">用户权限： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nlevel" name="nlevel">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="dregdate">注册时间：</label>
+                                        <div class="controls">
+                                            <input type="date" id="dregdate" name="dregdate">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="dlastdate">最后登录：</label>
+                                        <div class="controls">
+                                            <input type="date" id="dlastdate" name="dlastdate">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nlogin">登录次数： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nlogin" name="nlogin">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="slock">账号状态：</label>
+                                        <div class="controls">
+                                            <select id="slock" name="slock" class="chzn-select">
+                                                <option>inactivated</option>
+                                                <option>activated</option>
+                                                <option>locked</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <!--                                        <button type="submit" class="btn btn-primary">确定添加</button>-->
+                                        <!--                                        <button id="bt3" class="btn btn-primary">提交</button>-->
+                                        <input id="bt3" value="提交" type="button" class="btn btn-primary">
+                                        <button type="reset" class="btn">取消</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /block -->
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <p>Copyright &copy; 2020.闽江学院二区二B509宿舍 All rights reserved.<a target="_blank" href="index.html">前往商城首页</a>
+        </p>
+    </footer>
+</div>
+
+<script>
+    $(function () {
+        $(function () {
+            let $users = $("#users");
+
+            //前往修改文本信息
+            $users.delegate(".modifyMsg", 'click', function () {
+                let array = [];
+                $.each($(this).parent().parent().children(), function (i) {
+                    console.log(i);
+                    array[i] = $(this).text();
+                });
+
+                console.log(array);
+                $("#suser").val(array[0]);
+                $("#sname").val(array[1]);
+                $("#semail").val(array[2]);
+                $("#sphone").val(array[3]);
+                $("#saddress").val(array[4]);
+                $("#scode").val(array[5]);
+                $("#nlevel").val(array[6]);
+                $("#dregdate").val(array[7]);
+                $("#dlastdate").val(array[8]);
+                $("#nlogin").val(array[9]);
+                $("#slock").val(array[10]);
+
+                // $users.empty();
+                // $.ajax({
+                //     url: "AdminModifyIndexCommodityServlet",
+                //     data: {"btn": "setIndex", "nid": nid},
+                //     type: "post",
+                //     success: function (data) {
+                //         $("#msg").html(data.errorMsg);
+                //     }
+                // });
+            });
+
+
+            // 展示全部
+            $('#bt1').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyUserServlet",
+                    data: {"btn": "showAll"},
+                    type: "post",
+                    success: function (data) {
+                        // let $users = $("#commoditys");
+                        $users.empty();
+                        $users.append(
+                            '    <tr>' +
+                            '         <td>用户账号</td>' +
+                            '         <td>用户名称</td>' +
+                            '         <td>用户邮箱</td>' +
+                            '         <td>用户手机</td>' +
+                            '         <td>收货地址</td>' +
+                            '         <td>地址邮编</td>' +
+                            '         <td>用户权限</td>' +
+                            '         <td>注册时间</td>' +
+                            '         <td>最后登录</td>' +
+                            '         <td>登陆次数</td>' +
+                            '         <td>账号状态</td>' +
+                            '         <td>前往修改</td>' +
+                            '    </tr>'
+                        );
+                        $.each(data, function (index, value) {
+                            let contentHtml = '';
+                            contentHtml +=
+                                '    <tr>' +
+                                '        <td>' + value.suser + '</td>' +
+                                '        <td>' + value.sname + '</td>' +
+                                '        <td>' + value.semail + '</td>' +
+                                '        <td>' + value.sphone + '</td>' +
+                                '        <td>' + value.saddress + '</td>' +
+                                '        <td>' + value.scode + '</td>' +
+                                '        <td>' + value.nlevel + '</td>' +
+                                '        <td>' + value.dregdate + '</td>' +
+                                '        <td>' + value.dlastdate + '</td>' +
+                                '        <td>' + value.nlogin + '</td>' +
+                                '        <td>' + value.slock + '</td>' +
+                                '        <td><input value="填充到表格" type="button" class="btn btn-primary modifyMsg"></td>' +
+                                '    </tr>';
+                            // $("#commoditys").append(contentHtml);
+                            $users.append(contentHtml);
+                        });
+                        $("#msg").html("搜索成功，已经展示全部用户！");
+                    }
+                });
+            });
+
+            // 展示条件查询
+            $('#bt2').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyUserServlet",
+                    data: {"btn": "showBySuser", "suser": $("#selectSuser").val()},
+                    type: "post",
+                    success: function (data) {
+                        // let $users = $("#commoditys");
+                        $users.empty();
+                        $users.append(
+                            '    <tr>' +
+                            '         <td>用户账号</td>' +
+                            '         <td>用户名称</td>' +
+                            '         <td>用户邮箱</td>' +
+                            '         <td>用户手机</td>' +
+                            '         <td>收货地址</td>' +
+                            '         <td>地址邮编</td>' +
+                            '         <td>用户权限</td>' +
+                            '         <td>注册时间</td>' +
+                            '         <td>最后登录</td>' +
+                            '         <td>登陆次数</td>' +
+                            '         <td>账号状态</td>' +
+                            '         <td>前往修改</td>' +
+                            '    </tr>'
+                        );
+                        // console.log(data);
+                        let contentHtml = '';
+                        contentHtml +=
+                            '    <tr>' +
+                            '        <td>' + data.suser + '</td>' +
+                            '        <td>' + data.sname + '</td>' +
+                            '        <td>' + data.semail + '</td>' +
+                            '        <td>' + data.sphone + '</td>' +
+                            '        <td>' + data.saddress + '</td>' +
+                            '        <td>' + data.scode + '</td>' +
+                            '        <td>' + data.nlevel + '</td>' +
+                            '        <td>' + data.dregdate + '</td>' +
+                            '        <td>' + data.dlastdate + '</td>' +
+                            '        <td>' + data.nlogin + '</td>' +
+                            '        <td>' + data.slock + '</td>' +
+                            '        <td><input value="填充到表格" type="button" class="btn btn-primary modifyMsg"></td>' +
+                            '    </tr>';
+                        $users.append(contentHtml);
+                        $("#msg").html("搜索成功，已经展示用户！");
+                    }
+                });
+            });
+
+            //提交修改后的表格
+            $('#bt3').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyUserServlet",
+                    data: {
+                        "btn":"modify",
+                        "suser": $("#suser").val(),
+                        "sname": $("#sname").val(),
+                        "semail": $("#semail").val(),
+                        "sphone": $("#sphone").val(),
+                        "saddress": $("#saddress").val(),
+                        "scode": $("#scode").val(),
+                        "nlevel": $("#nlevel").val(),
+                        "dregdate": $("#dregdate").val(),
+                        "dlastdate": $("#dlastdate").val(),
+                        "nlogin": $("#nlogin").val(),
+                        "slock": $("#slock").val()
+                    },
+                    type: "post",
+                    success: function (data) {
+                        alert(data.errorMsg);
+                    }
+                });
+            });
+        });
+
+    });
+</script>
+</body>
+
+
+</html>

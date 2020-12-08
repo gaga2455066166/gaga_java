@@ -6,6 +6,8 @@ import com.cjl.domain.User;
 import com.cjl.service.UserService;
 import com.cjl.util.MailUtils;
 
+import java.util.List;
+
 
 /**
  * 逻辑，对接
@@ -65,5 +67,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findUserBySuser(String suser) {
         return dao.selectBySuser(suser);
+    }
+
+    @Override
+    public List<User> findAllUser() {
+        return dao.selectAllUser();
+    }
+
+    @Override
+    public int modifyUserBySuser(User user) {
+        return dao.updateUserBySuser(user);
+    }
+
+    @Override
+    public int userModifyUserBySuser(User user) {
+        return dao.userUpdateUserBySuser(user);
     }
 }

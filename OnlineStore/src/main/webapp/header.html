@@ -6,20 +6,20 @@
     <script>
         $(function () {
             //上线后关闭
-            document.cookie = "suser=adminuser";
+            // document.cookie = "suser=adminuser";
 
             //上线后开启
-            // let suser = getCookieByName("suser");
-            // if (suser === "") {
-            //     $("#headersuser").html('您好，请先登录！');
-            //     if (getPageName() !== "login" && getPageName() !== "register") {
-            //         // $("#headersuser").html('请先登录！');
-            //         alert("请先登录!");
-            //         location.href = "login.html";
-            //     }
-            // } else {
-            //     $("#headersuser").html('欢迎回来，' + suser);
-            // }
+            let suser = getCookieByName("suser");
+            if (suser === "") {
+                $("#headersuser").html('您好，请先登录！');
+                if (getPageName() !== "login" && getPageName() !== "register") {
+                    // $("#headersuser").html('请先登录！');
+                    alert("请先登录!");
+                    location.href = "login.html";
+                }
+            } else {
+                $("#headersuser").html('欢迎回来，' + suser);
+            }
 
         });
 
@@ -88,7 +88,7 @@
         <li><a href="cart.html">购物车</a></li>
 <!--        <li><a href="favoriterank.html">收藏排行榜</a></li>-->
         <li><a href="order.html">我的订单</a></li>
-        <li><a href="">个人中心</a></li>
+        <li><a href="User-modifyUser.html">个人中心</a></li>
     </ul>
 </div>
     

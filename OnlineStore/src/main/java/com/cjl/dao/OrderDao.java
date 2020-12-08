@@ -10,4 +10,8 @@ public interface OrderDao {
     int insertByOrder(Order order);
 
     int updateSdeliveryByOrder(Order order);
+
+    List<Order> selectAllOrder();
+
+    int updateOrderByOrder(Order order);
 }

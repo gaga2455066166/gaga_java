@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>订单信息管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">-->
+    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <!--/span-->
+        <div class="span12" id="content">
+            <div class="row-fluid">
+                <!-- block -->
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">管路员权限：订单</div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <div class="span12">
+                            <!--                            <form class="form-horizontal" action="AdminAddCommodity" id="addCommodity" enctype="multipart/form-data" method="post">-->
+                            <form class="form-horizontal" id="modifyUser" method="post">
+                                <fieldset>
+                                    <legend>订单信息查询</legend>
+                                    <p id="msg"></p>
+                                    <div>
+                                        <input id="bt1" value="展示所有订单" type="button" class="btn btn-primary">
+                                        <input id="bt2" value="根据suser搜索" type="button" class="btn btn-primary">
+                                        <input type="text" class="span6" id="selectSuser" name="selectSuser">
+                                    </div>
+                                    <div class="control-group">
+                                        <table class="table table-hover" id="orders">
+                                        </table>
+                                    </div>
+                                    <h4>修改表格：</h4>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sorder">订单编号： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sorder" name="sorder"
+                                                   readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="suser">用户账号： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="suser" name="suser"
+                                                   readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nid">商品编号： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nid" name="nid"
+                                                   readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sname">商品名称： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="sname" name="sname"
+                                                   readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nprice">商品单价： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nprice" name="nprice"
+                                                   readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="nquantity">商品数量： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="nquantity" name="nquantity">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="ntotal">订单总价： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="ntotal" name="ntotal">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="ddate">下单时间：</label>
+                                        <div class="controls">
+                                            <input type="date" id="ddate" name="ddate">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="saddress">收获地址： </label>
+                                        <div class="controls">
+                                            <input type="text" class="span6" id="saddress" name="saddress">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="sdelivery">货物状态：</label>
+                                        <div class="controls">
+                                            <select id="sdelivery" name="sdelivery" class="chzn-select">
+                                                <option>订单取消</option>
+                                                <option>未发货</option>
+                                                <option>已发货</option>
+                                                <option>已收货</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <input id="bt3" value="提交" type="button" class="btn btn-primary">
+                                        <button type="reset" class="btn">取消</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /block -->
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <p>Copyright &copy; 2020.闽江学院二区二B509宿舍 All rights reserved.<a target="_blank" href="index.html">前往商城首页</a>
+        </p>
+    </footer>
+</div>
+
+<script>
+    $(function () {
+        $(function () {
+            let $orders = $("#orders");
+
+            //前往修改文本信息
+            $orders.delegate(".modifyMsg", 'click', function () {
+                let array = [];
+                $.each($(this).parent().parent().children(), function (i) {
+                    console.log(i);
+                    array[i] = $(this).text();
+                });
+
+                console.log(array);
+                $("#sorder").val(array[0]);
+                $("#suser").val(array[1]);
+                $("#nid").val(array[2]);
+                $("#sname").val(array[3]);
+                $("#nprice").val(array[4]);
+                $("#nquantity").val(array[5]);
+                $("#ntotal").val(array[6]);
+                $("#ddate").val(array[7]);
+                $("#saddress").val(array[8]);
+                $("#sdelivery").val(array[9]);
+            });
+
+
+            // 展示全部
+            $('#bt1').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyOrderServlet",
+                    data: {"btn": "showAll"},
+                    type: "post",
+                    success: function (data) {
+                        $orders.empty();
+                        $orders.append(
+                            '    <tr>' +
+                            '         <td>订单编号</td>' +
+                            '         <td>用户账号</td>' +
+                            '         <td>商品编号</td>' +
+                            '         <td>商品名称</td>' +
+                            '         <td>商品单价</td>' +
+                            '         <td>商品数量</td>' +
+                            '         <td>订单总价</td>' +
+                            '         <td>下单时间</td>' +
+                            '         <td>收货地址</td>' +
+                            '         <td>货物状态</td>' +
+                            '         <td>前往修改</td>' +
+                            '    </tr>'
+                        );
+                        $.each(data, function (index, value) {
+                            let contentHtml = '';
+                            contentHtml +=
+                                '    <tr>' +
+                                '        <td>' + value.sorder + '</td>' +
+                                '        <td>' + value.suser + '</td>' +
+                                '        <td>' + value.nid + '</td>' +
+                                '        <td>' + value.sname + '</td>' +
+                                '        <td>' + value.nprice + '</td>' +
+                                '        <td>' + value.nquantity + '</td>' +
+                                '        <td>' + value.ntotal + '</td>' +
+                                '        <td>' + value.ddate + '</td>' +
+                                '        <td>' + value.saddress + '</td>' +
+                                '        <td>' + value.sdelivery + '</td>' +
+                                '        <td><input value="填充到表格" type="button" class="btn btn-primary modifyMsg"></td>' +
+                                '    </tr>';
+                            // $("#commoditys").append(contentHtml);
+                            $orders.append(contentHtml);
+                        });
+                        $("#msg").html("搜索成功，已经展示全部订单！");
+                    }
+                });
+            });
+
+            // 展示条件查询
+            $('#bt2').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyOrderServlet",
+                    data: {"btn": "showBySuser", "suser": $("#selectSuser").val()},
+                    type: "post",
+                    success: function (data) {
+                        $orders.empty();
+                        $orders.append(
+                            '    <tr>' +
+                            '         <td>订单编号</td>' +
+                            '         <td>用户账号</td>' +
+                            '         <td>商品编号</td>' +
+                            '         <td>商品名称</td>' +
+                            '         <td>商品单价</td>' +
+                            '         <td>商品数量</td>' +
+                            '         <td>订单总价</td>' +
+                            '         <td>下单时间</td>' +
+                            '         <td>收货地址</td>' +
+                            '         <td>货物状态</td>' +
+                            '         <td>前往修改</td>' +
+                            '    </tr>'
+                        );
+                        $.each(data, function (index, value) {
+                            let contentHtml = '';
+                            contentHtml +=
+                                '    <tr>' +
+                                '        <td>' + value.sorder + '</td>' +
+                                '        <td>' + value.suser + '</td>' +
+                                '        <td>' + value.nid + '</td>' +
+                                '        <td>' + value.sname + '</td>' +
+                                '        <td>' + value.nprice + '</td>' +
+                                '        <td>' + value.nquantity + '</td>' +
+                                '        <td>' + value.ntotal + '</td>' +
+                                '        <td>' + value.ddate + '</td>' +
+                                '        <td>' + value.saddress + '</td>' +
+                                '        <td>' + value.sdelivery + '</td>' +
+                                '        <td><input value="填充到表格" type="button" class="btn btn-primary modifyMsg"></td>' +
+                                '    </tr>';
+                            // $("#commoditys").append(contentHtml);
+                            $orders.append(contentHtml);
+                        });
+                        $("#msg").html("搜索成功，已经展示订单！");
+                    }
+                });
+            });
+
+            //提交修改后的表格
+            $('#bt3').on('click', function () {
+                $.ajax({
+                    url: "AdminModifyOrderServlet",
+                    data: {
+                        "btn": "modify",
+                        "sorder": $("#sorder").val(),
+                        "suser": $("#suser").val(),
+                        "nid": $("#nid").val(),
+                        "sname": $("#sname").val(),
+                        "nprice": $("#nprice").val(),
+                        "nquantity": $("#nquantity").val(),
+                        "ntotal": $("#ntotal").val(),
+                        "ddate": $("#ddate").val(),
+                        "saddress": $("#saddress").val(),
+                        "sdelivery": $("#sdelivery").val()
+                    },
+                    type: "post",
+                    success: function (data) {
+                        alert(data.errorMsg);
+                    }
+                });
+            });
+        });
+
+    });
+</script>
+</body>
+
+
+</html>

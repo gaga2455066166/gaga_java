@@ -13,4 +13,8 @@ public interface OrderService {
     int saveOrderByOrder(Order order);
 
     int modifySdeliveryByOrder(Order order);
+
+    List<Order> findAllOrder();
+
+    int modifyOrderByOrder(Order order);
 }

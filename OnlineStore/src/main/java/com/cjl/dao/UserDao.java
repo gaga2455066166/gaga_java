@@ -2,6 +2,8 @@ package com.cjl.dao;
 
 import com.cjl.domain.User;
 
+import java.util.List;
+
 public interface UserDao {
     /**
      * 查询是否有这个用户
@@ -20,4 +22,10 @@ public interface UserDao {
     User selectByCode(String code);
 
     boolean updateStatusByUser(User user);
+
+    List<User> selectAllUser();
+
+    int updateUserBySuser(User user);
+
+    int userUpdateUserBySuser(User user);
 }

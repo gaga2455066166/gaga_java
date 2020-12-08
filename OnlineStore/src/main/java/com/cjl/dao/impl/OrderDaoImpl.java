@@ -79,4 +79,47 @@ public class OrderDaoImpl implements OrderDao {
         }
         return update;
     }
+
+    @Override
+    public List<Order> selectAllOrder() {
+        String sql = "select * from `order`";
+        List<Order> orders;
+        try {
+            orders = template.query(sql, new BeanPropertyRowMapper<>(Order.class));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("There is no data in the database!");
+            return null;
+        }
+        return orders;
+    }
+
+    @Override
+    public int updateOrderByOrder(Order order) {
+        String sql = "update `order` set " +
+                "nquantity = ?, " +
+                "ntotal = ?, " +
+                "ddate = ?, " +
+                "saddress = ?, " +
+                "sdelivery = ? " +
+                "where sorder = ? and suser = ? and nid = ?";
+        int update = 0;
+        try {
+            update = template.update(sql,
+                    order.getNquantity(),
+                    order.getNtotal(),
+                    order.getDdate(),
+                    order.getSaddress(),
+                    order.getSdelivery(),
+                    order.getSorder(),
+                    order.getSuser(),
+                    order.getNid()
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Update 0");
+            return 0;
+        }
+        return update;
+    }
 }
