@@ -9,6 +9,7 @@
         <module name="Junit4" />
         <module name="OnlineStore" />
         <module name="Web1" />
+        <module name="Spring5" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="mall" target="1.8" />
       <module name="market" target="1.5" />
       <module name="OnlineStore" target="1.8" />
+      <module name="Spring5" target="1.8" />
       <module name="travel" target="1.8" />
       <module name="Web1" target="1.8" />
       <module name="Web4" target="1.8" />
