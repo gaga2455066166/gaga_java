@@ -99,6 +99,21 @@
             <version>3.5.6</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
         <dependency>
             <groupId>commons-logging</groupId>
@@ -154,6 +169,7 @@
             <artifactId>jedis</artifactId>
             <version>3.3.0</version>
         </dependency>
+<<<<<<< Updated upstream
         <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -161,6 +177,13 @@
             <version>2.1.4</version>
         </dependency>
 
+=======
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+>>>>>>> Stashed changes
 
     </dependencies>
 
@@ -179,6 +202,7 @@
                 <includes>
                     <include>**/*.xml</include>
                     <include>**/*.properties</include>
+
                 </includes>
                 <filtering>false</filtering>
             </resource>
