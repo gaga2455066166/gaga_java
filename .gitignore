@@ -30,3 +30,4 @@ SpringTest/.idea/*
 OnlineStore/.idea/*
 OnlineStore/OnlineStore.iml
 OnlineStore/target/*
+*/.idea
