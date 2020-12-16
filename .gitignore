@@ -31,3 +31,4 @@ OnlineStore/.idea/*
 OnlineStore/OnlineStore.iml
 OnlineStore/target/*
 */.idea
+*/*.iml
