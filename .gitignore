@@ -24,12 +24,8 @@ hs_err_pid*
 /.metadata/
 
 
+
 .idea/*
-Web1/.idea/*
-SpringTest/.idea/*
-OnlineStore/.idea/*
-OnlineStore/OnlineStore.iml
-OnlineStore/target/*
 */.idea
 */target
 */*.iml
