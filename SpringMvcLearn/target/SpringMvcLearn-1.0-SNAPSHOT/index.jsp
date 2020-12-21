@@ -15,5 +15,14 @@
         <input type="submit" value="Submit">
     </label> <br>
 </form>
+
+<h3>提交信息给服务器，服务器用对象接收：</h3>
+<form action="${pageContext.request.contextPath}/submitByObject.do" method="post">
+    <label>
+        姓名：<input type="text" name="name">
+        年龄：<input type="text" name="age">
+        <input type="submit" value="Submit">
+    </label> <br>
+</form>
 </body>
 </html>

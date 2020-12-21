@@ -1,5 +1,6 @@
 package com.cjl.controller;
 
+import com.cjl.vo.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,10 +29,10 @@ public class MyController {
     }
 
     @RequestMapping(value = "/submitByObject.do")
-    public ModelAndView doSubmitByObject(String name,int age) {
+    public ModelAndView doSubmitByObject(Student student) {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("name", name);
-        mv.addObject("age", age);
+        mv.addObject("StudentName", student.getName());
+        mv.addObject("StudentAge", student.getAge());
 
         mv.setViewName("show");
         return mv;

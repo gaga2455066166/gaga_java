@@ -7,11 +7,14 @@
 <h3>展示页面：</h3>
 <h3>msg:${msg}</h3>
 <h3>fun:${fun}</h3>
-
+<hr>
 <h3>展示提交的数据：</h3>
 <h3>name:${name}</h3>
 <h3>age:${age}</h3>
-
-
+<hr>
+<h3>展示提交的数据(通过对象接收：</h3>
+<h3>StudentName:${StudentName}</h3>
+<h3>StudentAge:${StudentAge}</h3>
+<hr>
 </body>
 </html>
