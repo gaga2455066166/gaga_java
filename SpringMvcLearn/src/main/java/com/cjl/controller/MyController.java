@@ -16,4 +16,24 @@ public class MyController {
         mv.setViewName("show");
         return mv;
     }
+
+    @RequestMapping(value = "/submit.do")
+    public ModelAndView doSubmit(String name,int age) {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("name", name);
+        mv.addObject("age", age);
+
+        mv.setViewName("show");
+        return mv;
+    }
+
+    @RequestMapping(value = "/submitByObject.do")
+    public ModelAndView doSubmitByObject(String name,int age) {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("name", name);
+        mv.addObject("age", age);
+
+        mv.setViewName("show");
+        return mv;
+    }
 }
