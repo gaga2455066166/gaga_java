@@ -20,6 +20,39 @@
                     }
                 });
             });
+
+            $("#btn2").click(function () {
+                alert("这是一个ajax请求。");
+                $.ajax({
+                    url: "returnObject.do",
+                    data: {
+                        name: "ZhangSan",
+                        age: 34
+                    },
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+                        alert(data.name);
+                    }
+                });
+            });
+
+            $("#btn3").click(function () {
+                alert("这是一个ajax请求。");
+                $.ajax({
+                    url: "returnObjects.do",
+                    data: {
+                        name: "ZhangSan",
+                        age: 34
+                    },
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+                        alert(data[0].name);
+                        alert(data[1].name);
+                    }
+                });
+            });
         });
     </script>
 </head>
@@ -57,5 +90,13 @@
 <hr>
 <h1>用一个按钮发起ajax请求：</h1>
 <button id="btn1">发起请求</button>
+
+<hr>
+<h1>用一个按钮发起ajax请求,服务器用Object返回：</h1>
+<button id="btn2">发起请求</button>
+
+<hr>
+<h1>用一个按钮发起ajax请求,服务器用Objects返回：</h1>
+<button id="btn3">发起请求</button>
 </body>
 </html>

@@ -5,11 +5,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class MyController {
@@ -25,7 +28,7 @@ public class MyController {
     }
 
     @RequestMapping(value = "/submit.do")
-    public ModelAndView doSubmit(String name,int age) {
+    public ModelAndView doSubmit(String name, int age) {
         ModelAndView mv = new ModelAndView();
         mv.addObject("name", name);
         mv.addObject("age", age);
@@ -45,10 +48,10 @@ public class MyController {
     }
 
     @RequestMapping(value = "/returnString.do")
-    public String returnString(HttpServletRequest request,Student student) {
+    public String returnString(HttpServletRequest request, Student student) {
         System.out.println("Method: returnString was finish");
-        request.setAttribute("stringName",student.getName());
-        request.setAttribute("stringAge",student.getAge());
+        request.setAttribute("stringName", student.getName());
+        request.setAttribute("stringAge", student.getAge());
         return "show";
     }
 
@@ -67,8 +70,32 @@ public class MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("json:"+jsonStr);
+        System.out.println("json:" + jsonStr);
+    }
 
+    @RequestMapping(value = "/returnObject.do")
+    @ResponseBody
+    public Student returnObject(String name, int age) {
+        Student student = new Student();
+        student.setAge(age);
+        student.setName(name);
+        return student;
+    }
 
+    @RequestMapping(value = "/returnObjects.do")
+    @ResponseBody
+    public List<Student> returnObjects(String name, int age) {
+        List<Student> students = new ArrayList<>();
+        Student student1 = new Student();
+        student1.setAge(age);
+        student1.setName(name);
+
+        Student student2 = new Student();
+        student2.setAge(12);
+        student2.setName("name");
+
+        students.add(student1);
+        students.add(student2);
+        return students;
     }
 }
