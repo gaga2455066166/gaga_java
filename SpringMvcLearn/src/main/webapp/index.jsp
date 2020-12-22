@@ -24,5 +24,15 @@
         <input type="submit" value="Submit">
     </label> <br>
 </form>
+
+<hr>
+<h1>处理器方法返回String表示视图名称</h1>
+<form action="${pageContext.request.contextPath}/returnString.do" method="post">
+    <label>
+        姓名：<input type="text" name="name">
+        年龄：<input type="text" name="age">
+        <input type="submit" value="Submit">
+    </label> <br>
+</form>
 </body>
 </html>

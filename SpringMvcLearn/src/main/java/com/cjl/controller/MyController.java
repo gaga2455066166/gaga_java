@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class MyController {
 
@@ -36,5 +38,13 @@ public class MyController {
 
         mv.setViewName("show");
         return mv;
+    }
+
+    @RequestMapping(value = "/returnString.do")
+    public String returnString(HttpServletRequest request,Student student) {
+        System.out.println("Method: returnString was finish");
+        request.setAttribute("stringName",student.getName());
+        request.setAttribute("stringAge",student.getAge());
+        return "show";
     }
 }
