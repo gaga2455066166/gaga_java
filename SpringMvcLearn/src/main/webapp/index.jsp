@@ -2,6 +2,26 @@
 <html>
 <head>
     <title>Index</title>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn1").click(function () {
+                alert("这是一个ajax请求。");
+                $.ajax({
+                    url: "returnVoidAjax.do",
+                    data: {
+                        name: "ZhangSan",
+                        age: 34
+                    },
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+                        alert(data.name);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <h3>这是一个页面</h3>
@@ -34,5 +54,8 @@
         <input type="submit" value="Submit">
     </label> <br>
 </form>
+<hr>
+<h1>用一个按钮发起ajax请求：</h1>
+<button id="btn1">发起请求</button>
 </body>
 </html>
