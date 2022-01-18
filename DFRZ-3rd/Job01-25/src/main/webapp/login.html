@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            $("#loginForm").submit(function (){
+                $.post("TestServlet8", $(this).serialize(), function (data) {
+                    //校验通过，发送ajax异步请求
+                    alert(1);
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <form id="loginForm">
+        <table>
+            <tr>
+                <td>
+                    <label for="1">用户名：
+                        <input type="text" name="id" id="1">
+                    </label>
+                </td>
+                <td>
+                    <label for="2">密码：
+                        <input type="text" name="pwd" id="2">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>登录
+                        <input type="submit">
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

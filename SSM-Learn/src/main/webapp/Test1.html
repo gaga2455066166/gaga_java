@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    let jsonObj = {
+        "key1": 12,
+        "key2": "abc",
+        "key3": true,
+        "key4": [11, "arr", false],
+        "key5": {
+            "key5_1": 551,
+            "key5_2": "key5_2_value"
+        },
+        "key6": [{
+            "key6_1_1": 6611,
+            "key6_1_2": "key6_1_2_value"
+        }, {
+            "key6_2_1": 6621,
+            "key6_2_2": "key6_2_2_value"
+        }]
+    };
+    alert("第一种");
+    alert(jsonObj.key1);
+    s1 = jsonObj.key1;
+    alert(jsonObj.key2);
+    alert(jsonObj.key3);
+
+    let s = JSON.stringify(jsonObj);
+    alert("第二种");
+    alert(s);
+
+    let parse = JSON.parse(s);
+    alert(parse.key1);
+
+</script>
+
+<div>
+
+</div>
+</body>
+</html>
